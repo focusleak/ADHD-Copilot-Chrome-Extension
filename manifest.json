@@ -15,6 +15,14 @@
         "https://baidu.com/*",
         "https://*.baidu.com/*"
       ]
+    },
+    {
+      "js": ["scripts/mask.js"],
+      "css": [],
+      "matches": [
+        "https://*.zhihu.com/*",
+        "https://*.v2ex.com/*"
+      ]
     }
   ]
 }
