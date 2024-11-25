@@ -60,6 +60,13 @@ function closeTab(count = 10) {
             mask.remove();
         });
 
+        window.onkeydown = (e) => {
+            if (e.key === 'escape') {
+                clearInterval(interval);
+                mask.remove();
+            }
+        }
+
         mask.appendChild(close);
         mask.appendChild(visit);
 

@@ -21,6 +21,7 @@
       "css": [],
       "matches": [
         "https://*.zhihu.com/*",
+        "https://*.bilibili.com/*",
         "https://*.v2ex.com/*"
       ]
     }
