@@ -1,0 +1,20 @@
+{
+  "name": "ADHD Copilot",
+  "description": "",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "hello_extensions.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/baidu.js"],
+      "css": ["styles/baidu.css"],
+      "matches": [
+        "https://baidu.com/*",
+        "https://*.baidu.com/*"
+      ]
+    }
+  ]
+}
