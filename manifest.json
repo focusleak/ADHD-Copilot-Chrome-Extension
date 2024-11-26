@@ -25,5 +25,8 @@
         "https://*.v2ex.com/*"
       ]
     }
+  ],
+  "permissions": [
+    "storage"
   ]
 }
