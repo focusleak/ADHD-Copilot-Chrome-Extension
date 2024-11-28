@@ -17,7 +17,7 @@
       ]
     },
     {
-      "js": ["scripts/mask.js"],
+      "js": ["scripts/workTimeGuard.js"],
       "css": [],
       "matches": [
         "https://*.zhihu.com/*",

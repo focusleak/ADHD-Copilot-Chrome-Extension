@@ -1,7 +1,7 @@
 (function () {
     const LEISURE_MINUTES = 5; // 休息时间，单位为分钟
     // 检测当前时间是否为工作时间
-    function isWorkingHours(begin = 8, end = 23) { // 开发阶段，暂时先设定为8点到23点
+    function isInWorkTime(begin = 8, end = 23) { // 开发阶段，暂时先设定为8点到23点
         const now = new Date();
         const hour = now.getHours();
         return hour >= begin && hour < end;
@@ -12,7 +12,7 @@
         mask.style.fontSize = '24px';
         mask.style.fontWeight = 'bold';
         mask.style.textAlign = 'center';
-        mask.style.paddingTop = '20%';
+        // mask.style.paddingTop = '20%';
         mask.style.position = 'fixed';
         mask.style.top = '0';
         mask.style.bottom = '0';
@@ -51,17 +51,17 @@
         }
     }
 
-    if (isWorkingHours()) {
+    if (isInWorkTime()) {
         // 获取存储的时间
-        chrome.storage.local.get(['lastLeisureTime'], (result) => {
-            if (result.lastLeisureTime) {
-                let lastLeisureTime = new Date(result.lastLeisureTime);
-                console.log(lastLeisureTime);
+        chrome.storage.local.get(['lastLeisureTime'], ({lastLeisureTime}) => {
+            if (lastLeisureTime) {
+                let before = new Date(lastLeisureTime);
+                console.log(before);
                 let now = new Date();
-                let diff = now - lastLeisureTime;
+                let diff = now - before;
                 // 小于10分钟，则不显示遮罩
                 if (diff < 1000 * 60 * LEISURE_MINUTES) {
-                    console.log(`距离上次允许摸鱼时间小于${LEISURE_MINUTES}分钟，不显示遮罩`);
+                    console.log(`距离上次允许使用时间小于${LEISURE_MINUTES}分钟，不显示遮罩`);
                     return;
                 }
             }
@@ -78,13 +78,15 @@
             // 摸鱼按钮
             const visitButton = document.createElement('a');
             visitButton.href = 'javascript:void(0)';
-            visitButton.innerHTML = '我想摸会儿鱼';
+            visitButton.innerHTML = '继续使用';
             visitButton.addEventListener('click', () => {
                 tabManager.cancelClose();
                 pageMask.remove();
             });
 
             pageMask.appendChild(closeTips);
+            pageMask.appendChild(document.createElement('br'));
+            pageMask.appendChild(document.createElement('br'));
             pageMask.appendChild(visitButton);
 
             // 添加遮罩到页面
