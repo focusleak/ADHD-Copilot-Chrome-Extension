@@ -3,11 +3,12 @@ https://developer.chrome.com/docs/extensions/get-started?hl=zh-cn
 chrome://extensions/
 
 ## Features
- * 屏蔽百度热搜、广告 √
- * 针对指定网站，工作时间遮罩提示不要打开，有允许摸鱼按钮 √
+ * 屏蔽网站上的推荐内容，避免分心
+ * baidu -  屏蔽百度热搜、广告 √
+ * workTimeGuard 针对指定网站，工作时间遮罩提示不要打开，有允许访问按钮 √
 
 ## TODO
- * 连续浏览超过一定时长也提示
+ * pageTimeTracker -  统计浏览时长和次数，连续浏览超过一定时长也提示
  * 去掉网站的页面跳转提示，直接跳转 https://github.com/OldPanda/Open-the-F-king-URL-Right-Now
  * 解除复制限制，去掉复制增加文本
  * 自由编辑页面

@@ -1,0 +1,25 @@
+/* 热文 */
+#hot-news {
+  display: none;
+}
+#articleAllsee {
+  display: none;
+}
+#groomRead {
+  display: none;
+}
+.hot-atlas {
+  display: none;
+}
+#recommend-writer{
+    display: none;
+}
+/* 广告 */
+#left-bottom-god,
+#god_1,#god_2,#god_3,#god_4,#god_5,
+#god_fix_1 {
+  display: none!important;
+}
+.left-bottom-float-fullScreenSleepContainer {
+  display: none!important;
+}

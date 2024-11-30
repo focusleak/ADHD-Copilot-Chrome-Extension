@@ -9,19 +9,59 @@
   },
   "content_scripts": [
     {
-      "js": ["scripts/baidu.js"],
-      "css": ["styles/baidu.css"],
+      "js": [
+        "scripts/baidu.js"
+      ],
+      "css": [
+        "styles/baidu.css"
+      ],
       "matches": [
         "https://baidu.com/*",
         "https://*.baidu.com/*"
       ]
     },
     {
-      "js": ["scripts/workTimeGuard.js"],
+      "js": [
+        "scripts/workTimeGuard.js",
+        "scripts/pageTimeTracker.js"
+      ],
       "css": [],
       "matches": [
         "https://*.zhihu.com/*",
         "https://*.bilibili.com/*",
+        "https://*.v2ex.com/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/sohu.js"
+      ],
+      "css": [
+        "styles/sohu.css"
+      ],
+      "matches": [
+        "https://*.sohu.com/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/cnki.js"
+      ],
+      "css": [
+        "styles/cnki.css"
+      ],
+      "matches": [
+        "https://*.cnki.net/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/v2ex.js"
+      ],
+      "css": [
+        "styles/v2ex.css"
+      ],
+      "matches": [
         "https://*.v2ex.com/*"
       ]
     }
