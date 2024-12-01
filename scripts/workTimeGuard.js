@@ -31,6 +31,7 @@
         closeAfter(count, handleTick, beforeClose) {
             this.count = count;
             handleTick();
+            clearInterval(this.interval);
             this.interval = setInterval(() => {
                 this.count--;
                 handleTick();
@@ -79,9 +80,18 @@
             const visitButton = document.createElement('a');
             visitButton.href = 'javascript:void(0)';
             visitButton.innerHTML = '继续使用';
+            let timeoutId = null;
             visitButton.addEventListener('click', () => {
                 tabManager.cancelClose();
                 pageMask.remove();
+                // 开始计时，5分钟后再次提示 - 改为localStorage存储的方案，每分钟检查
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    document.body.appendChild(pageMask);
+                    tabManager.closeAfter(3, () => {
+                        closeTips.innerHTML = `This page will be closed in ${tabManager.count} seconds.`;
+                    });
+                },1000 * 60 * 5);
             });
 
             pageMask.appendChild(closeTips);
