@@ -12,6 +12,7 @@
         mask.style.fontSize = '24px';
         mask.style.fontWeight = 'bold';
         mask.style.textAlign = 'center';
+        mask.style.alignContent = 'center';
         // mask.style.paddingTop = '20%';
         mask.style.position = 'fixed';
         mask.style.top = '0';
@@ -54,7 +55,7 @@
 
     if (isInWorkTime()) {
         // 获取存储的时间
-        chrome.storage.local.get(['lastLeisureTime'], ({lastLeisureTime}) => {
+        chrome.storage.local.get(['lastLeisureTime'], ({ lastLeisureTime }) => {
             if (lastLeisureTime) {
                 let before = new Date(lastLeisureTime);
                 console.log(before);
@@ -77,21 +78,21 @@
             });
 
             // 摸鱼按钮
-            const visitButton = document.createElement('a');
-            visitButton.href = 'javascript:void(0)';
+            const visitButton = document.createElement('span');
             visitButton.innerHTML = '继续使用';
+            visitButton.cursor = 'pointer';
             let timeoutId = null;
             visitButton.addEventListener('click', () => {
                 tabManager.cancelClose();
                 pageMask.remove();
-                // 开始计时，5分钟后再次提示 - 改为localStorage存储的方案，每分钟检查
+                // 开始计时，5分钟后再次提示 - 改为sessionStorage存储的方案，每分钟检查
                 clearTimeout(timeoutId);
                 timeoutId = setTimeout(() => {
                     document.body.appendChild(pageMask);
                     tabManager.closeAfter(3, () => {
                         closeTips.innerHTML = `This page will be closed in ${tabManager.count} seconds.`;
                     });
-                },1000 * 60 * 5);
+                }, 1000 * 60 * 5);
             });
 
             pageMask.appendChild(closeTips);

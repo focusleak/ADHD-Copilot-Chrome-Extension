@@ -1,0 +1,60 @@
+/*谷歌广告*/
+.google-auto-placed,
+.adsbygoogle.adsbygoogle-noablate {
+  display: none !important;
+}
+@media print {
+  /*谷歌广告*/
+  .google-auto-placed,
+  .adsbygoogle.adsbygoogle-noablate {
+    display: none !important;
+  }
+  /*最顶部导航栏*/
+  nav.navbar {
+    display: none;
+  }
+  /*最顶部导航栏下的空白块*/
+  #cc_spacer {
+    display: none;
+  }
+  /*酷壳 - CoolShell*/
+  .site-header {
+    display: none;
+  }
+  /* 搜索框*/
+  .container .row .nav-searchbox {
+    display: none;
+  }
+  /*目录*/
+  #ez-toc-container {
+    display: none;
+  }
+  /*相关文章1*/
+  #wp_rp_first {
+    display: none;
+  }
+  /*评分*/
+  .post-ratings {
+    display: none;
+  }
+  /*文章标签*/
+  footer.entry-footer {
+    display: none;
+  }
+  /*相关文章2*/
+  #related_posts {
+    display: none;
+  }
+  /*相关评论*/
+  .post-comments {
+    display: none;
+  }
+  /*最新评论*/
+  #recent-posts-4 {
+    /*display: none; */
+  }
+  /*全站热门*/
+  #views-6 {
+    /*display: none; */
+  }
+}

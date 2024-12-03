@@ -1,0 +1,9 @@
+/* 中国人民银行 */
+@media print {
+  .header,.footer {
+    display: none;
+  }
+  table{
+    border: none!important;
+  }
+}

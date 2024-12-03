@@ -1,0 +1,6 @@
+[adtype],
+.common_ad_item,
+.ad_module,
+.ad_hover_href {
+  display: none !important;
+}

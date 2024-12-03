@@ -1,0 +1,11 @@
+div.inner {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+img {
+  box-shadow: none;
+}
+pre {
+  overflow: initial;
+}

@@ -16,8 +16,20 @@
       "css": [],
       "matches": [
         "https://*.bilibili.com/*",
-        "https://*.zhihu.com/*",
-        "https://*.v2ex.com/*"
+        "https://*.ruanyifeng.com/*",
+        "https://*.v2ex.com/*",
+        "https://*.zhihu.com/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/163.js"
+      ],
+      "css": [
+        "styles/163.css"
+      ],
+      "matches": [
+        "https://*.163.com/*"
       ]
     },
     {
@@ -67,6 +79,28 @@
     },
     {
       "js": [
+        "scripts/coolshell.js"
+      ],
+      "css": [
+        "styles/coolshell.css"
+      ],
+      "matches": [
+        "https://coolshell.cn/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/yinwang.js"
+      ],
+      "css": [
+        "styles/yinwang.css"
+      ],
+      "matches": [
+        "https://*.yinwang.org/*"
+      ]
+    },
+    {
+      "js": [
         "scripts/zhihu.js"
       ],
       "css": [
@@ -75,6 +109,14 @@
       "matches": [
         "https://*.zhihu.com/*"
       ]
+    },
+    {
+      "js": [
+      ],
+      "css":[
+        "styles/pbc.css"
+      ],
+      "matches":["http://www.pbc.gov.cn/goutongjiaoliu/*"]
     }
   ],
   "permissions": [
