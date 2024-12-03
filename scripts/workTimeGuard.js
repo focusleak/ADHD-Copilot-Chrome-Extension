@@ -29,18 +29,18 @@
         constructor() {
             this.interval = null;
         }
-        closeAfter(count, handleTick, beforeClose) {
+        closeAfter(count, { handleTick, beforeClose, afterClose } = {}) {
             this.count = count;
-            handleTick();
+            handleTick && handleTick();
             clearInterval(this.interval);
             this.interval = setInterval(() => {
                 this.count--;
-                handleTick();
+                handleTick && handleTick();
                 if (this.count <= 0) {
                     clearInterval(this.interval);
                     beforeClose && beforeClose();
-                    console.log('关闭页面');
                     window.close();
+                    afterClose && afterClose();
                 }
             }, 1000);
         }
@@ -73,14 +73,21 @@
             setMaskStyle(pageMask);
 
             const closeTips = document.createElement('p');
-            tabManager.closeAfter(3, () => {
-                closeTips.innerHTML = `This page will be closed in ${tabManager.count} seconds.`;
+            tabManager.closeAfter(3, {
+                handleTick: () => {
+                    closeTips.innerHTML = `This page will be closed in ${tabManager.count} seconds.`;
+                },
+                afterClose: () => {
+                    console.log('关闭页面失败');
+                    closeTips.innerHTML = 'Failed to auto close the page, please close it manually.';
+                    closeTips.style.color = 'red';
+                }
             });
 
             // 摸鱼按钮
             const visitButton = document.createElement('span');
-            visitButton.innerHTML = '继续使用';
-            visitButton.cursor = 'pointer';
+            visitButton.innerHTML = 'continue visit';
+            visitButton.style.cursor = 'pointer';
             let timeoutId = null;
             visitButton.addEventListener('click', () => {
                 tabManager.cancelClose();

@@ -1,30 +1,43 @@
 (function () {
-    // 统计页面浏览次数和时间
-    let visitTimes = parseInt(localStorage.getItem('_adhd_helper_page_visit_times'));
-    visitTimes = visitTimes ? visitTimes + 1 : 1;
-    console.log(`This page has been visited ${visitTimes} times.`)
-    localStorage.setItem('_adhd_helper_page_visit_times', visitTimes);
-    console.log(JSON.parse(localStorage.getItem('_adhd_helper_page_time_spent') || '[]'));
+    // 统计页面浏览次数
+    let date = new Date();
+    let today = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    // 获取上次离开时间
+    // 小于一定时间则不增加访问次数
+    let visitTimes = JSON.parse(localStorage.getItem('_adhd_helper_page_visit_times') || '{}');
+    visitTimes[today] = visitTimes[today] ? visitTimes[today] + 1 : 1;
+    console.log(`This page has been visited ${visitTimes[today]} times today.`)
+    localStorage.setItem('_adhd_helper_page_visit_times', JSON.stringify(visitTimes));
+
+    // 统计页面停留时间
+    let timeSpent = JSON.parse(localStorage.getItem('_adhd_helper_page_time_spent') || '[]');
+    let x = (timeSpent[today] || []).reduce((a, b) => a + b, 0);
+    let minute = Math.floor(x / 1000 / 60);
+    let second = Math.floor((x / 1000) % 60);
+    console.log(`Time spent on this page today: ${minute} minutes ${second} second.`)
 
 
     let startTime = new Date();
-    let accumulatedTime = 0;
+    let accumulatedMS = 0;
+    // 页面关闭
     window.addEventListener('beforeunload', () => {
-        let timeSpent = JSON.parse(localStorage.getItem('_adhd_helper_page_time_spent') || '[]');
-        timeSpent.push(Math.round((accumulatedTime + new Date() - startTime) / 1000 / 60, 2));
+        let timeSpent = JSON.parse(localStorage.getItem('_adhd_helper_page_time_spent') || '{}');
+        let x = accumulatedMS + (new Date() - startTime);
+        timeSpent[today] = timeSpent[today] ? timeSpent[today] : [];
+        timeSpent[today].push(x);
         localStorage.setItem('_adhd_helper_page_time_spent', JSON.stringify(timeSpent));
     })
     // 页面激活
     window.addEventListener('focus', () => {
-        console.log('Page is active.')
-        console.log(accumulatedTime)
         startTime = new Date();// 重新开始计时
     })
     // 页面失焦
     window.addEventListener('blur', () => {
-        console.log('Page is inactive.')
-        accumulatedTime += new Date() - startTime; // 停止计时
-        console.log(accumulatedTime)
+        accumulatedMS += new Date() - startTime; // 停止计时
+        // let x = Math.floor((accumulatedMS + (new Date() - startTime)) / 1000);
+        // let minute = Math.floor(x / 60);
+        // let second = x % 60;
+        // console.log(`Time spent on this page: ${minute} minutes ${second} second.`)
     })
     // // 滚动
     // window.addEventListener('scroll', () => {
