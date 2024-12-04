@@ -22,9 +22,7 @@
       ]
     },
     {
-      "js": [
-        "scripts/163.js"
-      ],
+      "js": [],
       "css": [
         "styles/163.css"
       ],
@@ -33,9 +31,7 @@
       ]
     },
     {
-      "js": [
-        "scripts/baidu.js"
-      ],
+      "js": [],
       "css": [
         "styles/baidu.css"
       ],
@@ -45,9 +41,7 @@
       ]
     },
     {
-      "js": [
-        "scripts/cnki.js"
-      ],
+      "js": [],
       "css": [
         "styles/cnki.css"
       ],
@@ -56,9 +50,7 @@
       ]
     },
     {
-      "js": [
-        "scripts/sohu.js"
-      ],
+      "js": [],
       "css": [
         "styles/sohu.css"
       ],
@@ -67,9 +59,7 @@
       ]
     },
     {
-      "js": [
-        "scripts/v2ex.js"
-      ],
+      "js": [],
       "css": [
         "styles/v2ex.css"
       ],
@@ -78,9 +68,7 @@
       ]
     },
     {
-      "js": [
-        "scripts/coolshell.js"
-      ],
+      "js": [],
       "css": [
         "styles/coolshell.css"
       ],
@@ -89,9 +77,7 @@
       ]
     },
     {
-      "js": [
-        "scripts/yinwang.js"
-      ],
+      "js": [],
       "css": [
         "styles/yinwang.css"
       ],
@@ -100,9 +86,7 @@
       ]
     },
     {
-      "js": [
-        "scripts/zhihu.js"
-      ],
+      "js": [],
       "css": [
         "styles/zhihu.css"
       ],
