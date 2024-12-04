@@ -7,6 +7,9 @@
     "default_popup": "pages/popup.html",
     "default_icon": "images/icon.png"
   },
+  "background": {
+    "service_worker": "scripts/serviceWorker.js"
+  },
   "content_scripts": [
     {
       "js": [
@@ -16,6 +19,7 @@
       "css": [],
       "matches": [
         "https://*.bilibili.com/*",
+        "https://*.douyin.com/*",
         "https://*.ruanyifeng.com/*",
         "https://*.v2ex.com/*",
         "https://*.zhihu.com/*"
@@ -114,6 +118,9 @@
     }
   ],
   "permissions": [
-    "storage"
+    "storage",
+    "contextMenus",
+    "activeTab",
+    "scripting"
   ]
 }
