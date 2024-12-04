@@ -111,12 +111,22 @@
       ]
     },
     {
-      "js": [
-      ],
-      "css":[
+      "js": [],
+      "css": [
         "styles/pbc.css"
       ],
-      "matches":["http://www.pbc.gov.cn/goutongjiaoliu/*"]
+      "matches": [
+        "http://www.pbc.gov.cn/goutongjiaoliu/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/monkeytype.css"
+      ],
+      "matches": [
+        "https://monkeytype.com/"
+      ]
     }
   ],
   "permissions": [

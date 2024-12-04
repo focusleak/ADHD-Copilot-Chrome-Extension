@@ -4,3 +4,7 @@
 .ad_hover_href {
   display: none !important;
 }
+.post_side_mod,
+.post_recommends {
+  display: none !important;
+}

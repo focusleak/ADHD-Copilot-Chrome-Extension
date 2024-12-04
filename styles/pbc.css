@@ -1,9 +1,10 @@
 /* 中国人民银行 */
 @media print {
-  .header,.footer {
+  .header,
+  .footer {
     display: none;
   }
-  table{
-    border: none!important;
+  table {
+    border: none !important;
   }
 }
