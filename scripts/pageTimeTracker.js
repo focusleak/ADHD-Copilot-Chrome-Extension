@@ -1,4 +1,22 @@
 (function () {
+    const timeTracker = {
+        time: 0,
+        accu: 0,
+        start(){
+            this.time = new Date();
+            this.accu = 0;
+        },
+        pause(){
+            this.accu += new Date() - this.time;
+        },
+        resume(){
+            this.time = new Date();
+        },
+        stop(){
+            return this.accu + (new Date() - this.time);
+        }
+    }
+
     // 统计页面浏览次数
     let date = new Date();
     let today = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -11,33 +29,36 @@
 
     // 统计页面停留时间
     let timeSpent = JSON.parse(localStorage.getItem('_adhd_helper_page_time_spent') || '[]');
+    console.log("======Time spent on this page======")
+    for (let date in timeSpent) {
+        let x = (timeSpent[date] || []).reduce((a, b) => a + b, 0)
+        let minute = Math.floor(x / 1000 / 60);
+        let second = Math.floor((x / 1000) % 60);
+        console.log(`${date}: ${minute} minutes ${second} second.`)
+    }
+
+    // 统计今日页面停留时间
     let x = (timeSpent[today] || []).reduce((a, b) => a + b, 0);
     let minute = Math.floor(x / 1000 / 60);
     let second = Math.floor((x / 1000) % 60);
     console.log(`Time spent on this page today: ${minute} minutes ${second} second.`)
 
-
-    let startTime = new Date();
-    let accumulatedMS = 0;
+    timeTracker.start();
     // 页面关闭
     window.addEventListener('beforeunload', () => {
         let timeSpent = JSON.parse(localStorage.getItem('_adhd_helper_page_time_spent') || '{}');
-        let x = accumulatedMS + (new Date() - startTime);
+        let x = timeTracker.stop();
         timeSpent[today] = timeSpent[today] ? timeSpent[today] : [];
         timeSpent[today].push(x);
         localStorage.setItem('_adhd_helper_page_time_spent', JSON.stringify(timeSpent));
     })
     // 页面激活
     window.addEventListener('focus', () => {
-        startTime = new Date();// 重新开始计时
+        timeTracker.resume();
     })
     // 页面失焦
     window.addEventListener('blur', () => {
-        accumulatedMS += new Date() - startTime; // 停止计时
-        // let x = Math.floor((accumulatedMS + (new Date() - startTime)) / 1000);
-        // let minute = Math.floor(x / 60);
-        // let second = x % 60;
-        // console.log(`Time spent on this page: ${minute} minutes ${second} second.`)
+        timeTracker.pause();
     })
     // // 滚动
     // window.addEventListener('scroll', () => {

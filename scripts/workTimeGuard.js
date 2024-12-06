@@ -39,8 +39,9 @@
                 if (this.count <= 0) {
                     clearInterval(this.interval);
                     beforeClose && beforeClose();
-                    window.close();
                     afterClose && afterClose();
+                    window.close();
+                    history.back();// 关闭有时候不成功，返回上一个页面
                 }
             }, 1000);
         }

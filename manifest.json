@@ -22,7 +22,10 @@
         "https://*.douyin.com/*",
         "https://*.ruanyifeng.com/*",
         "https://*.v2ex.com/*",
-        "https://*.zhihu.com/*"
+        "https://*.xiaohongshu.com/*",
+        "https://*.weibo.com/*",
+        "https://*.zhihu.com/*",
+        "https://mp.weixin.qq.com/*"
       ]
     },
     {
