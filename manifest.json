@@ -50,6 +50,15 @@
     {
       "js": [],
       "css": [
+        "styles/bilibili.css"
+      ],
+      "matches": [
+        "https://*.bilibili.com/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
         "styles/cnki.css"
       ],
       "matches": [

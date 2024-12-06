@@ -11,6 +11,7 @@ chrome://extensions/
 
 ## TODO
  * 资源嗅探，直链增加下载按钮：mp3 jpg pdf等
+ * 文字快速收藏
  * 去掉网站的页面跳转提示，直接跳转 https://github.com/OldPanda/Open-the-F-king-URL-Right-Now
  * 解除复制限制，去掉复制增加文本
  * 添加自定义屏蔽词
