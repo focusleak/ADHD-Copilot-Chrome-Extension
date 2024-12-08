@@ -50,6 +50,15 @@
     {
       "js": [],
       "css": [
+        "styles/tencent.css"
+      ],
+      "matches": [
+        "https://cloud.tencent.com/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
         "styles/bilibili.css"
       ],
       "matches": [

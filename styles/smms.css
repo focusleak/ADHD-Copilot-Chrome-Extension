@@ -1,0 +1,5 @@
+/* https://smms.app/ */
+.advert_nav,
+.advert_foot {
+  display: none !important;
+}
