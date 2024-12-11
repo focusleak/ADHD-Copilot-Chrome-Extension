@@ -74,7 +74,7 @@
             setMaskStyle(pageMask);
 
             const closeTips = document.createElement('p');
-            tabManager.closeAfter(3, {
+            tabManager.closeAfter(5, {
                 handleTick: () => {
                     closeTips.innerHTML = `This page will be closed in ${tabManager.count} seconds.`;
                 },
@@ -97,8 +97,10 @@
                 clearTimeout(timeoutId);
                 timeoutId = setTimeout(() => {
                     document.body.appendChild(pageMask);
-                    tabManager.closeAfter(3, () => {
-                        closeTips.innerHTML = `This page will be closed in ${tabManager.count} seconds.`;
+                    tabManager.closeAfter(5, {
+                        handleTick: () => {
+                            closeTips.innerHTML = `This page will be closed in ${tabManager.count} seconds.`;
+                        }
                     });
                 }, 1000 * 60 * 5);
             });

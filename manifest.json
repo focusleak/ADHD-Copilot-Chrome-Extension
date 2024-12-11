@@ -25,6 +25,7 @@
         "https://*.xiaohongshu.com/*",
         "https://*.weibo.com/*",
         "https://*.zhihu.com/*",
+        "https://*.jd.com/*",
         "https://mp.weixin.qq.com/*"
       ]
     },
@@ -54,6 +55,23 @@
       ],
       "matches": [
         "https://cloud.tencent.com/*"
+      ]
+    },
+    {
+      "css": [
+        "styles/csdn.css"
+      ],
+      "matches": [
+        "https://*.csdn.net/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/tonymacx86.css"
+      ],
+      "matches": [
+        "https://*.tonymacx86.com/*"
       ]
     },
     {
