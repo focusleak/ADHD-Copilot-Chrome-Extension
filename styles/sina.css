@@ -1,0 +1,17 @@
+/* https://sports.sina.com.cn/ */
+#sinaadToolkitBox0,
+#sinaadToolkitBox1,
+#sinaadToolkitBox2,
+#sinaadToolkitBox3 {
+  display: none !important;
+}
+.top-banner {
+  display: none !important;
+}
+.ad,
+.top-ad,
+.sinaads-done,
+.right-side-ad,
+.sinaads {
+  display: none !important;
+}

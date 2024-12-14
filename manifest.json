@@ -32,6 +32,26 @@
     {
       "js": [],
       "css": [
+        "styles/sina.css"
+      ],
+      "matches": [
+        "https://sports.sina.com.cn/*"
+      ]
+
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/cnblogs.css"
+      ],
+      "matches": [
+        "https://*.cnblogs.com/*"
+      ]
+    },
+
+    {
+      "js": [],
+      "css": [
         "styles/163.css"
       ],
       "matches": [
