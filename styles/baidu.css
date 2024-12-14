@@ -4,6 +4,17 @@
   display: none !important;
 }
 /* 广告 */
-.unionAd_WxCEr {
+.unionAd_WxCEr,
+/* https://developer.mozilla.org/zh-CN/docs/Web/CSS/:has */
+/* 百度贴吧 */
+div:has(img.close_btn.j_click_close) {
+  display: none !important;
+}
+/* 通配符 *= ^= $= */
+[id^="mediago-tb-frs-list-"],
+[id^="mediago-tb-pb-list-"] {
+  display: none !important;
+}
+#plat_recom_carousel {
   display: none !important;
 }

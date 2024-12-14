@@ -26,6 +26,7 @@
         "https://*.weibo.com/*",
         "https://*.zhihu.com/*",
         "https://*.jd.com/*",
+        "https://tieba.baidu.com/*",
         "https://mp.weixin.qq.com/*"
       ]
     },
@@ -37,7 +38,6 @@
       "matches": [
         "https://sports.sina.com.cn/*"
       ]
-
     },
     {
       "js": [],
@@ -48,7 +48,6 @@
         "https://*.cnblogs.com/*"
       ]
     },
-
     {
       "js": [],
       "css": [
@@ -64,7 +63,6 @@
         "styles/baidu.css"
       ],
       "matches": [
-        "https://baidu.com/*",
         "https://*.baidu.com/*"
       ]
     },
