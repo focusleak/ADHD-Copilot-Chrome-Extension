@@ -1,0 +1,14 @@
+[class*="TipsAd_"] {
+  display: none !important;
+}
+/* 未关注 */
+/* .vue-recycle-scroller__item-view:has(button[class*="follow-btn_followbtn_"]), */
+/* 广告 */
+.vue-recycle-scroller__item-view:has(div.wbpro-tag-img),
+/* 热推 */
+.vue-recycle-scroller__item-view:has(div.wbpro-tag-c2) {
+  display: none !important;
+}
+a[href="/tv"] {
+  display: none !important;
+}

@@ -40,6 +40,14 @@
       ]
     },
     {
+      "css": [
+        "styles/weibo.css"
+      ],
+      "matches": [
+        "https://*.weibo.com/*"
+      ]
+    },
+    {
       "js": [],
       "css": [
         "styles/cnblogs.css"

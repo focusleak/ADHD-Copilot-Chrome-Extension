@@ -40,8 +40,7 @@
                     clearInterval(this.interval);
                     beforeClose && beforeClose();
                     afterClose && afterClose();
-                    window.close();
-                    history.back();// 关闭有时候不成功，返回上一个页面
+                    window.open("about:blank", "_self");// 打开空白页代替关闭标签页，window.close有时不生效
                 }
             }, 1000);
         }
