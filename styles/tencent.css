@@ -2,3 +2,10 @@
 .layout-side .info-side-activity {
   display: none !important;
 }
+#community-header-product-container,
+.cdc-widget-global__btn.code,
+.mod-article-content.recommend,
+.cdc-header__activity,
+.cdc-commercial-card {
+  display: none !important;
+}

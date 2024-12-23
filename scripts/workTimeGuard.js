@@ -1,7 +1,7 @@
 (function () {
     const LEISURE_MINUTES = 5; // 休息时间，单位为分钟
     // 检测当前时间是否为工作时间
-    function isInWorkTime(begin = 8, end = 23) { // 开发阶段，暂时先设定为8点到23点
+    function isInWorkTime(begin = 8, end = 22) { // 开发阶段，暂时先设定为8点到22点
         const now = new Date();
         const hour = now.getHours();
         return hour >= begin && hour < end;
@@ -109,6 +109,8 @@
             pageMask.appendChild(document.createElement('br'));
             pageMask.appendChild(visitButton);
 
+            // 清空页面内容
+            document.body.innerHTML = '';
             // 添加遮罩到页面
             document.body.appendChild(pageMask);
         })

@@ -24,10 +24,9 @@
         "https://*.v2ex.com/*",
         "https://*.xiaohongshu.com/*",
         "https://*.weibo.com/*",
-        "https://*.zhihu.com/*",
+        "https://www.zhihu.com/*",
         "https://*.jd.com/*",
-        "https://tieba.baidu.com/*",
-        "https://mp.weixin.qq.com/*"
+        "https://tieba.baidu.com/*"
       ]
     },
     {
@@ -66,7 +65,9 @@
       ]
     },
     {
-      "js": [],
+      "js": [
+        "scripts/baidu.js"
+      ],
       "css": [
         "styles/baidu.css"
       ],
