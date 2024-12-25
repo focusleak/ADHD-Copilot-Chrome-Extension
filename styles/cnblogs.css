@@ -1,13 +1,12 @@
 #cnblogs_ch,
 #under_post_card1,
-#under_post_card2 {
-  display: none !important;
-}
-vip_tip,
-.charm-bar-wrapper {
-  display: none !important;
-}
+#under_post_card2,
+.vip_tip,
+.charm-bar-wrapper,
 #blog_c1,
-#cnblogs_c2 {
+#cnblogs_c2,
+a:has(.imagebar.forpc) {
   display: none !important;
+  /* border: 5px solid red; */
 }
+

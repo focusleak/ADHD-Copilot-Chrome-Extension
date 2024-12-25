@@ -30,6 +30,16 @@
       ]
     },
     {
+      "js": [
+        "libs/FileSaver.js",
+        "scripts/openreview.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://openreview.net/*"
+      ]
+    },
+    {
       "js": [],
       "css": [
         "styles/sina.css"
