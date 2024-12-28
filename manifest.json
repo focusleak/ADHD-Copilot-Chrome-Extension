@@ -42,6 +42,15 @@
     {
       "js": [],
       "css": [
+        "styles/ruanyifeng.css"
+      ],
+      "matches": [
+        "https://*.ruanyifeng.com/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
         "styles/sina.css"
       ],
       "matches": [
