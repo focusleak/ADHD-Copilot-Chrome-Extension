@@ -13,6 +13,7 @@
   "content_scripts": [
     {
       "js": [
+        "scripts/utils.js",
         "scripts/workTimeGuard.js",
         "scripts/pageTimeTracker.js"
       ],
