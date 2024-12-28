@@ -166,7 +166,9 @@
       ]
     },
     {
-      "js": [],
+      "js": [
+        "scripts/zhihu.js"
+      ],
       "css": [
         "styles/zhihu.css"
       ],

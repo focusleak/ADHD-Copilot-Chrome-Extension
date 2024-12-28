@@ -10,6 +10,7 @@ chrome://extensions/
  * 自由编辑页面 - 加开关 `contenteditable="true"`
 
 ## TODO
+ * 多端同步
  * 资源嗅探，直链增加下载按钮：mp3 jpg pdf等
  * 文字快速收藏 - 选中+快捷键(ctrl+c) - 采集侧边栏 - 支持导出 - 支持markdown语法
  * 去掉网站的页面跳转提示，直接跳转 https://github.com/OldPanda/Open-the-F-king-URL-Right-Now
@@ -18,3 +19,4 @@ chrome://extensions/
  * 页面跳转统计
  * 收藏管理
  * 键盘/鼠标/手柄/屏幕/网络检测
+ * 在线标注
