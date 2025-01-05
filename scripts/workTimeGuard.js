@@ -3,6 +3,10 @@
     // 检测当前时间是否为工作时间
     function isInWorkTime(begin = 8, end = 22) { // 开发阶段，暂时先设定为8点到22点
         const now = new Date();
+        const day = now.getDay();
+        if (day === 0 || day === 6) {
+            return false;
+        }
         const hour = now.getHours();
         return hour >= begin && hour < end;
     }
