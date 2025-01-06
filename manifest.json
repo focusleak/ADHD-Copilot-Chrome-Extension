@@ -122,7 +122,9 @@
       ]
     },
     {
-      "js": [],
+      "js": [
+        "scripts/bilibili.js"
+      ],
       "css": [
         "styles/bilibili.css"
       ],
