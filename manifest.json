@@ -31,6 +31,23 @@
       ]
     },
     {
+      "css": [
+        "styles/springer.css"
+      ],
+      "matches": [
+        "https://link.springer.com/*"
+      ]
+    },
+    {
+      "css": [
+        "styles/126.css"
+      ],
+      "js": [],
+      "matches": [
+        "https://mail.126.com/*"
+      ]
+    },
+    {
       "js": [
         "libs/FileSaver.js",
         "scripts/openreview.js"
