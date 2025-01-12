@@ -40,6 +40,14 @@
     },
     {
       "css": [
+        "styles/timeanddate.css"
+      ],
+      "matches": [
+        "https://www.timeanddate.com/*"
+      ]
+    },
+    {
+      "css": [
         "styles/126.css"
       ],
       "js": [],
