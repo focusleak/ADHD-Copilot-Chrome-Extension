@@ -1,3 +1,7 @@
 .mailgg.mailgg_letter {
   display: none !important;
 }
+/* 网易邮箱 */
+.nui-closeable {
+  display: none !important;
+}

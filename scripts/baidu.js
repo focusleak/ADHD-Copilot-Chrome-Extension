@@ -1,7 +1,7 @@
-window.addEventListener('load', function () {
+const remove_search_box_placeholder = () => {
     // Remove the placeholder of the search input box
     const searchInput = document.getElementById('kw');
-    if(searchInput){
+    if (searchInput) {
         const observer = new MutationObserver(() => {
             if (searchInput.placeholder != '') {
                 searchInput.placeholder = '';
@@ -12,4 +12,8 @@ window.addEventListener('load', function () {
             attributeFilter: ['placeholder']
         });
     }
+}
+
+window.addEventListener('load', function () {
+    // remove_search_box_placeholder();
 });

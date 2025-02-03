@@ -3,7 +3,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         case 'edit':
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
-                files: ["scripts/toggleEditPage.js"]
+                files: ["scripts/service/toggleEditPage.js"]
             });
             break;
         case 'searchByGoogle':
@@ -16,6 +16,11 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                 url: 'https://scholar.google.com/scholar?q=' + info.selectionText
             });
             break;
+        case 'clearCookiesLocalStorage':
+            chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                files: ["scripts/service/clearCookiesLocalStorage.js"]
+            })
         default:
             console.log('Standard context menu item clicked.');
     }
@@ -25,6 +30,11 @@ chrome.runtime.onInstalled.addListener(function () {
         title: 'Edit this page(Press ESC to finish editing)',
         contexts: ['page'],
         id: 'edit'
+    });
+    chrome.contextMenus.create({
+        title: '清除cookies和localStorage',
+        contexts: ['page'],
+        id: 'clearCookiesLocalStorage'
     });
     chrome.contextMenus.create({
         title: '使用谷歌搜索',

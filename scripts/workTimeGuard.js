@@ -1,4 +1,5 @@
 (async function () {
+    const IS_ENABLE = false; // 是否启用
     const LEISURE_MINUTES = 5; // 休息时间，单位为分钟
     // 检测当前时间是否为工作时间
     function isInWorkTime(begin = 8, end = 22) { // 开发阶段，暂时先设定为8点到22点
@@ -104,7 +105,7 @@
         }
     }
 
-    if (isInWorkTime()) {
+    if (IS_ENABLE && isInWorkTime()) {
         // 获取存储的时间
         let { lastLeisureTime } = await getChromeStorage('lastLeisureTime');
         if (lastLeisureTime) {
