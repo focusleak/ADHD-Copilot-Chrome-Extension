@@ -1,3 +1,5 @@
-#recommendContent {
+#recommendContent,
+#recommend,
+.publicize {
   display: none !important;
 }

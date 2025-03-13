@@ -20,7 +20,12 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
                 files: ["scripts/service/clearCookiesLocalStorage.js"]
-            })
+            });
+        case 'readLater':
+            chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                files: ["scripts/service/readLater.js"]
+            });
         default:
             console.log('Standard context menu item clicked.');
     }
@@ -46,4 +51,9 @@ chrome.runtime.onInstalled.addListener(function () {
         contexts: ['selection'],
         id: 'searchByGoogleScholar'
     });
+    chrome.contextMenus.create({
+        title: '稍后再看',
+        contexts: ['page'],
+        id: 'readLater'
+    })
 });

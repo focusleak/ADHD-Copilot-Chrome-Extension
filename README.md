@@ -10,6 +10,8 @@ chrome://extensions/
  * 自由编辑页面 - 加开关 `contenteditable="true"`
 
 ## TODO
+ * 网页已读标记
+ * 结点截屏/收藏HTML
  * 多端同步
  * 资源嗅探，直链增加下载按钮：mp3 jpg pdf等
  * 文字快速收藏 - 选中+快捷键(ctrl+c) - 采集侧边栏 - 支持导出 - 支持markdown语法

@@ -1,0 +1,4 @@
+[id*="gpt_unit"],
+.topsticky {
+  display: none !important;
+}
