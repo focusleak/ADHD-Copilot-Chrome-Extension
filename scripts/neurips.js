@@ -9,11 +9,17 @@ if (url.includes('.pdf')) {
     const hash = url.match(/\/file\/(.+?)\-Paper|Paper-Conference\.pdf/)[1];
     const abstract_url = `https://proceedings.neurips.cc/paper_files/paper/${year}/hash/${hash}-Abstract.html`;
     console.log(abstract_url);
+    // window.addEventListener('load',()=>{
+    //     document.querySelector('body').innerHTML += `<br><a href="${abstract_url}">Abstract</a>`;
+    // })
 }
 // HTML页面
 if (url.includes('.html')) {
     // paper按钮增加download
-    const paper_btn = document.querySelector('[href*=".pdf"]');
+    const paper_btns = document.querySelectorAll('[href*=".pdf"]');
     const title = document.querySelector('h4').innerText;
-    paper_btn.download = title + '.pdf';
+    paper_btns.forEach(paper_btn => {
+        paper_btn.download = true;
+    })
+    // paper_btn.download = true // title + '.pdf';
 }
