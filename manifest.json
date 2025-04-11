@@ -13,6 +13,24 @@
   "content_scripts": [
     {
       "js": [
+        "scripts/selectable.js",
+        "scripts/scroll2Top.js"
+      ],
+      "matches": [
+        "https://*/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/arxiv.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://*.arxiv.org/*"
+      ]
+    },
+    {
+      "js": [
         "scripts/utils.js",
         "scripts/workTimeGuard.js",
         "scripts/pageTimeTracker.js"

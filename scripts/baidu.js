@@ -14,6 +14,6 @@ const remove_search_box_placeholder = () => {
     }
 }
 
-window.addEventListener('load', function () {
-    // remove_search_box_placeholder();
-});
+remove_search_box_placeholder();
+// window.addEventListener('load', function () {
+// });

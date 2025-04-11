@@ -4,7 +4,6 @@ window.addEventListener('load', function () {
     searchInputList.forEach(searchInput => {
         if (searchInput) {
             searchInput.placeholder = '';
-            console.log(123)
             const observer = new MutationObserver(() => {
                 if (searchInput.placeholder != '') {
                     searchInput.placeholder = '';
