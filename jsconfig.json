@@ -1,0 +1,13 @@
+{
+    "type": "setting",
+    "settings": {
+        "compilerOptions": {
+            "baseUrl": ".",
+            "paths": {
+                "@/*": [
+                    "src/*"
+                ]
+            }
+        }
+    }
+}
