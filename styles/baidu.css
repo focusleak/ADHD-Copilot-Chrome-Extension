@@ -22,6 +22,9 @@ div:has(img.close_btn.j_click_close) {
 #plat_recom_carousel {
   display: none !important;
 }
+.ylh-ad-container {
+  display: none !important;
+}
 /* 2024-12-31 */
 .thread_item_box:has(.ec-tuiguang),
 .l_post.l_post_bright.j_l_post.clearfix:has(.ec-tuiguang) {
