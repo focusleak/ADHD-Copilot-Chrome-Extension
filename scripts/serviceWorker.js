@@ -51,6 +51,11 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                 url: 'https://search.bilibili.com/all?keyword=' + info.selectionText
             });
             break;
+        case 'searchByJD':
+            chrome.tabs.create({
+                url: 'https://search.jd.com/Search?keyword=' + info.selectionText
+            });
+            break;
         case 'clearCookiesLocalStorage':
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },

@@ -17,30 +17,40 @@ window.addEventListener('load', function () {
 
     // 链接直接跳转
     document.querySelector('body').addEventListener('click', function (e) {
+        debugger
+        console.log(e.target)
         // a标签
+        // https://www.zhihu.com/question/1894812005174596681/answer/1899217045603746530
         if (e.target.tagName === 'A') {
-            const a = e.target;
-            let href = a.href;
-            if (href.includes('https://link.zhihu.com/?target')) {
+            console.log('直接跳转 Type 1')
+            let url = e.target.href;
+            if (url.includes('link.zhihu.com/?target')) {
+                url = new URL(url).searchParams.get('target');
                 e.preventDefault();
-                const url = new URL(href).searchParams.get('target');
                 window.open(url, '_blank');
             }
         }
 
         // span标签
-        // e.g. https://zhuanlan.zhihu.com/p/30400486089
+        // https://zhuanlan.zhihu.com/p/30400486089
+        // https://www.zhihu.com/question/335623643
         if (e.target.className === 'LinkCard-title two-line' && e.target.tagName === 'SPAN') {
             const span = e.target;
             const parent = span.parentElement;
             const grandparent = parent.parentElement;
             if (parent.className === 'LinkCard-contents' && grandparent.className === 'LinkCard new css-biylet') {
+                console.log('直接跳转 Type 2')
                 // 获取最近的祖先a节点
-                const url = span.closest('a').dataset.text;
+                let href = span.closest('a').href;
+                if (href.includes('link.zhihu.com/?target')) {
+                    href = new URL(href).searchParams.get('target');
+                }
                 // 阻止其他点击事件
                 e.stopPropagation();
-                window.open(url, '_blank');
+                window.open(href, '_blank');
             }
+        } else if (e.target.className === 'visible' && e.target.tagName === 'SPAN') {
+
         }
     });
 

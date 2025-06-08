@@ -42,7 +42,7 @@
         "https://*.v2ex.com/*",
         "https://*.xiaohongshu.com/*",
         "https://*.weibo.com/*",
-        "https://www.zhihu.com/*",
+        "https://*.zhihu.com/*",
         "https://*.jd.com/*",
         "https://tieba.baidu.com/*"
       ]
@@ -275,6 +275,25 @@
       ],
       "matches": [
         "https://monkeytype.com/"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/gying.css"
+      ],
+      "matches": [
+        "https://*.gying.net/*"
+      ]
+    },
+    {
+      "js": [
+        "libs/axios.js",
+        "scripts/yuanbao.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://yuanbao.tencent.com/*"
       ]
     }
   ],

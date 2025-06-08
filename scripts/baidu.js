@@ -16,7 +16,12 @@ const remove_search_box_placeholder = () => {
         });
     }
 };
-
+try {
+    remove_search_box_placeholder();
+}
+catch (e) {
+    console.log(e);
+}
 window.addEventListener("load", function () {
     remove_search_box_placeholder();
 });

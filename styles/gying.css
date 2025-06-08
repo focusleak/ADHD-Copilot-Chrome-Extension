@@ -1,0 +1,6 @@
+[id$="left"] {
+  display: none !important;
+}
+[id$="right"] {
+  display: none !important;
+}
