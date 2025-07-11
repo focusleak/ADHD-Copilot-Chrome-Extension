@@ -125,6 +125,11 @@ chrome.runtime.onInstalled.addListener(function () {
         id: 'searchByBiliBili'
     });
     chrome.contextMenus.create({
+        title: '使用京东搜索',
+        contexts: ['selection'],
+        id: 'searchByJD'
+    });
+    chrome.contextMenus.create({
         title: '使用谷歌学术搜索',
         contexts: ['selection'],
         id: 'searchByGoogleScholar'
