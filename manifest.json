@@ -13,6 +13,27 @@
   "content_scripts": [
     {
       "js": [
+        "libs/FileSaver.js",
+        "libs/html2canvas.js",
+        "scripts/downloader.js",
+        "scripts/copy.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://*/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/mozilla.css"
+      ],
+      "matches": [
+        "https://developer.mozilla.org/*"
+      ]
+    },
+    {
+      "js": [
         "scripts/selectable.js",
         "scripts/scroll2Top.js"
       ],
@@ -38,7 +59,6 @@
       "css": [],
       "matches": [
         "https://*.douyin.com/*",
-        "https://*.ruanyifeng.com/*",
         "https://*.v2ex.com/*",
         "https://*.xiaohongshu.com/*",
         "https://*.weibo.com/*",

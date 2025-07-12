@@ -31,6 +31,6 @@ div:has(img.close_btn.j_click_close) {
   display: none !important;
 }
 /* AI搜索DeepSeek */
-#s_new_search_guide {
+/* #s_new_search_guide {
   display: none !important;
-}
+} */

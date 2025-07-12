@@ -1,4 +1,7 @@
+#pro-campaign-container {
+  display: none !important;
+}
 .adsbygoogle,
 .wwads-cn {
-  display: none !important;
+  border: 1px solid red;
 }
