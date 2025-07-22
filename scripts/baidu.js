@@ -1,27 +1,27 @@
-const remove_search_box_placeholder = () => {
-    // Remove the placeholder of the search input box
-    const searchInput = document.getElementById("kw");
-    if (searchInput) {
-        console.log(searchInput.placeholder);
-        searchInput.placeholder = "";
-        const observer = new MutationObserver(() => {
-            console.log(searchInput.placeholder);
-            if (searchInput.placeholder != "") {
-                searchInput.placeholder = "";
-            }
-        });
-        observer.observe(searchInput, {
-            attributes: true,
-            attributeFilter: ["placeholder"],
-        });
-    }
-};
+
 try {
-    remove_search_box_placeholder();
+    remove_placeholder(document.getElementById("kw"));
 }
 catch (e) {
     console.log(e);
 }
+try {
+    remove_placeholder(document.getElementById("chat-textarea"));
+
+} catch (e) {
+    console.log(e);
+}
 window.addEventListener("load", function () {
-    remove_search_box_placeholder();
+    try {
+        remove_placeholder(document.getElementById("kw"));
+    }
+    catch (e) {
+        console.log(e);
+    }
+    try {
+        remove_placeholder(document.getElementById("chat-textarea"));
+
+    } catch (e) {
+        console.log(e);
+    }
 });

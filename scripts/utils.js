@@ -23,3 +23,21 @@ async function getChromeStorage(key) {
         })
     })
 }
+
+const remove_placeholder = (searchInput) => {
+    // Remove the placeholder of the search input box
+    if (searchInput) {
+        console.log(searchInput.placeholder);
+        searchInput.placeholder = "";
+        const observer = new MutationObserver(() => {
+            console.log(searchInput.placeholder);
+            if (searchInput.placeholder != "") {
+                searchInput.placeholder = "";
+            }
+        });
+        observer.observe(searchInput, {
+            attributes: true,
+            attributeFilter: ["placeholder"],
+        });
+    }
+};

@@ -15,6 +15,8 @@ document.body.addEventListener('dblclick', function (e) {
         }
     }
 });
+// 给img标签上增加下载图标
+
 
 window.addEventListener('keydown', function (e) {
     // PrtScr键

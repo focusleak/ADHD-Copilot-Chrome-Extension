@@ -18,5 +18,5 @@ const remove_search_box_placeholder = (searchInput) => {
 
 window.addEventListener('load', function () {
     const searchInput = document.getElementById('query');
-    remove_search_box_placeholder(searchInput);
+    remove_placeholder(searchInput);
 });

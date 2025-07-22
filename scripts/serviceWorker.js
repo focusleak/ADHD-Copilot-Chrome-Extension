@@ -1,4 +1,6 @@
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
+
+    const queryString = encodeURI(info.selectionText)
     switch (info.menuItemId) {
         case 'edit':
             chrome.scripting.executeScript({
@@ -8,52 +10,52 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
             break;
         case 'searchByGoogle':
             chrome.tabs.create({
-                url: 'https://www.google.com/search?q=' + info.selectionText
+                url: 'https://www.google.com/search?q=' + queryString
             });
             break;
         case 'searchByGoogleScholar':
             chrome.tabs.create({
-                url: 'https://scholar.google.com/scholar?q=' + info.selectionText
+                url: 'https://scholar.google.com/scholar?q=' + queryString
             });
             break;
         case 'searchByBaidu':
             chrome.tabs.create({
-                url: 'https://www.baidu.com/s?wd=' + info.selectionText
+                url: 'https://www.baidu.com/s?wd=' + queryString
             });
             break;
         case 'searchByZhihu':
             chrome.tabs.create({
-                url: 'https://www.zhihu.com/search?type=content&q=' + info.selectionText
+                url: 'https://www.zhihu.com/search?type=content&q=' + queryString
             });
             break;
         case 'searchBySogou':
             chrome.tabs.create({
-                url: 'https://www.sogou.com/web?query=' + info.selectionText
+                url: 'https://www.sogou.com/web?query=' + queryString
             });
             break;
         case 'searchByWexin':
             chrome.tabs.create({
-                url: 'https://weixin.sogou.com/weixin?type=2&query=' + info.selectionText
+                url: 'https://weixin.sogou.com/weixin?type=2&query=' + queryString
             });
             break;
         case 'searchByWeibo':
             chrome.tabs.create({
-                url: 'https://s.weibo.com/weibo/' + info.selectionText
+                url: 'https://s.weibo.com/weibo/' + queryString
             });
             break;
         case 'searchByXiaoHongShu':
             chrome.tabs.create({
-                url: 'https://www.xiaohongshu.com/search_result?keyword=' + info.selectionText + '&source=web_explore_feed'
+                url: 'https://www.xiaohongshu.com/search_result?keyword=' + queryString + '&source=web_explore_feed'
             });
             break;
         case 'searchByBiliBili':
             chrome.tabs.create({
-                url: 'https://search.bilibili.com/all?keyword=' + info.selectionText
+                url: 'https://search.bilibili.com/all?keyword=' + queryString
             });
             break;
         case 'searchByJD':
             chrome.tabs.create({
-                url: 'https://search.jd.com/Search?keyword=' + info.selectionText
+                url: 'https://search.jd.com/Search?keyword=' + queryString
             });
             break;
         case 'clearCookiesLocalStorage':

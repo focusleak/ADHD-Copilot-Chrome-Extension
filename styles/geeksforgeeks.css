@@ -1,0 +1,13 @@
+@media print {
+  nav,
+  #hslider,
+  .header-main__wrapper,
+  #header-main__slider-outer-div,
+  .next_article_leftbar_container,
+  .d-row.content-bw,
+  #similar-reads,
+  .article-meta,
+  #gfg-footer {
+    display: none !important;
+  }
+}
