@@ -1,9 +1,7 @@
 /* 百度热搜侧边 */
 #con-ar,
 #content_right,
-#con-ceiling-wrapper {
-  display: none !important;
-}
+#con-ceiling-wrapper ,
 /* 广告 */
 /* 百度百科 */
 #J-union-wrapper,
@@ -12,25 +10,15 @@
 [class*="guessLike_"],
 [class*="relatedSearch_"],
 /* 百度贴吧 */
-div:has(img.close_btn.j_click_close) {
-  display: none !important;
-}
+div:has(img.close_btn.j_click_close) ,
 [id^="mediago-tb-frs-list-"],
-[id^="mediago-tb-pb-list-"] {
-  display: none !important;
-}
-#plat_recom_carousel {
-  display: none !important;
-}
-.ylh-ad-container {
-  display: none !important;
-}
+[id^="mediago-tb-pb-list-"] ,
+#plat_recom_carousel ,
+.ylh-ad-container ,
 /* 2024-12-31 */
 .thread_item_box:has(.ec-tuiguang),
-.l_post.l_post_bright.j_l_post.clearfix:has(.ec-tuiguang) {
+.l_post.l_post_bright.j_l_post.clearfix:has(.ec-tuiguang) ,
+/* 首页 - AI搜索DeepSeek */
+#s_new_search_guide {
   display: none !important;
 }
-/* AI搜索DeepSeek */
-/* #s_new_search_guide {
-  display: none !important;
-} */

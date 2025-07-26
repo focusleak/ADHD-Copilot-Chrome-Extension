@@ -41,15 +41,17 @@
     }
 
     class PageMask {
+        static tips = ['不幸的是，指针一直在转，','时间在流失，过去在增加，未来在减少','可能性变小，遗憾也在增加。','你明白吗？']
         constructor(text) {
             this.mask = document.createElement('div');
-            this.mask.innerHTML = '<p>WARNING: Working Time.<br /> Please do not use this website during working hours.</p><br /><br />';
+            this.mask.innerHTML = `<p>${PageMask.tips.join('<br />')}<br /><br />`;
             this.setMaskStyle(this.mask);
             this.closeTips = document.createElement('p');
 
             // 摸鱼按钮
             const visitButton = document.createElement('span');
-            visitButton.innerHTML = 'continue visit';
+            // visitButton.innerHTML = 'continue visit';
+            visitButton.innerHTML = '继续忽略';
             visitButton.style.cursor = 'pointer';
             this.visitButton = visitButton;
 
