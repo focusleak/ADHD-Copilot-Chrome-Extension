@@ -1,9 +1,12 @@
 #slide_ad,
 .ad-report,
-.ad-floor-exp {
-  display: none !important;
-}
+.ad-floor-exp,
 .pop-live-small-mode,
+.search-panel,
 .recommend-list-v1 {
   display: none !important;
+}
+
+#nav-searchform.is-focus {
+  border-radius: 8px !important;
 }

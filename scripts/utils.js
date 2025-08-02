@@ -12,7 +12,7 @@
 //     _addEventListener.call(this, type, listener, options);
 // }
 
-async function getChromeStorage(key) {
+function getChromeStorage(key) {
     let keys = key;
     if (typeof key === 'string') {
         keys = [key];
@@ -24,7 +24,7 @@ async function getChromeStorage(key) {
     })
 }
 
-const remove_placeholder = (searchInput) => {
+function removePlaceholder(searchInput) {
     // Remove the placeholder of the search input box
     if (searchInput) {
         console.log(searchInput.placeholder);
@@ -41,3 +41,28 @@ const remove_placeholder = (searchInput) => {
         });
     }
 };
+
+function waitForElement(selector, timeout = 10000) {
+    return new Promise((resolve) => {
+        const target = document.querySelector(selector);
+        if (target) return resolve(target);
+
+        const observer = new MutationObserver((mutationsList, observer) => {
+            const target = document.querySelector(selector);
+            if (target) {
+                observer.disconnect();
+                clearTimeout(timer);
+                resolve(target);
+            }
+        });
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+        });
+        const timer = setTimeout(() => {
+            observer.disconnect();
+            reject(new Error(`Timeout: Element "${selector}" not found in ${timeout} ms.`));
+        }, timeout);
+
+    });
+}
