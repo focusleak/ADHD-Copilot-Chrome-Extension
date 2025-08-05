@@ -28,3 +28,21 @@ waitForElement('.nav-search-input').then(removePlaceholder);
 
 
 // 在右侧增加下载视频功能
+
+
+// 阻止多个视频同时播放
+(function () {
+    const MESSAGE = 'bilibili-player-video-start'
+    // 监测视频是否开始播放
+    waitForElement('#bilibili-player video').then(player => {
+        player.addEventListener('play', () => {
+            bc.postMessage(MESSAGE);
+        });
+        const bc = new BroadcastChannel('bilibili');
+        bc.addEventListener('message', function (e) {
+            if (e.data === MESSAGE) {
+                player.pause();
+            }
+        });
+    })
+})();

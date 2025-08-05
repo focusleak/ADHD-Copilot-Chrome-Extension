@@ -13,6 +13,7 @@
   "content_scripts": [
     {
       "js": [
+        "scripts/utils.js",
         "libs/FileSaver.js",
         "libs/html2canvas.js",
         "scripts/downloader.js",
@@ -21,6 +22,24 @@
       "css": [],
       "matches": [
         "https://*/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/leetcode.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://leetcode.cn/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/chatgpt.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://chatgpt.com/*"
       ]
     },
     {
@@ -70,7 +89,6 @@
     },
     {
       "js": [
-        "scripts/utils.js",
         "scripts/workTimeGuard.js",
         "scripts/pageTimeTracker.js"
       ],
@@ -121,7 +139,6 @@
     },
     {
       "js": [
-        "libs/FileSaver.js",
         "scripts/openreview.js"
       ],
       "css": [],
@@ -175,7 +192,6 @@
     },
     {
       "js": [
-        "scripts/utils.js",
         "scripts/baidu.js"
       ],
       "css": [
@@ -289,7 +305,6 @@
     },
     {
       "js": [
-        "scripts/utils.js",
         "scripts/zhihu.js"
       ],
       "css": [

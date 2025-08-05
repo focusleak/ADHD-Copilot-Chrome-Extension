@@ -1,22 +1,11 @@
 window.addEventListener('load', function () {
     // Remove the placeholder of the search input box
     document.querySelectorAll('.SearchBar-input input').forEach(searchInput => {
-        if (searchInput) {
-            searchInput.placeholder = '';
-            const observer = new MutationObserver(() => {
-                if (searchInput.placeholder != '') {
-                    searchInput.placeholder = '';
-                }
-            });
-            observer.observe(searchInput, {
-                attributes: true,
-                attributeFilter: ['placeholder']
-            });
-        }
+        removePlaceholder(searchInput);
     });
 
     // 链接直接跳转
-    document.querySelector('body').addEventListener('click', function (e) {
+    document.body.addEventListener('click', function (e) {
         debugger
         console.log(e.target)
         // a标签
@@ -54,7 +43,5 @@ window.addEventListener('load', function () {
         }
     });
 
-    // 解除复制限制
-
-
+    // TODO 解除复制限制
 });

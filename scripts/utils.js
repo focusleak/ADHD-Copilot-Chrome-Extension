@@ -42,6 +42,22 @@ function removePlaceholder(searchInput) {
     }
 };
 
+// 直接跳转
+function directJump(patten, urlParam) {
+    document.body.addEventListener('click', function (e) {
+        // 代理a标签
+        if (e.target.tagName === 'A') {
+            let href = e.target.href;
+            if (href.includes(patten)) {
+                href = new URL(href).searchParams.get(urlParam);
+            }
+            window.open(href, '_blank');
+            e.preventDefault();
+            return false;
+        }
+    });
+}
+
 function waitForElement(selector, timeout = 10000) {
     return new Promise((resolve) => {
         const target = document.querySelector(selector);
@@ -66,3 +82,6 @@ function waitForElement(selector, timeout = 10000) {
 
     });
 }
+
+
+// tab通信
