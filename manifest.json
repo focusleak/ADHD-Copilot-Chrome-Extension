@@ -14,8 +14,11 @@
     {
       "js": [
         "scripts/utils.js",
+        "scripts/selectable.js",
+        "scripts/scroll2Top.js",
         "libs/FileSaver.js",
         "libs/html2canvas.js",
+        "libs/axios.js",
         "scripts/downloader.js",
         "scripts/copy.js"
       ],
@@ -25,12 +28,52 @@
       ]
     },
     {
+      "css": [
+        "styles/126.css"
+      ],
+      "js": [],
+      "matches": [
+        "https://mail.126.com/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/163.css"
+      ],
+      "matches": [
+        "https://*.163.com/*"
+      ]
+    },
+    {
       "js": [
-        "scripts/leetcode.js"
+        "scripts/arxiv.js"
       ],
       "css": [],
       "matches": [
-        "https://leetcode.cn/*"
+        "https://*.arxiv.org/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/baidu.js"
+      ],
+      "css": [
+        "styles/baidu.css"
+      ],
+      "matches": [
+        "https://*.baidu.com/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/bilibili.js"
+      ],
+      "css": [
+        "styles/bilibili.css"
+      ],
+      "matches": [
+        "https://*.bilibili.com/*"
       ]
     },
     {
@@ -45,10 +88,63 @@
     {
       "js": [],
       "css": [
+        "styles/cnblogs.css"
+      ],
+      "matches": [
+        "https://*.cnblogs.com/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/cnki.css"
+      ],
+      "matches": [
+        "https://*.cnki.net/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/coolshell.css"
+      ],
+      "matches": [
+        "https://coolshell.cn/*"
+      ]
+    },
+    {
+      "css": [
+        "styles/csdn.css"
+      ],
+      "matches": [
+        "https://*.csdn.net/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
         "styles/geeksforgeeks.css"
       ],
       "matches": [
         "https://www.geeksforgeeks.org/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/gying.css"
+      ],
+      "matches": [
+        "https://*.gying.net/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/leetcode.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://leetcode.cn/*"
       ]
     },
     {
@@ -63,6 +159,15 @@
     {
       "js": [],
       "css": [
+        "styles/monkeytype.css"
+      ],
+      "matches": [
+        "https://monkeytype.com/"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
         "styles/mozilla.css"
       ],
       "matches": [
@@ -71,70 +176,11 @@
     },
     {
       "js": [
-        "scripts/selectable.js",
-        "scripts/scroll2Top.js"
-      ],
-      "matches": [
-        "https://*/*"
-      ]
-    },
-    {
-      "js": [
-        "scripts/arxiv.js"
+        "scripts/neurips.js"
       ],
       "css": [],
       "matches": [
-        "https://*.arxiv.org/*"
-      ]
-    },
-    {
-      "js": [
-        "scripts/workTimeGuard.js",
-        "scripts/pageTimeTracker.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://*.douyin.com/*",
-        "https://*.v2ex.com/*",
-        "https://*.xiaohongshu.com/*",
-        "https://*.weibo.com/*",
-        "https://*.zhihu.com/*",
-        "https://*.jd.com/*",
-        "https://tieba.baidu.com/*"
-      ]
-    },
-    {
-      "css": [
-        "styles/springer.css"
-      ],
-      "matches": [
-        "https://link.springer.com/*"
-      ]
-    },
-    {
-      "css": [
-        "styles/timeanddate.css"
-      ],
-      "matches": [
-        "https://www.timeanddate.com/*"
-      ]
-    },
-    {
-      "css": [
-        "styles/126.css"
-      ],
-      "js": [],
-      "matches": [
-        "https://mail.126.com/*"
-      ]
-    },
-    {
-      "css": [
-        "styles/plantuml.css"
-      ],
-      "js": [],
-      "matches": [
-        "https://www.plantuml.com/*"
+        "https://proceedings.neurips.cc/*"
       ]
     },
     {
@@ -144,6 +190,24 @@
       "css": [],
       "matches": [
         "https://openreview.net/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/pbc.css"
+      ],
+      "matches": [
+        "http://www.pbc.gov.cn/goutongjiaoliu/*"
+      ]
+    },
+    {
+      "css": [
+        "styles/plantuml.css"
+      ],
+      "js": [],
+      "matches": [
+        "https://www.plantuml.com/*"
       ]
     },
     {
@@ -165,52 +229,6 @@
       ]
     },
     {
-      "css": [
-        "styles/weibo.css"
-      ],
-      "matches": [
-        "https://*.weibo.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "styles/cnblogs.css"
-      ],
-      "matches": [
-        "https://*.cnblogs.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "styles/163.css"
-      ],
-      "matches": [
-        "https://*.163.com/*"
-      ]
-    },
-    {
-      "js": [
-        "scripts/baidu.js"
-      ],
-      "css": [
-        "styles/baidu.css"
-      ],
-      "matches": [
-        "https://*.baidu.com/*"
-      ]
-    },
-    {
-      "js": [
-        "scripts/neurips.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://proceedings.neurips.cc/*"
-      ]
-    },
-    {
       "js": [
         "scripts/sogou.js"
       ],
@@ -224,6 +242,23 @@
     {
       "js": [],
       "css": [
+        "styles/sohu.css"
+      ],
+      "matches": [
+        "https://*.sohu.com/*"
+      ]
+    },
+    {
+      "css": [
+        "styles/springer.css"
+      ],
+      "matches": [
+        "https://link.springer.com/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
         "styles/tencent.css"
       ],
       "matches": [
@@ -232,10 +267,10 @@
     },
     {
       "css": [
-        "styles/csdn.css"
+        "styles/timeanddate.css"
       ],
       "matches": [
-        "https://*.csdn.net/*"
+        "https://www.timeanddate.com/*"
       ]
     },
     {
@@ -248,35 +283,6 @@
       ]
     },
     {
-      "js": [
-        "scripts/bilibili.js"
-      ],
-      "css": [
-        "styles/bilibili.css"
-      ],
-      "matches": [
-        "https://*.bilibili.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "styles/cnki.css"
-      ],
-      "matches": [
-        "https://*.cnki.net/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "styles/sohu.css"
-      ],
-      "matches": [
-        "https://*.sohu.com/*"
-      ]
-    },
-    {
       "js": [],
       "css": [
         "styles/v2ex.css"
@@ -286,12 +292,27 @@
       ]
     },
     {
-      "js": [],
       "css": [
-        "styles/coolshell.css"
+        "styles/weibo.css"
       ],
       "matches": [
-        "https://coolshell.cn/*"
+        "https://*.weibo.com/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/workTimeGuard.js",
+        "scripts/pageTimeTracker.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://*.douyin.com/*",
+        "https://*.v2ex.com/*",
+        "https://*.xiaohongshu.com/*",
+        "https://*.weibo.com/*",
+        "https://*.zhihu.com/*",
+        "https://*.jd.com/*",
+        "https://tieba.baidu.com/*"
       ]
     },
     {
@@ -305,6 +326,15 @@
     },
     {
       "js": [
+        "scripts/yuanbao.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://yuanbao.tencent.com/*"
+      ]
+    },
+    {
+      "js": [
         "scripts/zhihu.js"
       ],
       "css": [
@@ -312,43 +342,6 @@
       ],
       "matches": [
         "https://*.zhihu.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "styles/pbc.css"
-      ],
-      "matches": [
-        "http://www.pbc.gov.cn/goutongjiaoliu/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "styles/monkeytype.css"
-      ],
-      "matches": [
-        "https://monkeytype.com/"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "styles/gying.css"
-      ],
-      "matches": [
-        "https://*.gying.net/*"
-      ]
-    },
-    {
-      "js": [
-        "libs/axios.js",
-        "scripts/yuanbao.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://yuanbao.tencent.com/*"
       ]
     }
   ],
