@@ -50,15 +50,15 @@ function directJump(patten, urlParam) {
             let href = e.target.href;
             if (href.includes(patten)) {
                 href = new URL(href).searchParams.get(urlParam);
+                window.open(href, '_blank');
+                e.preventDefault();
+                return false;
             }
-            window.open(href, '_blank');
-            e.preventDefault();
-            return false;
         }
     });
 }
 
-function waitForElement(selector, timeout = 10000) {
+function waitForElement(selector, timeout = 1000 * 60) {
     return new Promise((resolve) => {
         const target = document.querySelector(selector);
         if (target) return resolve(target);
@@ -85,3 +85,21 @@ function waitForElement(selector, timeout = 10000) {
 
 
 // tab通信
+
+
+// 判断url
+function isUrlIncluded(pattern) {
+    return window.location.href.includes(pattern);
+}
+
+
+// toast
+function toast(message, duration = 3000) {
+    const toast = document.createElement('div');
+    toast.className = 'adhd-copilot-toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+        toast.remove();
+    }, duration);
+}

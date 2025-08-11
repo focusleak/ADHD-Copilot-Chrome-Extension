@@ -1,6 +1,15 @@
 // 关闭搜索框placeholder
 waitForElement('.nav-search-input').then(removePlaceholder);
 
+// 自动关闭弹幕
+(function () {
+    waitForElement('.bui-danmaku-switch-input').then((checkbox) => {
+        if (checkbox.checked) {
+            checkbox.click();
+        }
+    })
+})();
+
 // 增加更多倍速选项
 (function () {
     // 仅播放页需要 https://www.bilibili.com/video/

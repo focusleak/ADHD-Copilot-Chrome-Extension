@@ -10,3 +10,6 @@
 #nav-searchform.is-focus {
   border-radius: 8px !important;
 }
+[aria-label="宽屏"] {
+  display: none !important;
+}

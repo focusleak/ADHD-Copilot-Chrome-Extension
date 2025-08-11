@@ -22,7 +22,9 @@
         "scripts/downloader.js",
         "scripts/copy.js"
       ],
-      "css": [],
+      "css": [
+        "styles/global.css"
+      ],
       "matches": [
         "https://*/*"
       ]
@@ -313,6 +315,15 @@
         "https://*.zhihu.com/*",
         "https://*.jd.com/*",
         "https://tieba.baidu.com/*"
+      ]
+    },
+    {
+      "js": [
+        "scripts/xiaohongshu.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://*.xiaohongshu.com/*"
       ]
     },
     {
