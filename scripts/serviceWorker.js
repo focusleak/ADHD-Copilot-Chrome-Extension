@@ -142,3 +142,4 @@ chrome.runtime.onInstalled.addListener(function () {
         id: 'readLater'
     });
 });
+

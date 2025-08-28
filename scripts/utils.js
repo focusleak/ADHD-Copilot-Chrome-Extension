@@ -12,16 +12,31 @@
 //     _addEventListener.call(this, type, listener, options);
 // }
 
-function getChromeStorage(key) {
-    let keys = key;
-    if (typeof key === 'string') {
-        keys = [key];
-    }
-    return new Promise((resolve, reject) => {
-        chrome.storage.local.get([key], (result) => {
-            resolve(result);
+const Storage = {
+    get(key) {
+        return new Promise((resolve, reject) => {
+            try {
+                chrome.storage.local.get([key], (result) => {
+                    resolve(result[key]);
+                })
+            } catch (e) {
+                reject(e);
+            }
         })
-    })
+    },
+    set(key, value) {
+        try {
+            chrome.storage.local.set({ [key]: value });
+        } catch (e) {
+
+        }
+    },
+    remove(key) {
+
+    },
+    clear() {
+
+    }
 }
 
 function removePlaceholder(searchInput) {
@@ -59,7 +74,7 @@ function directJump(patten, urlParam) {
 }
 
 function waitForElement(selector, timeout = 1000 * 60) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         const target = document.querySelector(selector);
         if (target) return resolve(target);
 
@@ -102,4 +117,55 @@ function toast(message, duration = 3000) {
     setTimeout(() => {
         toast.remove();
     }, duration);
+}
+
+
+const registerCombinedKeys = (() => {
+    let list = [];
+    document.addEventListener('keydown', function (event) {
+        list.map(([]) => {
+
+        })
+
+    });
+    return (keys, callback) => {
+
+    }
+})();
+
+// 组合键
+document.addEventListener('keydown', function (event) {
+    let selection = window.getSelection();
+    let string = selection.toString().trim();
+    if (!string) return;
+    if (event.altKey && event.key.toLowerCase() === "c") {// 增加颜色
+        setSelectionStyles(selection, { color: "#FC6A03" });
+    }
+    if (event.altKey && event.key.toLowerCase() === "b") {// bold
+        setSelectionStyles(selection, { fontWeight: "bold" });
+    }
+    if (event.altKey && event.key.toLowerCase() === "u") {
+        setSelectionStyles(selection, { textDecoration: "underline #FC6A03" });
+    }
+    if (event.altKey && event.key.toLowerCase() === "h") {// highlight
+        setSelectionStyles(selection, { backgroundColor: "yellow" });
+    }
+});
+
+
+function setSelectionStyles(selection, styles) {
+    if (!selection) return;
+    if (!selection.rangeCount) return;
+    // TODO 判断是否已经被span包裹
+
+    const range = selection.getRangeAt(0);
+    if (range.toString().trim()) {
+        const span = document.createElement("span");
+        span.dataset.adhdMark = "true";
+        // span.style.backgroundColor = "yellow";
+        Object.entries(styles).forEach(([key, value]) => {
+            span.style[key] = value;
+        });
+        range.surroundContents(span);
+    }
 }

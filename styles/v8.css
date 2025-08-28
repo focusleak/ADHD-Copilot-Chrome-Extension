@@ -1,0 +1,8 @@
+/* for print */
+@media print {
+  #nav-toggle,
+  footer,
+  #footer {
+    display: none !important;
+  }
+}

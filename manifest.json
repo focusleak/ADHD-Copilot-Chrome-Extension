@@ -8,7 +8,12 @@
     "default_icon": "images/icon.png"
   },
   "background": {
-    "service_worker": "scripts/serviceWorker.js"
+    "service_worker": "scripts/serviceWorker.js",
+    "type": "module"
+  },
+  "options_ui": {
+    "page": "pages/options.html",
+    "open_in_tab": true
   },
   "content_scripts": [
     {
@@ -20,13 +25,24 @@
         "libs/html2canvas.js",
         "libs/axios.js",
         "scripts/downloader.js",
-        "scripts/copy.js"
+        "scripts/copy.js",
+        "scripts/Notes.js",
+        "scripts/dict.js"
       ],
       "css": [
         "styles/global.css"
       ],
       "matches": [
         "https://*/*"
+      ]
+    },
+    {
+      "css": [
+        "styles/juejin.css"
+      ],
+      "js": [],
+      "matches": [
+        "https://juejin.cn/post/*"
       ]
     },
     {
@@ -310,11 +326,19 @@
       "matches": [
         "https://*.douyin.com/*",
         "https://*.v2ex.com/*",
-        "https://*.xiaohongshu.com/*",
         "https://*.weibo.com/*",
         "https://*.zhihu.com/*",
         "https://*.jd.com/*",
         "https://tieba.baidu.com/*"
+      ]
+    },
+    {
+      "js": [],
+      "css": [
+        "styles/v8.css"
+      ],
+      "matches": [
+        "https://v8.dev/blog/*"
       ]
     },
     {

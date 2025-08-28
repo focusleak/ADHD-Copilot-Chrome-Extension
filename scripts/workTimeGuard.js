@@ -1,4 +1,5 @@
 (async function () {
+
     const IS_ENABLE = true; // 是否启用
     const LEISURE_MINUTES = 5; // 休息时间，单位为分钟
     // 检测当前时间是否为工作时间
@@ -11,6 +12,8 @@
         const hour = now.getHours();
         return hour >= begin && hour < end;
     }
+    const MESSAGE = 'continue_visit'
+    const bc = new BroadcastChannel('workTimeGuard');
 
     class TabManager {
         constructor() {
@@ -34,14 +37,15 @@
         cancelClose() {
             // 记录并存储当前时间
             let lastLeisureTime = new Date();
-            chrome.storage.local.set({ lastLeisureTime: lastLeisureTime.toJSON() });
+            Storage.set('lastLeisureTime', lastLeisureTime.toJSON());
+            bc.postMessage(MESSAGE);
             clearInterval(this.interval);
             this.interval = null;
         }
     }
 
     class PageMask {
-        static tips = ['不幸的是，指针一直在转，','时间在流失，过去在增加，未来在减少','可能性变小，遗憾也在增加。','你明白吗？']
+        static tips = ['不幸的是，指针一直在转，', '时间在流失，过去在增加，未来在减少', '可能性变小，遗憾也在增加。', '你明白吗？']
         constructor(text) {
             this.mask = document.createElement('div');
             this.mask.innerHTML = `<p>${PageMask.tips.join('<br />')}<br /><br />`;
@@ -109,7 +113,7 @@
 
     if (IS_ENABLE && isInWorkTime()) {
         // 获取存储的时间
-        let { lastLeisureTime } = await getChromeStorage('lastLeisureTime');
+        let lastLeisureTime = await Storage.get('lastLeisureTime');
         if (lastLeisureTime) {
             let before = new Date(lastLeisureTime);
             let now = new Date();
@@ -142,6 +146,12 @@
                 }
             });
             pageMask.setButtonEvent(tabManager);
+
+            bc.addEventListener('message', function (e) {
+                if (e.data === MESSAGE) {
+                    tabManager.cancelClose();
+                }
+            });
         }
 
         // 清空页面内容
