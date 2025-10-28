@@ -1,6 +1,6 @@
 (async function () {
 
-    const IS_ENABLE = true; // 是否启用
+    const IS_ENABLE = false; // 是否启用
     const LEISURE_MINUTES = 5; // 休息时间，单位为分钟
     // 检测当前时间是否为工作时间
     function isInWorkTime(begin = 8, end = 22) { // 开发阶段，暂时先设定为8点到22点
@@ -12,11 +12,13 @@
         const hour = now.getHours();
         return hour >= begin && hour < end;
     }
+
     const MESSAGE = 'continue_visit'
     const bc = new BroadcastChannel('workTimeGuard');
 
     class TabManager {
-        constructor() {
+        constructor(pageMask) {
+            this.pageMask = pageMask;
             this.interval = null;
         }
         closeAfter(count, { handleTick, beforeClose, afterClose } = {}) {
@@ -25,11 +27,11 @@
             clearInterval(this.interval);
             this.interval = setInterval(() => {
                 this.count--;
-                handleTick && handleTick();
+                handleTick?.();
                 if (this.count <= 0) {
+                    beforeClose?.();
                     clearInterval(this.interval);
-                    beforeClose && beforeClose();
-                    afterClose && afterClose();
+                    afterClose?.();
                     window.open("about:blank", "_self");// 打开空白页代替关闭标签页，window.close有时不生效
                 }
             }, 1000);
@@ -46,7 +48,7 @@
 
     class PageMask {
         static tips = ['不幸的是，指针一直在转，', '时间在流失，过去在增加，未来在减少', '可能性变小，遗憾也在增加。', '你明白吗？']
-        constructor(text) {
+        constructor() {
             this.mask = document.createElement('div');
             this.mask.innerHTML = `<p>${PageMask.tips.join('<br />')}<br /><br />`;
             this.setMaskStyle(this.mask);
@@ -70,7 +72,7 @@
         setButtonEvent(tabManager) {
             this.visitButton.addEventListener('click', (e) => {
                 tabManager.cancelClose();
-                this.mask.remove();
+                this.remove();
                 // 开始计时，5分钟后再次提示 - 改为sessionStorage存储的方案，每分钟检查
                 clearTimeout(this.timeoutId);
                 this.timeoutId = setTimeout(() => {
@@ -133,8 +135,8 @@
             main();
         }
         function main() {
-            let tabManager = new TabManager();
             let pageMask = new PageMask();
+            let tabManager = new TabManager(pageMask);
             tabManager.closeAfter(5, {
                 handleTick: () => {
                     pageMask.setCloseTips(`This page will be closed in ${tabManager.count} seconds.`)
@@ -150,6 +152,7 @@
             bc.addEventListener('message', function (e) {
                 if (e.data === MESSAGE) {
                     tabManager.cancelClose();
+                    pageMask.remove();
                 }
             });
         }

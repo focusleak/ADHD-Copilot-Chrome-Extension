@@ -13,7 +13,9 @@ waitForElement('.nav-search-input').then(removePlaceholder);
 // 增加更多倍速选项
 (function () {
     // 仅播放页需要 https://www.bilibili.com/video/
-    if (!location.href.includes('www.bilibili.com/video/')) return;
+    if (!location.href.includes('www.bilibili.com/video/' || 
+        !location.href.includes('www.bilibili.com/list/watchlater')
+    )) return;
     function createItem(value) {
         const item = document.createElement('li');
         item.className = 'bpx-player-ctrl-playbackrate-menu-item';

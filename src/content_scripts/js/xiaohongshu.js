@@ -2,7 +2,7 @@
 waitForElement('.xgplayer-start').then((startButton) => {
     startButton.addEventListener('click', () => {
         document.querySelector('.xgplayer-volume .xgplayer-icon-large').click();
-        console.log('start')
+        console.log('start');
     }, {
         once: true
     })

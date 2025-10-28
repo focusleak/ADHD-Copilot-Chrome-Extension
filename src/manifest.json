@@ -4,33 +4,39 @@
   "version": "0.0.2",
   "manifest_version": 3,
   "action": {
-    "default_popup": "pages/popup.html",
-    "default_icon": "images/icon.png"
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
   },
   "background": {
-    "service_worker": "scripts/serviceWorker.js",
+    "service_worker": "content_scripts/js/serviceWorker.js",
     "type": "module"
   },
   "options_ui": {
-    "page": "pages/options.html",
+    "page": "options.html",
     "open_in_tab": true
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
   },
   "content_scripts": [
     {
       "js": [
-        "scripts/utils.js",
-        "scripts/selectable.js",
-        "scripts/scroll2Top.js",
-        "libs/FileSaver.js",
-        "libs/html2canvas.js",
-        "libs/axios.js",
-        "scripts/downloader.js",
-        "scripts/copy.js",
-        "scripts/Notes.js",
-        "scripts/dict.js"
+        "content_scripts/js/utils.js",
+        "content_scripts/js/selectable.js",
+        "content_scripts/js/scroll2Top.js",
+        "content_scripts/libs/FileSaver.js",
+        "content_scripts/libs/html2canvas.js",
+        "content_scripts/libs/axios.js",
+        "content_scripts/js/downloader.js",
+        "content_scripts/js/copy.js",
+        "content_scripts/js/Notes.js",
+        "content_scripts/js/dict.js"
       ],
       "css": [
-        "styles/global.css"
+        "content_scripts/css/global.css"
       ],
       "matches": [
         "https://*/*"
@@ -38,7 +44,7 @@
     },
     {
       "css": [
-        "styles/juejin.css"
+        "content_scripts/css/juejin.css"
       ],
       "js": [],
       "matches": [
@@ -47,7 +53,7 @@
     },
     {
       "css": [
-        "styles/126.css"
+        "content_scripts/css/126.css"
       ],
       "js": [],
       "matches": [
@@ -57,7 +63,7 @@
     {
       "js": [],
       "css": [
-        "styles/163.css"
+        "content_scripts/css/163.css"
       ],
       "matches": [
         "https://*.163.com/*"
@@ -65,7 +71,7 @@
     },
     {
       "js": [
-        "scripts/arxiv.js"
+        "content_scripts/js/arxiv.js"
       ],
       "css": [],
       "matches": [
@@ -74,10 +80,10 @@
     },
     {
       "js": [
-        "scripts/baidu.js"
+        "content_scripts/js/baidu.js"
       ],
       "css": [
-        "styles/baidu.css"
+        "content_scripts/css/baidu.css"
       ],
       "matches": [
         "https://*.baidu.com/*"
@@ -85,10 +91,10 @@
     },
     {
       "js": [
-        "scripts/bilibili.js"
+        "content_scripts/js/bilibili.js"
       ],
       "css": [
-        "styles/bilibili.css"
+        "content_scripts/css/bilibili.css"
       ],
       "matches": [
         "https://*.bilibili.com/*"
@@ -96,7 +102,7 @@
     },
     {
       "js": [
-        "scripts/chatgpt.js"
+        "content_scripts/js/chatgpt.js"
       ],
       "css": [],
       "matches": [
@@ -106,7 +112,7 @@
     {
       "js": [],
       "css": [
-        "styles/cnblogs.css"
+        "content_scripts/css/cnblogs.css"
       ],
       "matches": [
         "https://*.cnblogs.com/*"
@@ -115,7 +121,7 @@
     {
       "js": [],
       "css": [
-        "styles/cnki.css"
+        "content_scripts/css/cnki.css"
       ],
       "matches": [
         "https://*.cnki.net/*"
@@ -124,7 +130,7 @@
     {
       "js": [],
       "css": [
-        "styles/coolshell.css"
+        "content_scripts/css/coolshell.css"
       ],
       "matches": [
         "https://coolshell.cn/*"
@@ -132,7 +138,7 @@
     },
     {
       "css": [
-        "styles/csdn.css"
+        "content_scripts/css/csdn.css"
       ],
       "matches": [
         "https://*.csdn.net/*"
@@ -141,7 +147,7 @@
     {
       "js": [],
       "css": [
-        "styles/geeksforgeeks.css"
+        "content_scripts/css/geeksforgeeks.css"
       ],
       "matches": [
         "https://www.geeksforgeeks.org/*"
@@ -150,7 +156,7 @@
     {
       "js": [],
       "css": [
-        "styles/gying.css"
+        "content_scripts/css/gying.css"
       ],
       "matches": [
         "https://*.gying.net/*"
@@ -158,7 +164,7 @@
     },
     {
       "js": [
-        "scripts/leetcode.js"
+        "content_scripts/js/leetcode.js"
       ],
       "css": [],
       "matches": [
@@ -168,7 +174,7 @@
     {
       "js": [],
       "css": [
-        "styles/medium.css"
+        "content_scripts/css/medium.css"
       ],
       "matches": [
         "https://*.medium.com/*"
@@ -177,7 +183,7 @@
     {
       "js": [],
       "css": [
-        "styles/monkeytype.css"
+        "content_scripts/css/monkeytype.css"
       ],
       "matches": [
         "https://monkeytype.com/"
@@ -186,7 +192,7 @@
     {
       "js": [],
       "css": [
-        "styles/mozilla.css"
+        "content_scripts/css/mozilla.css"
       ],
       "matches": [
         "https://developer.mozilla.org/*"
@@ -194,7 +200,7 @@
     },
     {
       "js": [
-        "scripts/neurips.js"
+        "content_scripts/js/neurips.js"
       ],
       "css": [],
       "matches": [
@@ -203,7 +209,7 @@
     },
     {
       "js": [
-        "scripts/openreview.js"
+        "content_scripts/js/openreview.js"
       ],
       "css": [],
       "matches": [
@@ -213,7 +219,7 @@
     {
       "js": [],
       "css": [
-        "styles/pbc.css"
+        "content_scripts/css/pbc.css"
       ],
       "matches": [
         "http://www.pbc.gov.cn/goutongjiaoliu/*"
@@ -221,7 +227,7 @@
     },
     {
       "css": [
-        "styles/plantuml.css"
+        "content_scripts/css/plantuml.css"
       ],
       "js": [],
       "matches": [
@@ -231,7 +237,7 @@
     {
       "js": [],
       "css": [
-        "styles/ruanyifeng.css"
+        "content_scripts/css/ruanyifeng.css"
       ],
       "matches": [
         "https://*.ruanyifeng.com/*"
@@ -240,7 +246,7 @@
     {
       "js": [],
       "css": [
-        "styles/sina.css"
+        "content_scripts/css/sina.css"
       ],
       "matches": [
         "https://sports.sina.com.cn/*"
@@ -248,10 +254,10 @@
     },
     {
       "js": [
-        "scripts/sogou.js"
+        "content_scripts/js/sogou.js"
       ],
       "css": [
-        "styles/sogou.css"
+        "content_scripts/css/sogou.css"
       ],
       "matches": [
         "https://*.sogou.com/*"
@@ -260,7 +266,7 @@
     {
       "js": [],
       "css": [
-        "styles/sohu.css"
+        "content_scripts/css/sohu.css"
       ],
       "matches": [
         "https://*.sohu.com/*"
@@ -268,7 +274,7 @@
     },
     {
       "css": [
-        "styles/springer.css"
+        "content_scripts/css/springer.css"
       ],
       "matches": [
         "https://link.springer.com/*"
@@ -277,7 +283,7 @@
     {
       "js": [],
       "css": [
-        "styles/tencent.css"
+        "content_scripts/css/tencent.css"
       ],
       "matches": [
         "https://cloud.tencent.com/*"
@@ -285,7 +291,7 @@
     },
     {
       "css": [
-        "styles/timeanddate.css"
+        "content_scripts/css/timeanddate.css"
       ],
       "matches": [
         "https://www.timeanddate.com/*"
@@ -294,7 +300,7 @@
     {
       "js": [],
       "css": [
-        "styles/tonymacx86.css"
+        "content_scripts/css/tonymacx86.css"
       ],
       "matches": [
         "https://*.tonymacx86.com/*"
@@ -303,7 +309,7 @@
     {
       "js": [],
       "css": [
-        "styles/v2ex.css"
+        "content_scripts/css/v2ex.css"
       ],
       "matches": [
         "https://*.v2ex.com/*"
@@ -311,7 +317,7 @@
     },
     {
       "css": [
-        "styles/weibo.css"
+        "content_scripts/css/weibo.css"
       ],
       "matches": [
         "https://*.weibo.com/*"
@@ -319,8 +325,8 @@
     },
     {
       "js": [
-        "scripts/workTimeGuard.js",
-        "scripts/pageTimeTracker.js"
+        "content_scripts/js/workTimeGuard.js",
+        "content_scripts/js/pageTimeTracker.js"
       ],
       "css": [],
       "matches": [
@@ -335,7 +341,7 @@
     {
       "js": [],
       "css": [
-        "styles/v8.css"
+        "content_scripts/css/v8.css"
       ],
       "matches": [
         "https://v8.dev/blog/*"
@@ -343,7 +349,7 @@
     },
     {
       "js": [
-        "scripts/xiaohongshu.js"
+        "content_scripts/js/xiaohongshu.js"
       ],
       "css": [],
       "matches": [
@@ -353,7 +359,7 @@
     {
       "js": [],
       "css": [
-        "styles/yinwang.css"
+        "content_scripts/css/yinwang.css"
       ],
       "matches": [
         "https://*.yinwang.org/*"
@@ -361,7 +367,7 @@
     },
     {
       "js": [
-        "scripts/yuanbao.js"
+        "content_scripts/js/yuanbao.js"
       ],
       "css": [],
       "matches": [
@@ -370,10 +376,10 @@
     },
     {
       "js": [
-        "scripts/zhihu.js"
+        "content_scripts/js/zhihu.js"
       ],
       "css": [
-        "styles/zhihu.css"
+        "content_scripts/css/zhihu.css"
       ],
       "matches": [
         "https://*.zhihu.com/*"
