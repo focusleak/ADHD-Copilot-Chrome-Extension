@@ -8,8 +8,10 @@ import Youtube from './Youtube'
 import DuckDuckGo from './DuckDuckGo'
 import Zhihu from './Zhihu'
 import Bilibili from './Bilibili'
+import CambridgeDictionary from './CambridgeDictionary'
 
 const Engines = [
+    {key: 'cambridgedictionary', name: 'CambridgeDictionary', component: CambridgeDictionary },
     { key: 'bilibili', name: 'BiliBili', component: Bilibili },
     { key: 'google', name: '谷歌', component: Google },
     { key: 'baidu', name: '百度', component: Baidu },
