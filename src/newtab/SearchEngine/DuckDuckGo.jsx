@@ -1,4 +1,4 @@
-const Google = () => {
+const DuckDuckGo = () => {
     return <div></div>
-};
-export default Google;
+}
+export default DuckDuckGo

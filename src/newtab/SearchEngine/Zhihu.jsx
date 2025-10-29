@@ -1,11 +1,11 @@
-import React from 'react';
-import { useState } from 'react';
+import React from 'react'
+import { useState } from 'react'
 
 const search = (queryString) => {
     if (queryString) {
-        window.open(`https://www.zhihu.com/search?q=${queryString}`, '_blank');
+        window.open(`https://www.zhihu.com/search?q=${queryString}`, '_blank')
     }
-};
+}
 
 const Logo = () => (
     <svg
@@ -19,33 +19,29 @@ const Logo = () => (
         <path d="M11.27 19.675l-2.312 1.491 5.038 7.458a6.905 6.905 0 0 0 .672-2.218 3.15 3.15 0 0 0-.28-2.168l-3.118-4.563zM51.449 15.195V5.842c4.181-.205 7.988-.405 9.438-.483l.851-.05c.387-.399.885-2.395.689-3.021-.073-.25-.213-.666-.638-.555a33.279 33.279 0 0 1-4.277.727c-2.766.321-3.97.404-7.804.682-6.718.487-12.709.72-12.709.72a2.518 2.518 0 0 0 .788 1.834 2.567 2.567 0 0 0 1.883.706c2.278-.095 5.598-.25 8.996-.41v9.203h-12.78c0 .703.281 1.377.783 1.874a2.69 2.69 0 0 0 1.892.777h10.105v7.075c0 .887-.464 1.192-1.231 1.214h-3.92a4.15 4.15 0 0 0 .837 1.544 4.2 4.2 0 0 0 1.403 1.067 6.215 6.215 0 0 0 2.71.277c1.36-.066 2.967-.826 2.967-3.57v-7.607h11.28c.342 0 .67-.135.91-.374.242-.239.378-.563.378-.902v-1.375H51.449z"></path>
         <path d="M42.614 8.873a2.304 2.304 0 0 0-1.508-.926 2.334 2.334 0 0 0-1.727.405l-.376.272 4.255 5.85 2.24-1.62-2.884-3.98zM57.35 8.68l-3.125 4.097 2.24 1.663 4.517-5.927-.375-.277a2.32 2.32 0 0 0-1.722-.452 2.327 2.327 0 0 0-1.536.896z"></path>
     </svg>
-);
+)
 
 const Zhihu = ({ queryString, onInput }) => {
     const handleSearch = (event) => {
-        search(queryString);
-    };
+        search(queryString)
+    }
     const handleKeyUp = (event) => {
         if (event.code == 'Enter') {
-            search(queryString);
+            search(queryString)
         }
-    };
+    }
 
     return (
-        <div className="w-[100%] h-[100%] flex justify-center items-end">
-            <div className="flex justify-center items-center h-[52px] gap-[20px]">
+        <div className="flex h-[100%] w-[100%] items-end justify-center">
+            <div className="flex h-[52px] items-center justify-center gap-[20px]">
                 <Logo />
-                <div
-                    className="w-[385px] h-[34px] bg-[#f8f8fa] border-[1px] border-[#ebebec] rounded-[999px]
-                flex justify-between items-center
-            focus-within:bg-white transition "
-                >
+                <div className="flex h-[34px] w-[385px] items-center justify-between rounded-[999px] border-[1px] border-[#ebebec] bg-[#f8f8fa] transition focus-within:bg-white">
                     <input
                         type="search"
                         value={queryString}
                         onInput={onInput}
                         onKeyUp={handleKeyUp}
-                        className="outline-0 w-[311px] h-[34px] p-[10px]"
+                        className="h-[34px] w-[311px] p-[10px] outline-0"
                         style={{
                             padding: 10,
                         }}
@@ -71,6 +67,6 @@ const Zhihu = ({ queryString, onInput }) => {
                 </div>
             </div>
         </div>
-    );
-};
-export default Zhihu;
+    )
+}
+export default Zhihu
