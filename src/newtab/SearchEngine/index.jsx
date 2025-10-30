@@ -9,9 +9,21 @@ import DuckDuckGo from './DuckDuckGo'
 import Zhihu from './Zhihu'
 import Bilibili from './Bilibili'
 import CambridgeDictionary from './CambridgeDictionary'
+import CollinsDictionary from './CollinsDictionary'
+import Wikipedia from './Wikipedia'
 
 const Engines = [
-    {key: 'cambridgedictionary', name: 'CambridgeDictionary', component: CambridgeDictionary },
+    { key: 'wikipedia', name: 'Wikipedia', component: Wikipedia },
+    {
+        key: 'cambridgedictionary',
+        name: 'CambridgeDictionary',
+        component: CambridgeDictionary,
+    },
+    {
+        key: 'collinsdictionary',
+        name: 'CollinsDictionary',
+        component: CollinsDictionary,
+    },
     { key: 'bilibili', name: 'BiliBili', component: Bilibili },
     { key: 'google', name: '谷歌', component: Google },
     { key: 'baidu', name: '百度', component: Baidu },

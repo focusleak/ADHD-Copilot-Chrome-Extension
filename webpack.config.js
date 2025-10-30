@@ -44,7 +44,7 @@ module.exports = {
     newtab: "./src/newtab/index.js",
   }, //入口文件
   output: {
-    path: path.resolve(__dirname, "dist/scripts"),
+    path: path.resolve(__dirname, "dist/src"),
     clean: true,
     filename: "[name].js",
   },
@@ -52,7 +52,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx"], // 支持省略 .js 和 .jsx 扩展名
   },
   devServer: {
-    port: 8080,
+    port: 8004,
     open: true,
     hot: true,
     // 将 bundle 写到磁盘而不是内存

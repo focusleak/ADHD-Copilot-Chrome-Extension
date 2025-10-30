@@ -40,7 +40,7 @@ const Bilibili = ({ queryString, onInput }) => {
                 </svg>
             </p>
             <div className="mt-[30px] flex justify-center">
-                <p className="shadow-[0 1px 6px 0 #20212447] flex h-[48px] w-[640px] items-center rounded-[6px] border-[1px] border-solid border-[#F1F2F3] bg-[#F6F7F8] p-[5px] transition-[0.2s] focus-within:border-[#00AEEC]">
+                <p className="shadow-[0 1px 6px 0 #20212447] flex h-[48px] w-[640px] items-center rounded-[6px] border-[1px] border-solid border-[#F1F2F3] bg-[#F6F7F8] p-[5px] transition focus-within:border-[#00AEEC] focus-within:bg-white hover:bg-white">
                     <svg
                         className="mr-[10px] ml-[15px]"
                         color="#00AEEC"
@@ -63,6 +63,7 @@ const Bilibili = ({ queryString, onInput }) => {
                         onInput={onInput}
                         onKeyUp={handleKeyUp}
                         className="mr-[15px] flex-1 text-[18px] outline-0"
+                        placeholder='输入关键字搜索'
                     />
                     <button
                         onClick={handleSearch}

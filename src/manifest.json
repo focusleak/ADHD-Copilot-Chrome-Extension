@@ -388,6 +388,8 @@
   ],
   "permissions": [
     "storage",
+    "downloads",
+    "history",
     "cookies",
     "contextMenus",
     "tabs",

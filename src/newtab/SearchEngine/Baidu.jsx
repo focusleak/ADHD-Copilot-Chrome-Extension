@@ -26,7 +26,7 @@ const Baidu = ({ queryString, onInput }) => {
     )
 
     return (
-        <div className="flex h-[100%] w-[100%] items-end justify-center">
+        <div className="flex h-full w-full items-end justify-center">
             <div>
                 <p className="flex justify-center">
                     <img
@@ -41,7 +41,7 @@ const Baidu = ({ queryString, onInput }) => {
                         value={queryString}
                         onInput={onInput}
                         onKeyUp={handleKeyUp}
-                        className="h-[44px] w-[546px] rounded-l-[10px] border-[2px] border-r-0 border-solid border-[#c4c7ce] px-[12px] py-[16px] outline-0 transition focus:border-[#4e6ef2]"
+                        className="h-[44px] w-[546px] rounded-l-[10px] border-[2px] border-r-0 border-solid border-[#c4c7ce] px-[12px] py-[16px] text-[18px] outline-0 transition focus:border-[#4e6ef2]"
                     />
                     <button
                         onClick={handleSearch}
