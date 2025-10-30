@@ -5,13 +5,16 @@ import Favorites from './Favorites/index'
 import SearchEngine from './SearchEngine/index'
 import ControlPanel from './ControlPanel/index'
 import Footer from './Footer/index'
+import Reminders from './Reminders'
 const App = () => {
     return (
         <>
             <SearchEngine />
             <Favorites />
             <ControlPanel />
+            <Reminders />
             <Footer />
+
         </>
     )
 }

@@ -28,7 +28,8 @@
         "name": "MDN",
         "url": "https://developer.mozilla.org/zh-CN/",
         "icon": "https://developer.mozilla.org/favicon.svg"
-    },{
+    },
+    {
         "name": "TypeScript",
         "url": "https://www.typescriptlang.org/",
         "icon": "https://www.typescriptlang.org/favicon-32x32.png"
@@ -72,7 +73,18 @@
         "name": "Prettier",
         "url": "https://prettier.io/",
         "icon": "https://prettier.io/icon.png"
-    },{
+    },
+    {
+        "name": "shadcn/ui",
+        "url": "https://ui.shadcn.com/",
+        "icon": "https://ui.shadcn.com/favicon.ico"
+    },
+    {
+        "name": "Zustand",
+        "url": "https://zustand-demo.pmnd.rs/",
+        "icon": "https://zustand-demo.pmnd.rs/favicon.ico"
+    },
+    {
         "name": "微信读书",
         "url": "https://weread.qq.com/",
         "icon": "https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/favicon/favicon_48h.png"

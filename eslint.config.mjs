@@ -14,7 +14,13 @@ export default defineConfig([
             'no-unused-vars': 'off',
             'no-undef': 'error',
         },
-        languageOptions: { globals: { ...globals.browser, ...globals.node } },
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+                chrome: 'readonly',
+            },
+        },
     },
     {
         ...pluginReact.configs.flat.recommended,

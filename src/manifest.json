@@ -8,7 +8,7 @@
     "default_icon": "icon.png"
   },
   "background": {
-    "service_worker": "content_scripts/js/serviceWorker.js",
+    "service_worker": "src/service_worker.js",
     "type": "module"
   },
   "options_ui": {
@@ -281,6 +281,16 @@
       ]
     },
     {
+      "js": [
+        "content_scripts/js/tencent.js"
+      ],
+      "css": [],
+      "matches": [
+        "https://yb.tencent.com/*"
+      ],
+      "run_at": "document_start"
+    },
+    {
       "js": [],
       "css": [
         "content_scripts/css/tencent.css"
@@ -387,6 +397,7 @@
     }
   ],
   "permissions": [
+    "activeTab",
     "storage",
     "downloads",
     "history",

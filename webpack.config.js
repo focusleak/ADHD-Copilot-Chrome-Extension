@@ -42,6 +42,7 @@ module.exports = {
     popup: "./src/popup/index.js",
     options: "./src/options/index.js",
     newtab: "./src/newtab/index.js",
+    'service_worker': "./src/service_worker/index.js",
   }, //入口文件
   output: {
     path: path.resolve(__dirname, "dist/src"),
@@ -137,6 +138,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src/content_scripts"),
           to: path.resolve(__dirname, "dist/content_scripts"),
+        },
+        {
+          from: path.resolve(__dirname, "src/service"),
+          to: path.resolve(__dirname, "dist/service"),
         },
         {
           from: path.resolve(__dirname, "src/manifest.json"),
