@@ -4,7 +4,11 @@
 
 <chrome://extensions/>
 
-## 安装依赖
+## 项目搭建
+
+1. content_script通常是注入到其他网页，因此不需要使用UI框架
+2. 其他插件页面的开发可以使用React shadcn/ui tailwindcss 等现代前端开发技术来提高开发效率，因而需要Webpack等构建工具
+3. 由于浏览器插件运行在现代浏览器中，因此不需要使用Babel转换，也不需要core-js
 
 ```bash
 pnpm install webpack webpack-cli webpack-dev-server --save-dev
@@ -13,6 +17,81 @@ pnpm install core-js
 pnpm install prettier prettier-plugin-tailwindcss --save-dev
 pnpm add react react-dom @types/react @types/react-dom classnames
 ```
+
+## 配置webpack - webpack.config.js
+
+## 配置tailwindcss - tailwind.config.js
+
+## 配置shadcn/ui
+
+<https://ui.shadcn.com/docs/installation/manual>
+
+```bash
+pnpm add class-variance-authority clsx tailwind-merge lucide-react tw-animate-css
+```
+
+jsconfig.json
+
+```JavaScript
+{
+    "type": "setting",
+    "settings": {
+        "compilerOptions": {
+            "baseUrl": ".",
+            "paths": {
+                "@/*": [
+                    "src/*"
+                ]
+            },
+            "jsx": "react-jsx"
+        }
+    }
+}
+```
+
+globals.css
+
+```css
+
+``
+
+src/lib/utils.js
+```JavaScript
+import { clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs))
+}
+```
+
+components.json
+
+```JSON
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "iconLibrary": "lucide"
+}
+```
+
+## 配置eslint - eslint.config.mjs
 
 ## Features
 

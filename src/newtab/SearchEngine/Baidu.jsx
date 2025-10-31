@@ -41,7 +41,7 @@ const Baidu = ({ queryString, onInput }) => {
                         value={queryString}
                         onInput={onInput}
                         onKeyUp={handleKeyUp}
-                        className="h-[44px] w-[546px] rounded-l-[10px] border-[2px] border-r-0 border-solid border-[#c4c7ce] px-[12px] py-[16px] text-[18px] outline-0 transition focus:border-[#4e6ef2]"
+                        className="h-[44px] w-[546px] rounded-l-[10px] border-[2px] border-r-0 border-solid border-[#c4c7ce] bg-white px-[12px] py-[16px] text-[18px] outline-0 transition focus:border-[#4e6ef2]"
                     />
                     <button
                         onClick={handleSearch}

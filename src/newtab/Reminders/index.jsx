@@ -2,8 +2,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 
 import storage from '../../utils/storage'
+import icon from './reminders.webp'
+import { Button } from '@/components/ui/Button'
 
-export default function Reminders() {
+function Reminders() {
     const [reminders, setReminders] = useState([])
     const [text, setText] = useState('')
     const [filter, setFilter] = useState('all') // all | active | completed
@@ -63,7 +65,7 @@ export default function Reminders() {
     })
 
     return (
-        <div className="w-[320px] p-4 font-sans fixed h-full overflow-y-auto left-0 top-0 shadow-lg transition">
+        <div className="h-full p-4 font-sans">
             <h1 className="mb-3 text-xl font-semibold">Reminders</h1>
 
             <form onSubmit={add} className="mb-3 flex gap-2">
@@ -72,36 +74,32 @@ export default function Reminders() {
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Add a todo..."
-                    className="flex-1 border-b outline-0 px-3 py-2"
+                    className="flex-1 border-b px-3 py-2 outline-0"
                 />
-                <button
-                    type="submit"
-                    className="rounded-md bg-blue-500 px-3 py-2 text-white hover:bg-blue-600 disabled:opacity-60"
-                    disabled={!text.trim()}
-                >
+                <Button type="submit" disabled={!text.trim()}>
                     Add
-                </button>
+                </Button>
             </form>
 
             <div className="mb-3 flex gap-2">
-                <button
+                <Button
                     onClick={() => setFilter('all')}
-                    className={`rounded px-2 py-1 ${filter === 'all' ? 'bg-gray-200' : ''}`}
+                    className={`${filter === 'all' ? 'bg-gray-200' : ''}`}
                 >
                     All
-                </button>
-                <button
+                </Button>
+                <Button
                     onClick={() => setFilter('active')}
-                    className={`rounded px-2 py-1 ${filter === 'active' ? 'bg-gray-200' : ''}`}
+                    className={`${filter === 'active' ? 'bg-gray-200' : ''}`}
                 >
                     Active
-                </button>
-                <button
+                </Button>
+                <Button
                     onClick={() => setFilter('completed')}
-                    className={`rounded px-2 py-1 ${filter === 'completed' ? 'bg-gray-200' : ''}`}
+                    className={`${filter === 'completed' ? 'bg-gray-200' : ''}`}
                 >
                     Completed
-                </button>
+                </Button>
                 <div className="ml-auto text-sm text-gray-500">
                     {reminders.filter((t) => !t.done).length} left
                 </div>
@@ -123,20 +121,14 @@ export default function Reminders() {
             </ul>
 
             <div className="mt-3 flex items-center gap-2">
-                <button
-                    onClick={clearCompleted}
-                    className="rounded border px-2 py-1 text-sm"
-                >
-                    Clear completed
-                </button>
-                <button
+                <Button onClick={clearCompleted}>Clear completed</Button>
+                <Button
                     onClick={() => {
                         setReminders([])
                     }}
-                    className="ml-auto rounded border px-2 py-1 text-sm"
                 >
                     Remove all
-                </button>
+                </Button>
             </div>
         </div>
     )
@@ -176,24 +168,24 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }) {
             />
             {!editing ? (
                 <div className="flex flex-1 items-center gap-2">
-                    <button
+                    <Button
                         onDoubleClick={() => setEditing(true)}
                         className={`flex-1 text-left ${todo.done ? 'text-gray-400 line-through' : ''}`}
                     >
                         {todo.text}
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         onClick={() => setEditing(true)}
                         className="rounded border px-2 py-1 text-sm"
                     >
                         Edit
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         onClick={onDelete}
                         className="rounded border px-2 py-1 text-sm"
                     >
                         Del
-                    </button>
+                    </Button>
                 </div>
             ) : (
                 <div className="flex flex-1 gap-2">
@@ -208,12 +200,12 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }) {
                                 setEditing(false)
                             }
                         }}
-                        className="flex-1 border-b outline-0 px-2 py-1"
+                        className="flex-1 border-b px-2 py-1 outline-0"
                     />
-                    <button onClick={save} className="rounded border px-2 py-1">
+                    <Button onClick={save} className="rounded border px-2 py-1">
                         Save
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         onClick={() => {
                             setValue(todo.text)
                             setEditing(false)
@@ -221,9 +213,16 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }) {
                         className="rounded border px-2 py-1"
                     >
                         Cancel
-                    </button>
+                    </Button>
                 </div>
             )}
         </li>
     )
+}
+
+
+export default {
+    name: 'Reminders',
+    Component: Reminders,
+    icon
 }

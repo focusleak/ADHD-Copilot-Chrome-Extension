@@ -63,7 +63,7 @@ const Google = ({ queryString, onInput }) => {
                         value={queryString}
                         onInput={onInput}
                         onKeyUp={handleKeyUp}
-                        className="shadow-[0 1px 6px 0 #20212447] h-[50px] w-[584px] rounded-[48px] border text-[18px] border-solid border-[#c4c7ce] pl-[47px] outline-0"
+                        className="shadow-[0 1px 6px 0 #20212447] h-[50px] w-[584px] rounded-[48px] border border-solid border-[#c4c7ce] bg-white pl-[47px] text-[18px] outline-0"
                     />
                 </p>
             </div>

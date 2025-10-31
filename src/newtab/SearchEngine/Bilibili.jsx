@@ -63,7 +63,7 @@ const Bilibili = ({ queryString, onInput }) => {
                         onInput={onInput}
                         onKeyUp={handleKeyUp}
                         className="mr-[15px] flex-1 text-[18px] outline-0"
-                        placeholder='输入关键字搜索'
+                        placeholder="输入关键字搜索"
                     />
                     <button
                         onClick={handleSearch}

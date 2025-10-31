@@ -6,15 +6,16 @@ import SearchEngine from './SearchEngine/index'
 import ControlPanel from './ControlPanel/index'
 import Footer from './Footer/index'
 import Reminders from './Reminders'
+import Sidebar from './SideBar'
+
 const App = () => {
     return (
         <>
+            <Sidebar></Sidebar>
             <SearchEngine />
             <Favorites />
             <ControlPanel />
-            <Reminders />
             <Footer />
-
         </>
     )
 }

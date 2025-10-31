@@ -4,14 +4,14 @@ import list from './data.json'
 const Favorites = () => {
     return (
         <div className="mt-4">
-            <div className="mx-auto my-0 flex w-[800px] flex-wrap">
+            <div className="mx-auto my-0 flex w-[800px] flex-wrap bg-white/20 shadow-lg backdrop-blur-md rounded-sm">
                 {list.map((item) => {
                     return (
                         <a
                             href={item.url}
                             target="_self"
                             key={item.name}
-                            className="flex h-[100px] w-[100px] flex-col items-center justify-center rounded-sm hover:bg-[#E8E8E9]"
+                            className="flex h-[100px] w-[100px] flex-col items-center justify-center rounded-sm hover:bg-white/10"
                         >
                             <img src={item.icon} width={32} height={32} />
                             <span className="mt-2">{item.name}</span>
