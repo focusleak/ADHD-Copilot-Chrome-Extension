@@ -5,7 +5,7 @@ import Logo from './CambridgeDictionary.svg'
 const search = (queryString) => {
     if (queryString) {
         window.open(
-            `https://dictionary.cambridge.org/us/pronunciation/english/${queryString}`,
+            `https://dictionary.cambridge.org/us/pronunciation/english/${queryString.toLowerCase()}`,
             '_blank'
         )
     }

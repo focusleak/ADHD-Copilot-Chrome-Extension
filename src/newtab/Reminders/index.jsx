@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from 'react'
 
 import storage from '../../utils/storage'
 import icon from './reminders.webp'
-import { Button } from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 
 function Reminders() {
     const [reminders, setReminders] = useState([])
@@ -65,8 +65,8 @@ function Reminders() {
     })
 
     return (
-        <div className="h-full p-4 font-sans">
-            <h1 className="mb-3 text-xl font-semibold">Reminders</h1>
+        <div className="p-4 font-sans">
+            <h2 className="text-xl font-bold">Reminders</h2>
 
             <form onSubmit={add} className="mb-3 flex gap-2">
                 <input
@@ -220,9 +220,8 @@ function TodoItem({ todo, onToggle, onDelete, onEdit }) {
     )
 }
 
-
 export default {
     name: 'Reminders',
     Component: Reminders,
-    icon
+    icon,
 }

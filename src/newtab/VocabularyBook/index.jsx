@@ -1,11 +1,15 @@
 import React from 'react'
-
+import icon from './vocabulary.png'
 const VocabularyBook = () => {
     return (
-        <div className="flex h-full flex-col items-center justify-center">
-            <h1 className="text-3xl font-bold">Vocabulary Book</h1>
+        <div className="p-4 font-sans">
+            <h2 className="text-xl font-bold">Vocabulary Book</h2>
         </div>
     )
 }
 
-export default VocabularyBook
+export default {
+    Component: VocabularyBook,
+    name: 'Vocabulary Book',
+    icon
+}

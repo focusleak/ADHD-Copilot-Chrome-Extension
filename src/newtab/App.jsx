@@ -11,9 +11,9 @@ import Sidebar from './SideBar'
 const App = () => {
     return (
         <>
-            <Sidebar></Sidebar>
             <SearchEngine />
             <Favorites />
+            <Sidebar></Sidebar>
             <ControlPanel />
             <Footer />
         </>

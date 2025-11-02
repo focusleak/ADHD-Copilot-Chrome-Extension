@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
 
-import { Button } from '@/components/ui/Button'
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import {
     Sheet,
     SheetClose,
@@ -14,19 +15,38 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet'
 
+import Calculator from '../Calculator'
+import CheatSheet from '../CheatSheet'
+import Clock from '../Clock'
+import Downloader from '../Downloader'
+import ImageClipper from '../ImageCropper'
 import Reminders from '../Reminders'
+import TextProcessor from '../TextProcessor'
+import VocabularyBook from '../VocabularyBook'
 const apps = [
-    Reminders
-    // { name: 'Calculator' },
+    Reminders,
+    Calculator,
+    CheatSheet,
+    Clock,
+    VocabularyBook,
+    Downloader,
+    ImageClipper,
+    TextProcessor,
 ]
 
-function SheetContainer({ children, name }) {
+function SheetContainer({ children, name, icon }) {
     return (
         <Sheet>
             <SheetTrigger asChild>
                 <div>
-                    <div className="m-2 h-12 w-12 rounded-2xl shadow-lg"></div>
-                    <p className="text-center">{name}</p>
+                    <div className="m-4 mb-2 h-10 w-10 overflow-hidden rounded-[9px] shadow-lg">
+                        {icon ? (
+                            <img src={icon} width="100%" height="100%" />
+                        ) : (
+                            <span className="">{name[0]}</span>
+                        )}
+                    </div>
+                    <p className="text-center leading-none">{name}</p>
                 </div>
             </SheetTrigger>
             <SheetContent side="left">
@@ -36,7 +56,7 @@ function SheetContainer({ children, name }) {
             Make changes to your profile here. Click save when you&apos;re done.
           </SheetDescription>
         </SheetHeader> */}
-                {children}
+                <div className="h-full overflow-auto">{children}</div>
                 {/* <SheetFooter>
           <SheetClose asChild>
             <Button variant="outline">Close</Button>
@@ -46,18 +66,25 @@ function SheetContainer({ children, name }) {
         </Sheet>
     )
 }
+
+// ToDo - Drag to sort
 const Sidebar = () => {
     return (
         // 毛玻璃
-        <ul className="absolute top-0 left-0 flex h-full w-16 flex-col items-center bg-white/20 shadow-lg backdrop-blur-md">
-            {apps.map(({ name, Component }) => (
-                <li key={name} className="transition hover:scale-110">
-                    <SheetContainer name={name}>
-                        <Component />
-                    </SheetContainer>
-                </li>
-            ))}
-        </ul>
+        <div className="absolute top-0 left-0 h-full w-18 bg-white/20 shadow-lg backdrop-blur-md">
+            <ScrollArea className="h-full">
+                <ul className="flex-col items-center gap-4">
+                    {apps.map(({ name, icon, Component }) => (
+                        <li key={name}>
+                            <SheetContainer name={name} icon={icon}>
+                                <Component />
+                            </SheetContainer>
+                        </li>
+                    ))}
+                </ul>
+                {/* <ScrollArea.Scrollbar orientation="horizontal"><ScrollArea.Thumb state="hidden" /></ScrollArea.Scrollbar> */}
+            </ScrollArea>
+        </div>
     )
 }
 export default Sidebar

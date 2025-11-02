@@ -8,6 +8,10 @@
         "name": "Gemini",
         "url": "https://gemini.google.com/app",
         "icon": "https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg"
+    },{
+        "name":"腾讯元宝",
+        "url":"https://yuanbao.tencent.com/",
+        "icon": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon@32.png"
     },
     {
         "name": "Github",
@@ -28,6 +32,21 @@
         "name": "MDN",
         "url": "https://developer.mozilla.org/zh-CN/",
         "icon": "https://developer.mozilla.org/favicon.svg"
+    },
+    {
+        "name": "StackOverflow",
+        "url": "https://stackoverflow.com/",
+        "icon": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a"
+    },
+    {
+        "name": "Node.js",
+        "url": "https://nodejs.org/zh-cn/",
+        "icon": "https://nodejs.org/static/images/favicons/favicon.png"
+    },
+    {
+        "name": "NPM",
+        "url": "https://www.npmjs.com/",
+        "icon": "https://static-production.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png"
     },
     {
         "name": "TypeScript",
