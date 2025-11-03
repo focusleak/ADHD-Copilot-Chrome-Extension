@@ -2,8 +2,7 @@ import React from 'react'
 import icon from './vocabulary.png'
 const VocabularyBook = () => {
     return (
-        <div className="p-4 font-sans">
-            <h2 className="text-xl font-bold">Vocabulary Book</h2>
+        <div className="px-4 font-sans">
         </div>
     )
 }

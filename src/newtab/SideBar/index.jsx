@@ -50,12 +50,10 @@ function SheetContainer({ children, name, icon }) {
                 </div>
             </SheetTrigger>
             <SheetContent side="left">
-                {/* <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </SheetDescription>
-        </SheetHeader> */}
+                <SheetHeader>
+                    <SheetTitle className="text-xl">{name}</SheetTitle>
+                    <SheetDescription></SheetDescription>
+                </SheetHeader>
                 <div className="h-full overflow-auto">{children}</div>
                 {/* <SheetFooter>
           <SheetClose asChild>

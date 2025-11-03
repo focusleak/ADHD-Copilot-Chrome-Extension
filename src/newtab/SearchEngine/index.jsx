@@ -13,6 +13,7 @@ import CollinsDictionary from './CollinsDictionary'
 import Wikipedia from './Wikipedia'
 
 const Engines = [
+    { key: 'google', name: '谷歌', component: Google },
     { key: 'wikipedia', name: 'Wikipedia', component: Wikipedia },
     {
         key: 'cambridgedictionary',
@@ -25,7 +26,6 @@ const Engines = [
         component: CollinsDictionary,
     },
     { key: 'bilibili', name: 'BiliBili', component: Bilibili },
-    { key: 'google', name: '谷歌', component: Google },
     { key: 'baidu', name: '百度', component: Baidu },
     // { key: 'yandex', name: 'Yandex', component: Yandex },
     // { key: 'youtube', name: 'Youtube', component: Youtube },

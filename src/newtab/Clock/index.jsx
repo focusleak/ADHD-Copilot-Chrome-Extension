@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import icon from './clock.webp'
+import { format } from 'date-fns'
 
 const Stopwatch = () => {
     const [minutes, setMinutes] = useState(0)
@@ -20,9 +21,16 @@ const Stopwatch = () => {
 
 const Timers = () => {}
 const Clock = () => {
+    const [time, setTime] = useState(format(new Date(), 'HH:mm:ss'))
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTime(format(new Date(), 'HH:mm:ss'))
+        }, 1000)
+        return () => clearInterval(interval)
+    }, [])
     return (
         <div className="p-4 font-sans">
-            <h2 className="text-xl font-bold">Clock</h2>
+            <div>{time}</div>
         </div>
     )
 }

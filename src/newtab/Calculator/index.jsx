@@ -1,6 +1,7 @@
 // Calculator
 import React, { useState, useRef } from 'react'
-import { evaluate, parse } from 'mathjs'
+import { Textarea } from '@/components/ui/textarea'
+import { evaluate } from 'mathjs'
 import icon from './calculator.webp'
 
 // history
@@ -19,7 +20,6 @@ const Calculator = () => {
         // 上键
         if (event.key === 'ArrowUp' && history.length > 0) {
             setExpression(history.at(-1).split('=')[0])
-
         }
     }
     const handleInput = (event) => {
@@ -36,8 +36,7 @@ const Calculator = () => {
         answer = ''
     }
     return (
-        <div className="p-4">
-            <h2 className="text-xl font-bold">Calculator</h2>
+        <div className="px-4">
             <ul>
                 {history.map((item, index) => (
                     <li key={item}>
@@ -47,16 +46,16 @@ const Calculator = () => {
                     </li>
                 ))}
             </ul>
-            <input
+            <Textarea
                 type="text"
                 value={expression}
                 onInput={handleInput}
                 onKeyDown={handleKeyDown}
                 ref={ref}
-                className="text-18 w-full p-2 text-right text-4xl font-bold outline-0"
+                className="w-full p-2 text-right text-4xl font-bold outline-0"
                 autoFocus
             />
-            <p className="text-18 w-full p-2 text-right text-4xl font-bold wrap-break-word text-black/50">
+            <p className="w-full p-2 text-right text-4xl font-bold wrap-break-word text-black/50">
                 {answer}
             </p>
         </div>
