@@ -6,6 +6,7 @@ import ControlPanel from './ControlPanel/index'
 import Footer from './Footer/index'
 import Sidebar from './SideBar'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import { Toaster } from '@/components/ui/sonner'
 const App = () => {
     return (
         <>
@@ -16,6 +17,7 @@ const App = () => {
             </ErrorBoundary>
             <ControlPanel />
             <Footer />
+            <Toaster />
         </>
     )
 }

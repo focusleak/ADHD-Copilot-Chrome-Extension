@@ -4,26 +4,35 @@ import useStorage from '@/hooks/useStorage'
 import icon from './reminders.webp'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
+import { format } from 'date-fns'
+
+// 解析文字
+// 识别输入
+// x点
+// x小时后
+// x天后
+// 解析时间
+const parseInput = (input) => {
+    const content = input
+    const remindTime = null
+    return [content, remindTime]
+}
 
 const Reminders = () => {
-    // 识别输入
-    // x点
-    // x小时后
-    // x天后
-    // 解析时间
-    // 创建提醒任务
     const [input, setInput] = useState('')
     const [reminders, setReminders] = useStorage('reminders', [])
-    const handleKeyUp = (e) => {
-        if (e.code == 'Enter' && input != '') {
-            // 创建提醒任务
-            const time = 11
+    const handleKeyUp = (event) => {
+        if (event.code == 'Enter' && input != '') {
+            const createTime = format(new Date(), 'yyyy-MM-dd HH:mm:ss')
+            const [content, remindTime] = parseInput(input)
             setReminders([
                 ...reminders,
                 {
-                    content: input,
+                    content,
                     checked: false,
-                    time: time,
+                    remindTime,
+                    createTime: createTime,
+                    modifiedTime: createTime,
                 },
             ])
             setInput('')
@@ -34,15 +43,17 @@ const Reminders = () => {
     }
     const handleBurl = (index, content) => {
         setReminders(
-            reminders.map((reminder, i) => {
-                if (i === index) {
-                    return {
-                        ...reminder,
-                        content,
+            reminders
+                .map((reminder, i) => {
+                    if (i === index) {
+                        return {
+                            ...reminder,
+                            modifiedTime: content,
+                        }
                     }
-                }
-                return reminder
-            })
+                    return reminder
+                })
+                .filter((reminder) => reminder.content)
         )
     }
     const handleCheckboxChange = (index) => {
@@ -72,7 +83,7 @@ const Reminders = () => {
             <div>
                 <input
                     type="text"
-                    className="w-full border-b p-2 text-4xl font-bold outline-0"
+                    className="w-full border-b p-2 text-xl font-bold outline-0"
                     // placeholder="后天/明天/d天后/x点/提醒我xxx"
                     value={input}
                     onInput={handleInput}
@@ -84,10 +95,10 @@ const Reminders = () => {
                 {reminders.map(({ checked, content }, key) => (
                     <li
                         key={key}
-                        className="flex w-full border-b border-black/10 p-2 text-xl wrap-break-word"
+                        className="flex w-full border-b border-black/10 p-2 text-xs wrap-break-word"
                     >
                         <Checkbox
-                            className="m-2"
+                            className="mx-2"
                             checked={checked}
                             onCheckedChange={() => handleCheckboxChange(key)}
                         />

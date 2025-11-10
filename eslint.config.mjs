@@ -29,6 +29,7 @@ export default defineConfig([
             'react/prop-types': 'off',
             'react/no-unknown-property': 'warn',
             'react/jsx-key': 'warn',
+            'react/display-name': 'off',
         },
     },
     {

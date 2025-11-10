@@ -35,16 +35,14 @@ jsconfig.json
 ```JavaScript
 {
     "type": "setting",
-    "settings": {
-        "compilerOptions": {
-            "baseUrl": ".",
-            "paths": {
-                "@/*": [
-                    "src/*"
-                ]
-            },
-            "jsx": "react-jsx"
-        }
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "jsx": "react-jsx"
     }
 }
 ```

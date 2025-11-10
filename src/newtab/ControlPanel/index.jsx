@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ControlPanel = () => {
     return (
-        <div className="absolute top-4 right-8 text-right">
+        <div className="absolute top-4 right-8 text-right opacity-0 hover:opacity-100 transition">
             <p
                 className="cursor-pointer transition hover:text-green-500"
                 onClick={() => {
@@ -44,7 +44,10 @@ const ControlPanel = () => {
                 Popup
             </p>
             <p>
-                <a className="cursor-pointer transition hover:text-green-500" href="https://leetcode.cn/studyplan/top-100-liked/">
+                <a
+                    className="cursor-pointer transition hover:text-green-500"
+                    href="https://leetcode.cn/studyplan/top-100-liked/"
+                >
                     LeetCode Hot 100
                 </a>
             </p>

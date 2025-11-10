@@ -69,16 +69,16 @@ function directJump(patten, urlParam) {
     })
 }
 
-function waitForElement(selector, timeout = 1000 * 60) {
+function waitForElement(selector, { test, timeout } = {}) {
     return new Promise((resolve, reject) => {
         const target = document.querySelector(selector)
         if (target) return resolve(target)
 
         const observer = new MutationObserver((mutationsList, observer) => {
             const target = document.querySelector(selector)
-            if (target) {
+            if (target && test?.(target)) {
                 observer.disconnect()
-                clearTimeout(timer)
+                timer ?? clearTimeout(timer)
                 resolve(target)
             }
         })
@@ -86,12 +86,16 @@ function waitForElement(selector, timeout = 1000 * 60) {
             childList: true,
             subtree: true,
         })
-        const timer = setTimeout(() => {
-            observer.disconnect()
-            console.log('Timeout: Element "${selector}" not found in ${timeout} ms.')
+        const timer = timeout
+            ? setTimeout(() => {
+                  observer.disconnect()
+                  console.log(
+                      'Timeout: Element "${selector}" not found in ${timeout} ms.'
+                  )
 
-            // reject(new Error(`Timeout: Element "${selector}" not found in ${timeout} ms.`));
-        }, timeout)
+                  // reject(new Error(`Timeout: Element "${selector}" not found in ${timeout} ms.`));
+              }, timeout)
+            : null
     })
 }
 

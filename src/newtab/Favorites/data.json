@@ -10,9 +10,34 @@
         "icon": "https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg"
     },
     {
+        "name": "Grok",
+        "url": "https://grok.com/",
+        "icon": "https://grok.com/favicon.ico"
+    },
+    {
+        "name": "Perplexity",
+        "url": "https://www.perplexity.ai/",
+        "icon": "https://www.perplexity.ai/favicon.ico"
+    },
+    {
+        "name": "Copilot",
+        "url": "https://copilot.microsoft.com/",
+        "icon": "https://copilot.microsoft.com/static/cmc/favicon.svg"
+    },
+    {
         "name": "腾讯元宝",
         "url": "https://yuanbao.tencent.com/",
         "icon": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon@32.png"
+    },
+    {
+        "name": "Radio Garden",
+        "url": "https://radio.garden/",
+        "icon": "https://radio.garden/icons/favicon.png"
+    },
+    {
+        "name": "Hacker News",
+        "url": "https://news.ycombinator.com/",
+        "icon": "https://news.ycombinator.com/favicon.ico"
     },
     {
         "name": "Github",
@@ -25,9 +50,19 @@
         "icon": "https://leetcode.cn/favicon.ico"
     },
     {
+        "name": "datastructures-js",
+        "url": "https://datastructures-js.info/",
+        "icon": "https://datastructures-js.info/favicon.svg"
+    },
+    {
         "name": "Youtube",
         "url": "https://www.youtube.com/",
         "icon": "https://www.youtube.com/s/desktop/2aa21710/img/favicon_144x144.png"
+    },
+    {
+        "name": "roadmap",
+        "url": "https://roadmap.sh/",
+        "icon": "https://roadmap.sh//manifest/icon32.png"
     },
     {
         "name": "MDN",
@@ -58,6 +93,11 @@
         "name": "Webpack",
         "url": "https://webpack.js.org/",
         "icon": "https://webpack.js.org/icon_512x512.png"
+    },
+    {
+        "name": "Nest.js",
+        "url": "https://nestjs.com/",
+        "icon": "https://nestjs.com/logo-small-gradient.0ed287ce.svg"
     },
     {
         "name": "tailwindcss",
@@ -103,6 +143,10 @@
         "name": "Zustand",
         "url": "https://zustand-demo.pmnd.rs/",
         "icon": "https://zustand-demo.pmnd.rs/favicon.ico"
+    },{
+        "name": "Storybook",
+        "url": "https://storybook.js.org/",
+        "icon": "https://storybook.js.org/icon.svg"
     },
     {
         "name": "Expo",
@@ -110,7 +154,7 @@
         "icon": "https://static.expo.dev/static/favicons/favicon-light-48x48.png"
     },
     {
-        "name": "v2ex",
+        "name": "V2EX",
         "url": "https://www.v2ex.com/",
         "icon": "https://www.v2ex.com/static/icon-192.png"
     },
@@ -118,6 +162,27 @@
         "name": "微信读书",
         "url": "https://weread.qq.com/",
         "icon": "https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/favicon/favicon_48h.png"
+    },
+    {
+        "name": "Human Benchmark",
+        "url": "https://humanbenchmark.com/",
+        "icon": "https://humanbenchmark.com/favicon.ico"
+    },
+    {
+        "name": "CPU Benchmarks",
+        "url": "https://www.cpubenchmark.net/",
+        "icon": "https://www.cpubenchmark.net/favicon.ico"
+    },
+    {
+        "name": "Videocard Benchmarks",
+        "url": "https://www.videocardbenchmark.net/",
+        "icon": "https://www.videocardbenchmark.net/favicon.ico"
+    },
+    {
+        "name": "Z-Library",
+        "url":"https://z-lib.fm/",
+        "icon": "https:/z-lib.fm/favicon.ico"
+
     },
     {
         "url": "https://annas-archive.org/",
