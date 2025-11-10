@@ -67,6 +67,7 @@ if (isUrlIncluded('https://leetcode.cn/problems')) {
     )
 }
 console.log('test')
+// 判断今天是否已经解答
 waitForElement('h3.text-lg.font-medium', {
     test: (element) => {
         console.log('test')
