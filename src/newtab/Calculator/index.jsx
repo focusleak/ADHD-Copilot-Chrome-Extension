@@ -1,10 +1,14 @@
 // Calculator
 import React, { useState, useRef } from 'react'
 import { Textarea } from '@/components/ui/textarea'
-import { evaluate } from 'mathjs'
+import { create, all } from 'mathjs'
 import icon from './calculator.webp'
 
 // history
+const mathjs = create(all, {
+    number: 'BigNumber',
+    precision: 64, // 小数精度
+})
 
 const Calculator = () => {
     const [expression, setExpression] = useState('')
@@ -27,11 +31,10 @@ const Calculator = () => {
     }
     let answer = ''
     try {
-        answer = evaluate(expression)
-        console.log(typeof answer)
-        if (typeof answer == 'object') {
-            answer = ''
-        }
+        answer = mathjs.evaluate(expression).toString()
+        // if (!answer.test(/[0-9]+.?[0-9]+/)) {
+        //     answer = ''
+        // }
     } catch (e) {
         answer = ''
     }

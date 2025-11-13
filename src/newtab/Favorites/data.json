@@ -30,6 +30,11 @@
         "icon": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon@32.png"
     },
     {
+        "name": "DeepWiki",
+        "url": "https://deepwiki.com/",
+        "icon": "https://deepwiki.com/favicon.ico"
+    },
+    {
         "name": "Radio Garden",
         "url": "https://radio.garden/",
         "icon": "https://radio.garden/icons/favicon.png"
@@ -143,7 +148,8 @@
         "name": "Zustand",
         "url": "https://zustand-demo.pmnd.rs/",
         "icon": "https://zustand-demo.pmnd.rs/favicon.ico"
-    },{
+    },
+    {
         "name": "Storybook",
         "url": "https://storybook.js.org/",
         "icon": "https://storybook.js.org/icon.svg"
@@ -157,6 +163,16 @@
         "name": "V2EX",
         "url": "https://www.v2ex.com/",
         "icon": "https://www.v2ex.com/static/icon-192.png"
+    },
+    {
+        "name": "InfoQ",
+        "url": "https://www.infoq.cn/",
+        "icon": "https://static001.infoq.cn/static/infoq/www/img/share-default-5tgbiuhgfefgujjhg.png"
+    },
+    {
+        "name": "美团技术团队",
+        "url": "https://tech.meituan.com/",
+        "icon": "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/android-icon-192x192.png"
     },
     {
         "name": "微信读书",
@@ -180,9 +196,8 @@
     },
     {
         "name": "Z-Library",
-        "url":"https://z-lib.fm/",
+        "url": "https://z-lib.fm/",
         "icon": "https:/z-lib.fm/favicon.ico"
-
     },
     {
         "url": "https://annas-archive.org/",

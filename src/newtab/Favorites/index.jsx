@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import list from './data.json'
 import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
+import useStorage from '@/hooks/useStorage'
 
 let group = []
 for (let i = 0; i * 30 < list.length; i++) {
@@ -10,6 +11,16 @@ for (let i = 0; i * 30 < list.length; i++) {
 // 按时间显示不同的导航
 const Favorites = () => {
     const [index, setIndex] = React.useState(0)
+    let [favorites, setFavorites] = useStorage('favorites_freq', {})
+
+    const handleClick = (name) => {
+        setFavorites({})
+        favorites = { ...favorites }
+        if (favorites[name]) favorites[name] += 1
+        else favorites[name] = 1
+        setFavorites(favorites)
+        console.log(favorites)
+    }
     const handleWheel = (e) => {
         if (e.deltaY > 0 && index < group.length - 1) {
             setIndex(index + 1)
@@ -42,7 +53,11 @@ const Favorites = () => {
                                 return (
                                     <a
                                         href={item.url}
-                                        target="_self"
+                                        onClick={() => {
+                                            handleClick(item.name)
+                                        }}
+                                        target="_blank"
+                                        rel="noreferrer"
                                         key={item.name}
                                         className="flex h-[100px] w-[100px] flex-col items-center justify-center rounded-sm hover:bg-white/10"
                                     >

@@ -21,12 +21,12 @@ const CollinsDictionary = ({ queryString, onInput }) => {
         search(queryString)
     }
     return (
-        <div className="flex h-[100%] w-[100%] flex-col justify-end">
+        <div className="flex h-full w-full flex-col justify-end">
             <p className="flex justify-center font-[MicrosoftYaHei]">
-                <img width={300} src={Logo} />
+                <img width={200} src={Logo} />
             </p>
             <div className="mt-[30px] flex justify-center">
-                <p className="shadow-[0 1px 6px 0 #20212447] bg-white flex h-[40px] w-[650px] items-center rounded-[20px] border-[1px] border-solid border-[#ddd] p-[10px] pl-[15px] transition-[0.2s]">
+                <p className="shadow-[0 1px 6px 0 #20212447] flex h-[40px] w-[650px] items-center rounded-[20px] border border-solid border-[#ddd] bg-white p-[10px] pl-[15px] transition-[0.2s]">
                     <input
                         type="text"
                         value={queryString}

@@ -69,7 +69,7 @@ function directJump(patten, urlParam) {
     })
 }
 
-function waitForElement(selector, { test, timeout } = {}) {
+function waitForElement(selector, { test, timeout } = { test: () => true }) {
     return new Promise((resolve, reject) => {
         const target = document.querySelector(selector)
         if (target) return resolve(target)

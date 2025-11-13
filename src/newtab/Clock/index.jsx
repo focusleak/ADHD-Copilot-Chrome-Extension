@@ -3,6 +3,7 @@ import icon from './clock.webp'
 import { format } from 'date-fns'
 import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
+import notification from '@/lib/notification'
 
 function ms2hms(ms) {
     ms = Math.floor(ms)
@@ -78,28 +79,56 @@ const Stopwatch = memo(() => {
 const Alarm = () => {
     return (
         <div>
+            <h2>Alarm</h2>
             <Input
                 type="time"
                 step="1"
                 className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
             />
+            <br />
+            <hr />
         </div>
     )
 }
 
 const Timers = () => {
+    const presets = [
+        { name: '30 s', value: 30 },
+        { name: '1 min', value: 60 },
+        { name: '2 min', value: 120 },
+        { name: '3 min', value: 180 },
+        { name: '5 min', value: 300 },
+        { name: '10 min', value: 600 },
+        { name: '15 min', value: 900 },
+        { name: '30 min', value: 1800 },
+        { name: '1 hr', value: 3600 },
+    ]
+    const handleClick = (value) => {
+        const time = new Date()
+    }
     return (
         <div>
+            <h2>Timer</h2>
             <Input
                 type="time"
                 step="1"
                 defaultValue="00:00:00"
                 className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
             />
+            <ul>
+                {presets.map(({ name, value }) => (
+                    <li key={value} onClick={() => handleClick(value)}>
+                        {name}
+                    </li>
+                ))}
+            </ul>
+            <br />
+            <hr />
         </div>
     )
 }
 const Clock = () => {
+    // notification({ message: 'Clock' })
     const [time, setTime] = useState(format(new Date(), 'HH:mm:ss'))
     useEffect(() => {
         const interval = setInterval(() => {

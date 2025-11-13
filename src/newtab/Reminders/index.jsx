@@ -48,7 +48,11 @@ const Reminders = () => {
                     if (i === index) {
                         return {
                             ...reminder,
-                            modifiedTime: content,
+                            content,
+                            modifiedTime: format(
+                                new Date(),
+                                'yyyy-MM-dd HH:mm:ss'
+                            ),
                         }
                     }
                     return reminder
@@ -92,21 +96,31 @@ const Reminders = () => {
                 />
             </div>
             <ul>
-                {reminders.map(({ checked, content }, key) => (
-                    <li
-                        key={key}
-                        className="flex w-full border-b border-black/10 p-2 text-xs wrap-break-word"
-                    >
-                        <Checkbox
-                            className="mx-2"
-                            checked={checked}
-                            onCheckedChange={() => handleCheckboxChange(key)}
-                        />
-                        <Item onBurl={(content) => handleBurl(key, content)}>
-                            {content}
-                        </Item>
-                    </li>
-                ))}
+                {reminders.map(
+                    ({ checked, content, createTime, modifiedTime }, key) => (
+                        <li
+                            key={key}
+                            className="flex w-full border-b border-black/10 p-2 text-xs wrap-break-word"
+                        >
+                            <Checkbox
+                                className="mx-2"
+                                checked={checked}
+                                onCheckedChange={() =>
+                                    handleCheckboxChange(key)
+                                }
+                            />
+                            <Item
+                                onBurl={(content) => handleBurl(key, content)}
+                            >
+                                {content}
+                            </Item>
+                            <div className="text-xs text-gray-300">
+                                {/* <p>{createTime}</p>
+                                <p>{modifiedTime}</p> */}
+                            </div>
+                        </li>
+                    )
+                )}
             </ul>
         </div>
     )

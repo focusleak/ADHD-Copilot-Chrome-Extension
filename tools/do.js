@@ -1,3 +1,4 @@
+// 格式化 manifest.json 文件
 const fs = require('fs');
 
 const manifest = require('../manifest.json');
