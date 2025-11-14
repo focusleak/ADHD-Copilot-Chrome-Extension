@@ -1,0 +1,2 @@
+// indexed DB
+// Chrome Storage

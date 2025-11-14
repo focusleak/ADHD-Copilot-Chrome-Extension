@@ -4,6 +4,10 @@ import React, { useEffect, useState } from 'react'
 const dbName = 'image-cache-db'
 const storeName = 'images'
 
+// https://picsum.photos/1920/1080
+// https://bing.img.run/1920x1080.php
+// https://bing.img.run/rand.php
+
 const openDB = () => {
     return new Promise((resolve, reject) => {
         const request = indexedDB.open(dbName, 1)

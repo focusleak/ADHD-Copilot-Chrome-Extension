@@ -8,18 +8,16 @@ let group = []
 for (let i = 0; i * 30 < list.length; i++) {
     group.push(list.slice(i * 30, Math.min((i + 1) * 30, list.length)))
 }
-// 按时间显示不同的导航
+// TODO 按时间显示不同的导航
 const Favorites = () => {
     const [index, setIndex] = React.useState(0)
     let [favorites, setFavorites] = useStorage('favorites_freq', {})
 
     const handleClick = (name) => {
-        setFavorites({})
         favorites = { ...favorites }
         if (favorites[name]) favorites[name] += 1
         else favorites[name] = 1
         setFavorites(favorites)
-        console.log(favorites)
     }
     const handleWheel = (e) => {
         if (e.deltaY > 0 && index < group.length - 1) {

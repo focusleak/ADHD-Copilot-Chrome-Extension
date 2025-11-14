@@ -55,6 +55,11 @@
         "icon": "https://leetcode.cn/favicon.ico"
     },
     {
+        "name": "Codewars",
+        "url": "https://www.codewars.com/",
+        "icon": "https://www.codewars.com/favicon.ico"
+    },
+    {
         "name": "datastructures-js",
         "url": "https://datastructures-js.info/",
         "icon": "https://datastructures-js.info/favicon.svg"
@@ -67,7 +72,7 @@
     {
         "name": "roadmap",
         "url": "https://roadmap.sh/",
-        "icon": "https://roadmap.sh//manifest/icon32.png"
+        "icon": "https://roadmap.sh/manifest/icon32.png"
     },
     {
         "name": "MDN",
@@ -197,7 +202,7 @@
     {
         "name": "Z-Library",
         "url": "https://z-lib.fm/",
-        "icon": "https:/z-lib.fm/favicon.ico"
+        "icon": "https://z-lib.fm/favicon.ico"
     },
     {
         "url": "https://annas-archive.org/",
@@ -205,48 +210,13 @@
         "icon": "https://annas-archive.org/favicon.ico"
     },
     {
-        "url": "https://onlinestool.com/",
-        "name": "Online Tools",
-        "icon": "https://onlinestool.com/favicon.ico"
+        "url": "https://unsplash.com/",
+        "name": "Unsplash",
+        "icon": "https://unsplash.com/favicon.ico"
     },
     {
-        "url": "https://bestlearn.org/english",
-        "name": "笨方法学英语",
-        "icon": "https://bestlearn.org/favicon.ico"
-    },
-    {
-        "url": "https://julebu.co/home",
-        "name": "句乐部",
-        "icon": "https://julebu.co/favicon.ico"
-    },
-    {
-        "url": "https://english.shuzijumin.com/",
-        "name": "100 个句子记完7000个单词",
-        "icon": "https://english.shuzijumin.com/favicon.ico"
-    },
-    {
-        "url": "https://www.buzzing.cc/",
-        "name": "Buzzing",
-        "icon": "https://www.buzzing.cc/favicon.ico"
-    },
-    {
-        "url": "https://www.mianshi.online/",
-        "name": "Mianshi.online",
-        "icon": "https://www.mianshi.online/favicon.ico"
-    },
-    {
-        "url": "https://0xffff.one/",
-        "name": "0xffff.one",
-        "icon": "https://cdn.0xffff.one/assets/favicon-gggj2dbz.png"
-    },
-    {
-        "url": "https://www.thebyte.com.cn/",
-        "name": "深入高可用系统原理与设计",
-        "icon": "https://www.thebyte.com.cn//assets/favicon.ico"
-    },
-    {
-        "url": "https://www.babelabc.com/",
-        "name": "看美剧学英语",
-        "icon": "https://www.babelabc.com/favicon.ico"
+        "url": "https://lbs.amap.com/",
+        "name": "高德开放平台",
+        "icon": "https://a.amap.com/pc/static/favicon.ico"
     }
 ]
