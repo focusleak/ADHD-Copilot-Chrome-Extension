@@ -11,10 +11,24 @@ function getKey(url) {
 }
 const QuickNotes = () => {
     const key = getKey(window.location.href)
+    useEffect(() => {
+        chrome.tabs
+            .query({
+                active: true,
+                lastFocusedWindow: true,
+            })
+            .then(([tab]) => {
+                console.log('当前页面 URL:', tab.url)
+            })
+    }, [])
     const [notes, setNotes] = useStorage('quick-notes_' + key, '')
     return (
         <div className="p-2">
-            <Textarea className="h-80 w-lg" value={notes} onChange={(e) => setNotes(e.target.value)}></Textarea>
+            <Textarea
+                className="h-80 w-lg"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+            ></Textarea>
         </div>
     )
 }

@@ -31,8 +31,20 @@ const Storage = {
             console.log(error)
         }
     },
-    remove(key) {},
-    clear() {},
+    remove(key) {
+        try {
+            chrome.storage.local.remove(key)
+        } catch (error) {
+            console.log(error)
+        }
+    },
+    clear() {
+        try {
+            chrome.storage.local.clear()
+        } catch (error) {
+            console.log(error)
+        }
+    },
 }
 
 function removePlaceholder(searchInput) {

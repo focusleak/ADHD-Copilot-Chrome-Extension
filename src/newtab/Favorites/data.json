@@ -35,6 +35,11 @@
         "icon": "https://deepwiki.com/favicon.ico"
     },
     {
+        "name": "NotebookLM",
+        "url": "https://notebooklm.google/",
+        "icon": "https://notebooklm.google/_/static/branding/v4/light_mode/favicon/favicon.svg"
+    },
+    {
         "name": "Radio Garden",
         "url": "https://radio.garden/",
         "icon": "https://radio.garden/icons/favicon.png"
@@ -55,14 +60,39 @@
         "icon": "https://leetcode.cn/favicon.ico"
     },
     {
-        "name": "Codewars",
+        "name": "CodeWars",
         "url": "https://www.codewars.com/",
         "icon": "https://www.codewars.com/favicon.ico"
+    },
+    {
+        "name": "牛客",
+        "url": "https://www.nowcoder.com/interview/center",
+        "icon": "https://www.nowcoder.com/favicon.ico"
+    },
+    {
+        "name": "FreeCodeCamp",
+        "url": "https://www.freecodecamp.org/learn/",
+        "icon": "https://www.freecodecamp.org/favicon-32x32.png"
+    },
+    {
+        "name": "Learn X in Y Minutes",
+        "url": "https://learnxinyminutes.com/",
+        "icon": "https://learnxinyminutes.com/favicon.ico"
     },
     {
         "name": "datastructures-js",
         "url": "https://datastructures-js.info/",
         "icon": "https://datastructures-js.info/favicon.svg"
+    },
+    {
+        "name": "CS自学指南",
+        "url": "https://csdiy.wiki/",
+        "icon": "https://csdiy.wiki/images/favicon.ico"
+    },
+    {
+        "name": "OI Wiki",
+        "url": "https://oi-wiki.org/",
+        "icon": "https://oi-wiki.org/favicon.ico"
     },
     {
         "name": "Youtube",
@@ -213,6 +243,11 @@
         "url": "https://unsplash.com/",
         "name": "Unsplash",
         "icon": "https://unsplash.com/favicon.ico"
+    },
+    {
+        "name": "PrintFriendly",
+        "url": "https://www.printfriendly.com/",
+        "icon": "https://www.printfriendly.com/favicon.ico"
     },
     {
         "url": "https://lbs.amap.com/",

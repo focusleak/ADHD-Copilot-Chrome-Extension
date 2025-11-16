@@ -6,16 +6,20 @@
 
 ## 项目搭建
 
-1. content_script通常是注入到其他网页，因此不需要使用UI框架
-2. 其他插件页面的开发可以使用React shadcn/ui tailwindcss 等现代前端开发技术来提高开发效率，因而需要Webpack等构建工具
-3. 由于浏览器插件运行在现代浏览器中，因此不需要使用Babel转换，也不需要core-js
+1. `content_script`通常是注入到其他网页，因此不需要使用UI框架
+2. 其他插件页面的开发可以使用`React` `shadcn/ui` `tailwindcss` 等现代前端开发技术来提高开发效率，因而需要`Webpack`等构建工具
+3. 由于浏览器插件运行在现代浏览器中，因此不需要使用Babel转换，也不需要`core-js`，但处于学习`Webpack`的目的，依然引入
+4. 使用
 
 ```bash
-pnpm install webpack webpack-cli webpack-dev-server --save-dev
-pnpm install babel-loader @babel/core @babel/preset-env @babel/preset-react css-loader style-loader postcss postcss-loader sass sass-loader astroturf tailwindcss @tailwindcss/postcss html-webpack-plugin --save-dev
-pnpm install core-js
+pnpm install webpack webpack-cli webpack-dev-server webpack-dev-middleware --save-dev
+pnpm install html-webpack-plugin copy-webpack-plugin --save-dev
+pnpm install babel-loader @babel/core @babel/preset-env @babel/preset-react --save-dev
+pnpm install css-loader style-loader postcss postcss-loader sass sass-loader astroturf tailwindcss @tailwindcss/postcss --save-dev
 pnpm install prettier prettier-plugin-tailwindcss --save-dev
-pnpm add react react-dom @types/react @types/react-dom classnames
+pnpm add react react-dom @types/react @types/react-dom
+pnpm install core-js chrome-types 
+pnpm install clipboard crypto-js date-fns immer mathjs zustand
 ```
 
 ## 配置webpack - webpack.config.js

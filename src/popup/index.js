@@ -1,8 +1,8 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-import './index.css'
-import './reset.css'
+import '@/styles/globals.css'
+import '@/styles/reset.css'
 /**
  * 入口文件
  */

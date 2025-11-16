@@ -1234,16 +1234,7 @@ export const defaultBookmarks = [
         url: 'https://www.kaggle.com/',
         icon: 'https://www.kaggle.com/favicon.ico',
     },
-    {
-        name: 'Learn to Code — For Free — Coding Courses for Busy People',
-        url: 'https://www.freecodecamp.org/learn/',
-        icon: 'https://www.freecodecamp.org/favicon.ico',
-    },
-    {
-        name: 'Learn X in Y Minutes: Scenic Programming Language Tours',
-        url: 'https://learnxinyminutes.com/',
-        icon: 'https://learnxinyminutes.com/favicon.ico',
-    },
+
     {
         name: 'LeetCode',
         url: 'https://leetcode.com/',
@@ -1299,11 +1290,7 @@ export const defaultBookmarks = [
         url: 'https://www.shellscript.sh/',
         icon: 'https://www.shellscript.sh/favicon.ico',
     },
-    {
-        name: 'CS自学指南',
-        url: 'https://csdiy.wiki/',
-        icon: 'https://csdiy.wiki/favicon.ico',
-    },
+
     {
         name: 'GeeksforGeeks | A computer science portal for geeks',
         url: 'https://www.geeksforgeeks.org/',
@@ -1769,11 +1756,7 @@ export const defaultBookmarks = [
         url: 'https://q.shanyue.tech/',
         icon: 'https://q.shanyue.tech/favicon.ico',
     },
-    {
-        name: '面试经验 - 找工作神器|笔试题库|面试经验,实习招聘内推,求职就业一站解决 - 牛客网',
-        url: 'https://www.nowcoder.com/interview/center',
-        icon: 'https://www.nowcoder.com/favicon.ico',
-    },
+
     {
         name: 'WindRunnerMax/EveryDay: 前端基础 个人博客 学习笔记',
         url: 'https://github.com/WindrunnerMax/EveryDay',
@@ -1964,11 +1947,7 @@ export const defaultBookmarks = [
         url: 'https://grok.com/',
         icon: 'https://grok.com/favicon.ico',
     },
-    {
-        name: 'PDF Tools for Documents and Web Pages - PrintFriendly',
-        url: 'https://www.printfriendly.com/',
-        icon: 'https://www.printfriendly.com/favicon.ico',
-    },
+
     {
         name: 'DeepWiki | AI documentation you can talk to, for every repo',
         url: 'https://deepwiki.com/',

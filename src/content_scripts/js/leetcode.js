@@ -75,4 +75,6 @@ waitForElement('h3.text-lg.font-medium', {
     },
 }).then(() => {
     console.log('today target done')
+    Storage.set('LeetCode', true)
+    toast('已完成今日打卡任务')
 })
