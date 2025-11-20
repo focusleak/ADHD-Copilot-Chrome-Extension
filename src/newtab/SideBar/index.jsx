@@ -15,14 +15,14 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet'
 
-import Calculator from '../Calculator'
-import CheatSheet from '../CheatSheet'
-import Clock from '../Clock'
-import Downloader from '../Downloader'
-import ImageClipper from '../ImageCropper'
-import Reminders from '../Reminders'
-import TextProcessor from '../TextProcessor'
-import VocabularyBook from '../VocabularyBook'
+import Calculator from '@/applications/Calculator'
+import CheatSheet from '@/applications/CheatSheet'
+import Clock from '@/applications/Clock'
+import Downloader from '@/applications/Downloader'
+import ImageClipper from '@/applications/ImageCropper'
+import Reminders from '@/applications/Reminders'
+import TextProcessor from '@/applications/TextProcessor'
+import VocabularyBook from '@/applications/VocabularyBook'
 const apps = [
     Reminders,
     Calculator,

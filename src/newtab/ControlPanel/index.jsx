@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const ControlPanel = () => {
     return (
-        <div className="absolute top-4 right-8 text-right opacity-0 hover:opacity-100 transition">
+        <div className="absolute top-4 right-8 text-right opacity-0 transition hover:opacity-100">
             <p
                 className="cursor-pointer transition hover:text-green-500"
                 onClick={() => {
@@ -51,7 +51,16 @@ const ControlPanel = () => {
                     LeetCode Hot 100
                 </a>
             </p>
+            <p>
+                <a
+                    className="cursor-pointer transition hover:text-green-500"
+                    href="https://developer.chrome.com/docs/extensions/get-started?hl=zh-cn"
+                >
+                    Chrome Extensions - Get started
+                </a>
+            </p>
         </div>
     )
 }
+
 export default ControlPanel

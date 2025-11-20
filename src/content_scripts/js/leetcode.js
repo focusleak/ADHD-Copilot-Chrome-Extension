@@ -75,6 +75,10 @@ waitForElement('h3.text-lg.font-medium', {
     },
 }).then(() => {
     console.log('today target done')
-    Storage.set('LeetCode', true)
+    const records = Storage.get('LeetCode_Record') || {}
+    Storage.set('LeetCode_Record', {
+        ...records,
+        [new Date().toLocaleDateString()]: new Date().toLocaleTimeString(),
+    })
     toast('已完成今日打卡任务')
 })

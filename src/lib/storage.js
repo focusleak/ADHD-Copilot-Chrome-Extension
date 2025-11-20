@@ -1,3 +1,4 @@
+
 const storage = {
     get: (key) =>
         new Promise((resolve) => {
@@ -14,12 +15,14 @@ const storage = {
     set: (key, value) =>
         new Promise((resolve) => {
             try {
-                chrome.storage.local.set({ [key]: value }, () => resolve())
+                chrome.storage.local.set({ [key]: value }, () => resolve(true))
             } catch (e) {
                 window.localStorage.setItem(key, JSON.stringify(value))
-                resolve()
+                resolve(false)
             }
-        })
+        }),
+    // onchange(key,callback){
+    //     chrome.storage.onChanged.addListener(callback,key)
+    // }
 }
-
 export default storage;

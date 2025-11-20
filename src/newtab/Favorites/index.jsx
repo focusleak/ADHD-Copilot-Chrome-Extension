@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import list from './data.json'
 import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
 import useStorage from '@/hooks/useStorage'
 
+const STORAGE_KEY = 'NEW_TAB_FAVORITES_FREQUENCIES'
 const page = Math.ceil(list.length / 30)
 // TODO 按最近时间、点击频率显示不同的导航
 const Favorites = () => {
     const [index, setIndex] = React.useState(0)
-    let [favorites, setFavorites] = useStorage('favorites_freq', {})
+    let [favorites, setFavorites] = useStorage(STORAGE_KEY, {})
 
     let sortedList = list.toSorted(
         (a, b) => (favorites[b.name] || 0) - (favorites[a.name] || 0)
@@ -27,6 +28,11 @@ const Favorites = () => {
             setIndex(index - 1)
         }
     }
+    // LeetCode
+    const [LeetCodeState, setLeetCodeState] = useState(false)
+    useEffect(() => {
+        // 读取chrome.storage
+    })
     return (
         <div
             className={cn(
@@ -35,7 +41,7 @@ const Favorites = () => {
             onWheel={handleWheel}
         >
             <div
-                className="transition duration-500 flex flex-wrap"
+                className="flex flex-wrap transition duration-500"
                 style={{
                     transform: `translateY(${-index * 300}px)`,
                 }}

@@ -4,7 +4,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         case 'edit':
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
-                files: ['scripts/service/toggleEditPage.js'],
+                files: ['service_worker/toggleEditPage.js'],
             })
             break
         case 'searchByGoogle':
@@ -41,7 +41,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                 url: 'https://www.sogou.com/web?query=' + queryString,
             })
             break
-        case 'searchByWexin':
+        case 'searchByWeixin':
             chrome.tabs.create({
                 url:
                     'https://weixin.sogou.com/weixin?type=2&query=' +
@@ -74,13 +74,13 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
         case 'clearCookiesLocalStorage':
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
-                files: ['scripts/service/clearCookiesLocalStorage.js'],
+                files: ['service_worker/clearCookiesLocalStorage.js'],
             })
             break
         case 'readLater':
             chrome.scripting.executeScript({
                 target: { tabId: tab.id },
-                files: ['scripts/service/readLater.js'],
+                files: ['service_worker/readLater.js'],
             })
             break
         default:
@@ -122,7 +122,7 @@ chrome.runtime.onInstalled.addListener(function () {
     chrome.contextMenus.create({
         title: '使用微信搜索',
         contexts: ['selection'],
-        id: 'searchByWexin',
+        id: 'searchByWeixin',
     })
     chrome.contextMenus.create({
         title: '使用微博搜索',

@@ -5,6 +5,6 @@ export function cn(...inputs) {
     return twMerge(clsx(inputs))
 }
 console.log(cn('btn'))
-// export function isURL(text) {
-//     return /^https?:\/\//.test(text)
-// }
+export function isURL(text) {
+    return /^https?:\/\//.test(text)
+}
