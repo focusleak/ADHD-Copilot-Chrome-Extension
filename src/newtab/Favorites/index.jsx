@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import list from './data.json'
 import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
+import storage from '@/lib/storage'
 import useStorage from '@/hooks/useStorage'
 
 const STORAGE_KEY = 'NEW_TAB_FAVORITES_FREQUENCIES'
@@ -29,9 +30,14 @@ const Favorites = () => {
         }
     }
     // LeetCode
-    const [LeetCodeState, setLeetCodeState] = useState(false)
+    const [LeetCodeState, setLeetCodeState] = useState(false) // false = 无特殊样式 = 已完成
     useEffect(() => {
         // 读取chrome.storage
+        storage.get('LeetCode_Record').then((record) => {
+            if (!record[new Date().toLocaleDateString()]) {
+                setLeetCodeState(true)
+            }
+        })
     })
     return (
         <div
@@ -56,7 +62,15 @@ const Favorites = () => {
                             target="_blank"
                             rel="noreferrer"
                             key={item.name}
-                            className="flex h-[100px] w-[100px] flex-col items-center justify-center rounded-sm hover:bg-white/10"
+                            className={cn(
+                                'flex h-[100px] w-[100px] flex-col items-center justify-center rounded-sm hover:bg-white/10',
+                                {
+                                    'border-2 border-yellow-300':
+                                        item.name == 'LeetCode'
+                                            ? LeetCodeState
+                                            : false,
+                                }
+                            )}
                         >
                             <Image
                                 src={item.icon}
@@ -64,7 +78,9 @@ const Favorites = () => {
                                 height={32}
                                 cache={true}
                             />
-                            <span className="mt-2 text-center">
+                            <span className={cn("mt-2 text-center ",{
+                                'text-yellow-300': item.name == 'LeetCode' ? LeetCodeState : false
+                            })}>
                                 {item.name}
                             </span>
                         </a>

@@ -154,41 +154,13 @@ export const defaultBookmarks = [
         url: 'https://wx.qq.com/',
         icon: 'https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico',
     },
-    {
-        name: '微博',
-        url: 'http://weibo.com/',
-        icon: 'http://weibo.com/favicon.ico',
-    },
-    {
-        name: '小红书',
-        url: 'https://www.xiaohongshu.com/',
-        icon: 'https://www.xiaohongshu.com/favicon.ico',
-    },
-    {
-        name: '哔哩哔哩',
-        url: 'https://www.bilibili.com/',
-        icon: 'https://www.bilibili.com/favicon.ico',
-    },
-    {
-        name: 'CCTV',
-        url: 'https://tv.cctv.com/live/',
-        icon: 'https://tv.cctv.com/favicon.ico',
-    },
-    {
-        name: '咪咕视频',
-        url: 'https://www.miguvideo.com/',
-        icon: 'https://www.miguvideo.com/favicon.ico',
-    },
+    
     {
         name: 'V2EX',
         url: 'https://www.v2ex.com/',
         icon: 'https://www.v2ex.com/favicon.ico',
     },
-    {
-        name: '豆瓣',
-        url: 'https://www.douban.com/',
-        icon: 'https://www.douban.com/favicon.ico',
-    },
+    
     {
         name: '健康160',
         url: 'https://www.91160.com/',
@@ -204,21 +176,7 @@ export const defaultBookmarks = [
         url: 'https://www.gog.com/',
         icon: 'https://www.gog.com/favicon.ico',
     },
-    {
-        name: '126',
-        url: 'https://mail.126.com/',
-        icon: 'https://mail.126.com/favicon.ico',
-    },
-    {
-        name: '163',
-        url: 'http://mail.163.com/',
-        icon: 'http://mail.163.com/favicon.ico',
-    },
-    {
-        name: 'QQ邮箱',
-        url: 'https://mail.qq.com/',
-        icon: 'https://mail.qq.com/favicon.ico',
-    },
+    
     {
         name: 'outlook',
         url: 'https://outlook.live.com/owa/',
@@ -230,24 +188,9 @@ export const defaultBookmarks = [
         icon: 'https://www.icloud.com/favicon.ico',
     },
     {
-        name: '微信读书',
-        url: 'https://weread.qq.com/',
-        icon: 'https://weread.qq.com/favicon.ico',
-    },
-    {
         name: 'Instagram',
         url: 'https://www.instagram.com/',
         icon: 'https://www.instagram.com/favicon.ico',
-    },
-    {
-        name: 'V2EX',
-        url: 'https://v2ex.com/',
-        icon: 'https://v2ex.com/favicon.ico',
-    },
-    {
-        name: 'Anna’s Archive: LibGen (Library Genesis), Sci-Hub, Z-Library in one place - Anna’s Archive',
-        url: 'https://annas-archive.org/',
-        icon: 'https://annas-archive.org/favicon.ico',
     },
     {
         name: 'Practice',
@@ -538,11 +481,6 @@ export const defaultBookmarks = [
         name: '波特工具站 - Butof Tool App website',
         url: 'https://tool.butof.com/',
         icon: 'https://tool.butof.com/favicon.ico',
-    },
-    {
-        name: 'Math Notepad',
-        url: 'https://mathnotepad.com/',
-        icon: 'https://mathnotepad.com/favicon.ico',
     },
     {
         name: '幕布 - 极简大纲笔记 ｜ 一键生成思维导图',

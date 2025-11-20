@@ -24,8 +24,7 @@
   "content_scripts": [
     {
       "js": [
-        "src/content_scripts/js/utils.js",
-        "src/content_scripts/js/downloader.js",
+        "src/content_scripts/js/common.js",
         "src/content_scripts/js/dict.js",
         "src/content_scripts/js/index.js"
       ],

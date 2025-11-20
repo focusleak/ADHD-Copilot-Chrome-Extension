@@ -1,27 +1,23 @@
-
+import { removePlaceholder } from '@/lib/utils'
 try {
-    removePlaceholder(document.getElementById("kw"));
-}
-catch (e) {
-    console.log(e);
-}
-try {
-    removePlaceholder(document.getElementById("chat-textarea"));
-
+    removePlaceholder(document.getElementById('kw'))
 } catch (e) {
-    console.log(e);
+    console.log(e)
 }
-window.addEventListener("load", function () {
+try {
+    removePlaceholder(document.getElementById('chat-textarea'))
+} catch (e) {
+    console.log(e)
+}
+window.addEventListener('load', function () {
     try {
-        removePlaceholder(document.getElementById("kw"));
-    }
-    catch (e) {
-        console.log(e);
-    }
-    try {
-        removePlaceholder(document.getElementById("chat-textarea"));
-
+        removePlaceholder(document.getElementById('kw'))
     } catch (e) {
-        console.log(e);
+        console.log(e)
     }
-});
+    try {
+        removePlaceholder(document.getElementById('chat-textarea'))
+    } catch (e) {
+        console.log(e)
+    }
+})

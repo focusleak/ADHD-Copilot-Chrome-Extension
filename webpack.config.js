@@ -5,6 +5,7 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const ESLintWebpackPlugin = require("eslint-webpack-plugin");
+const glob = require('glob')
 
 const threads = os.cpus().length
 // file-loader
@@ -42,8 +43,18 @@ module.exports = {
         popup: './src/popup/index.js',
         options: './src/options/index.js',
         newtab: './src/newtab/index.js',
-        service_worker: './src/service_worker/index.js',
-    }, //入口文件
+        ...(() => {
+            const entries = {}
+            glob.sync('./src/content_scripts/js/*.js').forEach((file) => {
+                const name = path.basename(file, '.js') // 根据文件名生成入口名
+                entries[name] = {
+                    import: './' + file,
+                    filename: 'content_scripts/js/' + name + '.js',
+                }
+            })
+            return entries
+        })(),
+    },
     output: {
         path: path.resolve(__dirname, 'dist/src'),
         clean: true,
@@ -58,7 +69,7 @@ module.exports = {
     devServer: {
         port: 8004,
         open: true,
-        hot: true,
+        hot: false,
         // 将 bundle 写到磁盘而不是内存
         devMiddleware: {
             writeToDisk: true,
@@ -144,12 +155,11 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, 'src/content_scripts'),
-                    to: path.resolve(__dirname, 'dist/content_scripts'),
-                },
-                {
-                    from: path.resolve(__dirname, 'src/service'),
-                    to: path.resolve(__dirname, 'dist/service'),
+                    from: path.resolve(__dirname, 'src/content_scripts/css'),
+                    to: path.resolve(__dirname, 'dist/src/content_scripts/css'),
+                },{
+                    from: path.resolve(__dirname, 'src/service_worker'),
+                    to: path.resolve(__dirname, 'dist/src/service_worker'),
                 },
                 {
                     from: path.resolve(__dirname, 'src/manifest.json'),

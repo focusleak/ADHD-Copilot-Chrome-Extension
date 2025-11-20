@@ -1,3 +1,4 @@
+import { setSelectionStyles } from "@/lib/utils";
 document.body.addEventListener('click', async (event) => {
     if (event.target.className == 'gtx-trans-icon') {
         const selection = window.getSelection();

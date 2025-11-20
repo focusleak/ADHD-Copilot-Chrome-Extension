@@ -1,4 +1,5 @@
 // url跳转
+import { directJump, isUrlIncluded, waitForElement, toast } from '@/lib/utils'
 
 directJump('/link/?target=', 'target')
 
@@ -66,11 +67,9 @@ if (isUrlIncluded('https://leetcode.cn/problems')) {
         }
     )
 }
-console.log('test')
 // 判断今天是否已经解答
 waitForElement('h3.text-lg.font-medium', {
     test: (element) => {
-        console.log('test')
         return element.innerHTML.includes('恭喜完成今日打卡任务')
     },
 }).then(() => {
@@ -80,5 +79,4 @@ waitForElement('h3.text-lg.font-medium', {
         ...records,
         [new Date().toLocaleDateString()]: new Date().toLocaleTimeString(),
     })
-    toast('已完成今日打卡任务')
 })
