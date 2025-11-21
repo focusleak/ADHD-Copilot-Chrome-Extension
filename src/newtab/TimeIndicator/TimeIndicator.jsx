@@ -6,8 +6,7 @@ import { cva } from 'class-variance-authority'
 
 import { useToday } from '@/hooks/useTime'
 
-// year month week day
-const TimeIndicator = ({ className }) => {
+const YearIndicator = ({ className }) => {
     const date = useToday()
     const dayOfYear = getDayOfYear(date)
     const year = date.getFullYear()
@@ -32,7 +31,7 @@ const TimeIndicator = ({ className }) => {
             )}
         >
             <ScrollArea className="h-full">
-                <p className="text-right text-white">
+                <p className="mb-2 text-right text-white">
                     <span>{year}</span>
                     {/* <span>{dayOfYear} / 365 天</span> */}
                 </p>
@@ -54,8 +53,18 @@ const TimeIndicator = ({ className }) => {
     )
 }
 
+const HourIndicator = ({ className }) => {}
+const MonthIndicator = ({ className }) => {}
+const WeekIndicator = ({ className }) => {}
+
 const Point = React.memo(({ className }) => {
     return <li className={cn('h-1 w-1 rounded-full', className)}></li>
 })
+
+
+// year month week day
+const TimeIndicator = ({ className, type }) => {
+    return <YearIndicator className={className} />
+}
 
 export default TimeIndicator

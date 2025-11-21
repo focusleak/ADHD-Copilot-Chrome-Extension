@@ -1,7 +1,7 @@
 import url from '@/icon.png'
 const notification = ({
     message,
-    title = '新消息提醒',
+    title = 'ADHD Copilot',
     type = 'basic',
     iconUrl = url,
     priority = 2,

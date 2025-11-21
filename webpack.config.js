@@ -107,10 +107,9 @@ module.exports = {
                                     },
                                 ],
                             ],
-                            plugins: [],
+                            plugins: ['babel-plugin-react-compiler'],
                         },
                     },
-                    'astroturf/loader',
                 ],
             },
             {
@@ -157,7 +156,8 @@ module.exports = {
                 {
                     from: path.resolve(__dirname, 'src/content_scripts/css'),
                     to: path.resolve(__dirname, 'dist/src/content_scripts/css'),
-                },{
+                },
+                {
                     from: path.resolve(__dirname, 'src/service_worker'),
                     to: path.resolve(__dirname, 'dist/src/service_worker'),
                 },

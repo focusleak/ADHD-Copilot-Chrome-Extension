@@ -92,6 +92,10 @@ const Alarm = () => {
 }
 
 const Timers = () => {
+    const [total, setTotal] = useState(1)
+    const [current, setCurrent] = useState(0)
+
+    const [isRunning, setIsRunning] = useState(false)
     const presets = [
         { name: '30 s', value: 30 },
         { name: '1 min', value: 60 },
@@ -103,8 +107,31 @@ const Timers = () => {
         { name: '30 min', value: 1800 },
         { name: '1 hr', value: 3600 },
     ]
+    useEffect(() => {
+        let timeout = null
+        if (isRunning) {
+            const before = new Date()
+            timeout = setInterval(() => {
+                const now = new Date()
+                if (total > now - before + current) {
+                    setCurrent(now - before + current)
+                } else {
+                    setCurrent(total)
+                    notification({
+                        message: 'Time is up!',
+                    })
+                    setIsRunning(false)
+                    clearInterval(timeout)
+                }
+            }, 1)
+        }
+        return () => clearInterval(timeout)
+    }, [isRunning])
     const handleClick = (value) => {
-        const time = new Date()
+        setCurrent(0)
+        setTotal(value * 1000)
+        setIsRunning(true)
+        // 倒计时
     }
     return (
         <div>
@@ -115,10 +142,20 @@ const Timers = () => {
                 defaultValue="00:00:00"
                 className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
             />
-            <ul>
+            <p>
+                {((total - current) / 1000).toFixed(0)} /{' '}
+                {(total / 1000).toFixed(0)}
+            </p>
+            <ul className="flex flex-wrap select-none">
                 {presets.map(({ name, value }) => (
-                    <li key={value} onClick={() => handleClick(value)}>
-                        {name}
+                    <li
+                        key={value}
+                        onClick={() => handleClick(value)}
+                        className="flex items-center justify-center p-2"
+                    >
+                        <button className="h-12 w-12 rounded-full border outline-0">
+                            {name}
+                        </button>
                     </li>
                 ))}
             </ul>

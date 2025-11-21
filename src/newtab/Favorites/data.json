@@ -303,5 +303,10 @@
         "name": "咪咕视频",
         "url": "https://www.miguvideo.com/",
         "icon": "https://www.miguvideo.com/favicon.ico"
+    },
+    {
+        "name": "Epic Games",
+        "url": "https://store.epicgames.com/zh-CN",
+        "icon": "https://static-assets-prod.epicgames.com/epic-store/static/favicon.ico"
     }
 ]

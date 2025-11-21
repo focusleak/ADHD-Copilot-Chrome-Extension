@@ -1,8 +1,10 @@
-import js from '@eslint/js'
 import globals from 'globals'
-import pluginReact from 'eslint-plugin-react'
-import json from '@eslint/json'
 import css from '@eslint/css'
+import js from '@eslint/js'
+import json from '@eslint/json'
+import pluginReact from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+
 import { defineConfig } from 'eslint/config'
 
 export default defineConfig([
@@ -32,6 +34,7 @@ export default defineConfig([
             'react/display-name': 'off',
         },
     },
+    reactHooks.configs.flat.recommended,
     {
         files: ['**/*.json'],
         plugins: { json },

@@ -16,7 +16,6 @@ const CheatSheet = () => {
     // 创建提醒任务
     const [input, setInput] = useState('')
     const [cheatSheets, setCheatSheets] = useStorage('cheatsheet', [])
-    console.log(cheatSheets)
     const handleKeyUp = (e) => {
         if (e.code == 'Enter' && input != '') {
             // 创建提醒任务

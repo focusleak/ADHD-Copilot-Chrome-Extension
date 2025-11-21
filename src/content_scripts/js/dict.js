@@ -4,6 +4,7 @@ document.body.addEventListener('click', async (event) => {
     if (event.target.className == 'gtx-trans-icon') {
         const selection = window.getSelection()
         let string = selection.toString().trim()
+        string.replace('·', '');
 
         let words = (await storage.get('vocabulary')) || []
         try {

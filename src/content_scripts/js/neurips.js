@@ -8,7 +8,6 @@ if (url.includes('.pdf')) {
     const year = url.match(/\/paper\/(\d{4})\//)[1];
     const hash = url.match(/\/file\/(.+?)\-Paper|Paper-Conference\.pdf/)[1];
     const abstract_url = `https://proceedings.neurips.cc/paper_files/paper/${year}/hash/${hash}-Abstract.html`;
-    console.log(abstract_url);
     // window.addEventListener('load',()=>{
     //     document.querySelector('body').innerHTML += `<br><a href="${abstract_url}">Abstract</a>`;
     // })
