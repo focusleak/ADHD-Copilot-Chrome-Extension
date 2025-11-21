@@ -1,6 +1,6 @@
 // url跳转
 import { directJump, isUrlIncluded, waitForElement, toast } from '@/lib/utils'
-
+import storage from '@/lib/storage'
 directJump('/link/?target=', 'target')
 
 // 自动开始计时
@@ -67,15 +67,15 @@ if (isUrlIncluded('https://leetcode.cn/problems')) {
         }
     )
 }
-// 判断今天是否已经解答
+// 监听每日一题是否已经解答
 waitForElement('h3.text-lg.font-medium', {
     test: (element) => {
         return element.innerHTML.includes('恭喜完成今日打卡任务')
     },
-}).then(() => {
+}).then(async () => {
     console.log('today target done')
-    const records = Storage.get('LeetCode_Record') || {}
-    Storage.set('LeetCode_Record', {
+    const records = await storage.get('LeetCode_Record') || {}
+    storage.set('LeetCode_Record', {
         ...records,
         [new Date().toLocaleDateString()]: new Date().toLocaleTimeString(),
     })

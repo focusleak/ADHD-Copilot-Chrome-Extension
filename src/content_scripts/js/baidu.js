@@ -1,4 +1,5 @@
 import { removePlaceholder } from '@/lib/utils'
+
 try {
     removePlaceholder(document.getElementById('kw'))
 } catch (e) {

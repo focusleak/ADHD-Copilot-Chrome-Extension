@@ -29,9 +29,21 @@ const TextProcessor = () => {
         {
             name: 'Remove Space',
             order: 1,
-            handle: (text) => text.replace(/\s/g, ''),
+            handle: (text) => text.replace(/ /g, ''),
             state: removeSpace,
             setState: setRemoveSpace,
+        },
+        // 去重
+        {
+            name: 'Unique',
+            order: 4,
+            handle: (text) => {
+                const lines = text.split('\n')
+                const uniqueLines = [...new Set(lines)]
+                return uniqueLines.join('\n')
+            },
+            state: true,
+            setState: () => {},
         },
         {
             name: 'Decode From Base64',

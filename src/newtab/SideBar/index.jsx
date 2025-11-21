@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-
+import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -21,7 +21,7 @@ import Clock from '@/applications/Clock'
 import Downloader from '@/applications/Downloader'
 import ImageClipper from '@/applications/ImageCropper'
 import Reminders from '@/applications/Reminders'
-import TextProcessor from '@/applications/TextProcessor'
+import TextProcessor from '@/applications/TextProcessor/TextProcessor'
 import VocabularyBook from '@/applications/VocabularyBook'
 const apps = [
     Reminders,
@@ -66,10 +66,14 @@ function SheetContainer({ children, name, icon }) {
 }
 
 // ToDo - Drag to sort
-const Sidebar = () => {
+const Sidebar = ({ className }) => {
     return (
-        // 毛玻璃
-        <div className="absolute top-0 left-0 h-full w-18 bg-white/20 shadow-lg backdrop-blur-md">
+        <div
+            className={cn(
+                'w-18 bg-white/20 shadow-lg backdrop-blur-md',
+                className
+            )}
+        >
             <ScrollArea className="h-full">
                 <ul className="flex-col items-center gap-4">
                     {apps.map(({ name, icon, Component }) => (

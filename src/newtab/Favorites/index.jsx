@@ -4,7 +4,7 @@ import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
 import storage from '@/lib/storage'
 import useStorage from '@/hooks/useStorage'
-
+import { useToday } from '@/hooks/useTime'
 const STORAGE_KEY = 'NEW_TAB_FAVORITES_FREQUENCIES'
 const page = Math.ceil(list.length / 30)
 // TODO 按最近时间、点击频率显示不同的导航
@@ -29,16 +29,17 @@ const Favorites = () => {
             setIndex(index - 1)
         }
     }
+    const date = useToday()
     // LeetCode
     const [LeetCodeState, setLeetCodeState] = useState(false) // false = 无特殊样式 = 已完成
     useEffect(() => {
         // 读取chrome.storage
         storage.get('LeetCode_Record').then((record) => {
-            if (!record[new Date().toLocaleDateString()]) {
+            if (!record[date.toLocaleDateString()]) {
                 setLeetCodeState(true)
             }
         })
-    })
+    }, [date])
     return (
         <div
             className={cn(
@@ -65,7 +66,7 @@ const Favorites = () => {
                             className={cn(
                                 'flex h-[100px] w-[100px] flex-col items-center justify-center rounded-sm hover:bg-white/10',
                                 {
-                                    'border-2 border-yellow-300':
+                                    'animate-bounce':
                                         item.name == 'LeetCode'
                                             ? LeetCodeState
                                             : false,
@@ -78,9 +79,7 @@ const Favorites = () => {
                                 height={32}
                                 cache={true}
                             />
-                            <span className={cn("mt-2 text-center ",{
-                                'text-yellow-300': item.name == 'LeetCode' ? LeetCodeState : false
-                            })}>
+                            <span className={cn('mt-2 text-center')}>
                                 {item.name}
                             </span>
                         </a>
