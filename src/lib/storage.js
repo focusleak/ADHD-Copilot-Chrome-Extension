@@ -1,4 +1,3 @@
-
 const storage = {
     get: (key) =>
         new Promise((resolve) => {
@@ -21,8 +20,24 @@ const storage = {
                 resolve(false)
             }
         }),
-    // onchange(key,callback){
-    //     chrome.storage.onChanged.addListener(callback,key)
-    // }
+    on(key, callback) {
+        try {
+            const handle = (changes, area) => {
+                if (area === 'local' && changes[key]) {
+                    callback(changes[key].newValue)
+                }
+            }
+            chrome.storage.onChanged.addListener(handle)
+            return () => chrome.storage.onChanged.removeListener(handle)
+        } catch (e) {
+            const handle = (key, newValue, storageArea) => {
+                if (storageArea === localStorage) {
+                    callback(JSON.parse(newValue))
+                }
+            }
+            window.addEventListener('storage', handle)
+            return () => window.removeEventListener('storage', handle)
+        }
+    },
 }
-export default storage;
+export default storage

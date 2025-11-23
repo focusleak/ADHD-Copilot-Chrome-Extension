@@ -15,7 +15,7 @@
 pnpm install webpack webpack-cli webpack-dev-server webpack-dev-middleware --save-dev
 pnpm install html-webpack-plugin copy-webpack-plugin --save-dev
 pnpm install babel-loader @babel/core @babel/preset-env @babel/preset-react --save-dev
-pnpm install css-loader style-loader postcss postcss-loader sass sass-loader astroturf tailwindcss @tailwindcss/postcss --save-dev
+pnpm install css-loader style-loader postcss postcss-loader sass sass-loader tailwindcss @tailwindcss/postcss --save-dev
 pnpm install prettier prettier-plugin-tailwindcss --save-dev
 pnpm add react react-dom @types/react @types/react-dom
 pnpm install core-js chrome-types 

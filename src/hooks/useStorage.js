@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useEffectEvent } from 'react'
 import storage from '@/lib/storage'
 
 const useStorage = (key, initialValue) => {
@@ -6,17 +6,24 @@ const useStorage = (key, initialValue) => {
 
     useEffect(() => {
         storage.get(key).then((val) => {
-            console.log(val)
             val && setValue(val)
         })
-    }, [])
+    }, [key])
 
-    const syncValue = (value, ...args) => {
+    const listener = useEffectEvent((newValue) => {
+        newValue != value && setValue(newValue)
+    })
+    useEffect(() => {
+        const unsubscribe = storage.on(key, listener)
+        return () => unsubscribe()
+    }, [key])
+
+    const storeValue = (value, ...args) => {
         storage.set(key, value)
         setValue(value, ...args)
     }
 
-    return [value, syncValue]
+    return [value, storeValue]
 }
 
 export default useStorage

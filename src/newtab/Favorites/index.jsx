@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import list from './data.json'
+import { produce } from 'immer'
 import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
 import storage from '@/lib/storage'
 import useStorage from '@/hooks/useStorage'
 import { useToday } from '@/hooks/useTime'
+
+import list from './data.json'
+
+
 const STORAGE_KEY = 'NEW_TAB_FAVORITES_FREQUENCIES'
 const page = Math.ceil(list.length / 30)
 // TODO 按最近时间、点击频率显示不同的导航
@@ -17,10 +21,12 @@ const Favorites = () => {
     )
 
     const handleClick = (name) => {
-        favorites = { ...favorites }
-        if (favorites[name]) favorites[name] += 1
-        else favorites[name] = 1
-        setFavorites(favorites)
+        setFavorites(
+            produce(favorites, (draft) => {
+                if (draft[name]) draft[name] += 1
+                else draft[name] = 1
+            })
+        )
     }
     const handleWheel = (e) => {
         if (e.deltaY > 0 && index < page - 1) {

@@ -185,6 +185,11 @@
         "icon": "https://zustand-demo.pmnd.rs/favicon.ico"
     },
     {
+        "name": "immer",
+        "url": "https://immerjs.github.io/immer/",
+        "icon": "https://immerjs.github.io/immer/img/favicon.ico"
+    },
+    {
         "name": "Storybook",
         "url": "https://storybook.js.org/",
         "icon": "https://storybook.js.org/icon.svg"
