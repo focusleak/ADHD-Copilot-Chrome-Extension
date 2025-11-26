@@ -3,10 +3,11 @@ import { waitForElement } from '@/lib/utils'
 waitForElement('video').then((video) => {
     video.addEventListener(
         'play',
-        () => {
+        (event) => {
+            console.log(event.target)
             document
                 .querySelector('.xgplayer-volume .xgplayer-icon-large')
-                .click()
+                ?.click()
         },
         {
             once: true,

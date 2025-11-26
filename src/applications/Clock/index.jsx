@@ -3,6 +3,7 @@ import icon from './clock.webp'
 import { format } from 'date-fns'
 import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import notification from '@/lib/notification'
 
 function ms2hms(ms) {
@@ -46,7 +47,6 @@ const Stopwatch = memo(() => {
 
     return (
         <div>
-            <h2>Stopwatch</h2>
             <div className="text-center text-3xl">{ms2hms(milliseconds)}</div>
             <div className="flex justify-center">
                 {isRunning ? (
@@ -79,7 +79,6 @@ const Stopwatch = memo(() => {
 const Alarm = () => {
     return (
         <div>
-            <h2>Alarm</h2>
             <Input
                 type="time"
                 step="1"
@@ -135,7 +134,6 @@ const Timers = () => {
     }
     return (
         <div>
-            <h2>Timer</h2>
             <Input
                 type="time"
                 step="1"
@@ -176,11 +174,22 @@ const Clock = () => {
     return (
         <div className="px-4 font-sans">
             <div className="text-center text-3xl">{time}</div>
-            <div>
-                <Stopwatch />
-                <Alarm />
-                <Timers />
-            </div>
+            <Tabs>
+                <TabsList className="m-auto">
+                    <TabsTrigger value="1">Stopwatch</TabsTrigger>
+                    <TabsTrigger value="2">Alarm</TabsTrigger>
+                    <TabsTrigger value="3">Timers</TabsTrigger>
+                </TabsList>
+                <TabsContent value="1">
+                    <Stopwatch />
+                </TabsContent>
+                <TabsContent value="2">
+                    <Alarm />
+                </TabsContent>
+                <TabsContent value="3">
+                    <Timers />
+                </TabsContent>
+            </Tabs>
         </div>
     )
 }

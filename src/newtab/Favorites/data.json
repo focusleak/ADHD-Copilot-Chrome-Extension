@@ -313,5 +313,20 @@
         "name": "Epic Games",
         "url": "https://store.epicgames.com/zh-CN",
         "icon": "https://static-assets-prod.epicgames.com/epic-store/static/favicon.ico"
+    },
+    {
+        "name": "LangShift",
+        "url": "https://langshift.dev/",
+        "icon": "https://langshift.dev/favicon.ico"
+    },
+    {
+        "name": "Boss 直聘",
+        "url": "https://www.zhipin.com/",
+        "icon": "https://www.zhipin.com/favicon.ico"
+    },
+    {
+        "name": "一纸简历",
+        "url": "https://cv.devtool.tech/",
+        "icon": "https://cv.devtool.tech/favicon.ico"
     }
 ]

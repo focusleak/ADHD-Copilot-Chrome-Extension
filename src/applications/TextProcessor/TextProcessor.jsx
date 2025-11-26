@@ -13,6 +13,7 @@ const TextProcessor = () => {
     const [isUppercase, setIsUppercase] = useState(false)
     const [isSort, setIsSort] = useState(false)
     const [addNumber, setAddNumber] = useState(false)
+    const [unique, setUnique] = useState(false)
     const handleChange = (e) => {
         const text = e.target.value
         setRaw(text)
@@ -21,6 +22,7 @@ const TextProcessor = () => {
     const process = [
         {
             name: 'Remove Return',
+            id: useId(),
             order: 0,
             handle: (text) => text.replace(/\n/g, ''),
             state: removeReturn,
@@ -28,25 +30,35 @@ const TextProcessor = () => {
         },
         {
             name: 'Remove Space',
+            id: useId(),
             order: 1,
             handle: (text) => text.replace(/ /g, ''),
             state: removeSpace,
             setState: setRemoveSpace,
         },
-        // 去重
         {
             name: 'Unique',
+            id: useId(),
             order: 4,
             handle: (text) => {
                 const lines = text.split('\n')
                 const uniqueLines = [...new Set(lines)]
                 return uniqueLines.join('\n')
             },
-            state: true,
-            setState: () => {},
+            state: unique,
+            setState: setUnique,
+        },
+        {
+            name: 'Sort',
+            id: useId(),
+            order: 4,
+            handle: (text) => text.split('\n').sort().join('\n'),
+            state: isSort,
+            setState: setIsSort,
         },
         {
             name: 'Decode From Base64',
+            id: useId(),
             order: 2,
             handle: (text) => atob(text),
             state: decodeFromBase64,
@@ -57,6 +69,7 @@ const TextProcessor = () => {
         },
         {
             name: 'Encode To Base64',
+            id: useId(),
             order: 3,
             handle: (text) => btoa(text),
             state: encodeToBase64,
@@ -67,6 +80,7 @@ const TextProcessor = () => {
         },
         {
             name: 'Uppercase',
+            id: useId(),
             order: 5,
             handle: (text) => text.toUpperCase(),
             state: isUppercase,
@@ -77,6 +91,7 @@ const TextProcessor = () => {
         },
         {
             name: 'Lowercase',
+            id: useId(),
             order: 6,
             handle: (text) => text.toLowerCase(),
             state: isLowercase,
@@ -86,15 +101,9 @@ const TextProcessor = () => {
             },
         },
         {
-            name: 'Sort',
-            order: 4,
-            handle: (text) => text.split('\n').sort().join('\n'),
-            state: isSort,
-            setState: setIsSort,
-        },
-        {
             // 编号
             name: 'Number',
+            id: useId(),
             order: 8,
             handle: (text) =>
                 text
@@ -106,6 +115,7 @@ const TextProcessor = () => {
         },
         {
             name: 'Find and Replace',
+            id: useId(),
             order: 7,
             handle: (text) => text,
             state: false,
@@ -130,10 +140,9 @@ const TextProcessor = () => {
     return (
         <div className="px-4 font-sans">
             <div>
-                <p>Control Panel</p>
+                <p className="text-xl">Process</p>
                 <ul className="grid grid-cols-2">
-                    {process.map(({ name, state, setState }) => {
-                        const id = useId()
+                    {process.map(({ name, state, setState, id }) => {
                         return (
                             <li
                                 className="flex items-center p-1 text-xs"
@@ -153,7 +162,8 @@ const TextProcessor = () => {
                     })}
                 </ul>
             </div>
-            <div>
+            <div className='mt-4'>
+                <h3 className="text-xl">Raw Text</h3>
                 <Textarea
                     className="my-2 w-full p-2"
                     value={raw}
@@ -161,6 +171,7 @@ const TextProcessor = () => {
                 ></Textarea>
             </div>
             <div>
+                <h3 className="text-xl">Processed Text</h3>
                 <Textarea
                     className="my-2 w-full p-2"
                     value={processText(raw)}

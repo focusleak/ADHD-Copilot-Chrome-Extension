@@ -76,15 +76,6 @@ const Reminders = () => {
     return (
         <div className="px-4">
             <div>
-                <Button
-                    onClick={() => {
-                        setReminders([])
-                    }}
-                >
-                    Clear All
-                </Button>
-            </div>
-            <div>
                 <input
                     type="text"
                     className="w-full border-b p-2 text-xl font-bold outline-0"

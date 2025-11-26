@@ -13,26 +13,25 @@ waitForElement('.nav-search-input').then(removePlaceholder)
 
 // 增加更多倍速选项
 ;(function () {
-    // 仅播放页需要 https://www.bilibili.com/video/
     if (
-        !location.href.includes('www.bilibili.com/video/') ||
-        !location.href.includes('www.bilibili.com/list/watchlater')
-    )
-        return
-    function createItem(value) {
-        const item = document.createElement('li')
-        item.className = 'bpx-player-ctrl-playbackrate-menu-item'
-        item.dataset.value = value
-        item.innerHTML = value + 'x'
-        return item
+        location.href.includes('www.bilibili.com/video/') ||
+        location.href.includes('www.bilibili.com/list/watchlater')
+    ) {
+        function createItem(value) {
+            const item = document.createElement('li')
+            item.className = 'bpx-player-ctrl-playbackrate-menu-item'
+            item.dataset.value = value
+            item.innerHTML = value + 'x'
+            return item
+        }
+        waitForElement('.bpx-player-ctrl-playbackrate-menu').then((menu) => {
+            const fragment = document.createDocumentFragment()
+            fragment.appendChild(createItem('3.0'))
+            fragment.appendChild(createItem('2.5'))
+            menu.insertBefore(fragment, menu.firstElementChild)
+            menu.appendChild(createItem('0.25'))
+        })
     }
-    waitForElement('.bpx-player-ctrl-playbackrate-menu').then((menu) => {
-        const fragment = document.createDocumentFragment()
-        fragment.appendChild(createItem('3.0'))
-        fragment.appendChild(createItem('2.5'))
-        menu.insertBefore(fragment, menu.firstElementChild)
-        menu.appendChild(createItem('0.25'))
-    })
 })()
 
 // 所有tab页间通信

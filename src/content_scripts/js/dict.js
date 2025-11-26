@@ -4,17 +4,20 @@ document.body.addEventListener('click', async (event) => {
     if (event.target.className == 'gtx-trans-icon') {
         const selection = window.getSelection()
         let string = selection.toString().trim()
-        string.replace('·', '');
+        string.replaceAll('·', '')
 
         let words = (await storage.get('vocabulary')) || []
-        try {
-            storage.set('vocabulary', [...words, string])
-        } catch (e) {
-            storage.set('vocabulary', [string])
+        if (isEnglish(string) && !words.includes(string)) {
+            words.push(string)
+            storage.set('vocabulary', words)
         }
         setSelectionStyles(selection, { color: '#FC6A03' })
     }
 })
+
+function isEnglish(text) {
+    return /^[a-zA-Z]+$/.test(text)
+}
 function highlightText(root, text) {
     if (!text) return
     const walker = document.createTreeWalker(

@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { produce } from 'immer'
 import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
-import storage from '@/lib/storage'
 import useStorage from '@/hooks/useStorage'
 import { useToday } from '@/hooks/useTime'
 
 import list from './data.json'
-
 
 const STORAGE_KEY = 'NEW_TAB_FAVORITES_FREQUENCIES'
 const page = Math.ceil(list.length / 30)
@@ -37,15 +35,9 @@ const Favorites = () => {
     }
     const date = useToday()
     // LeetCode
-    const [LeetCodeState, setLeetCodeState] = useState(false) // false = 无特殊样式 = 已完成
-    useEffect(() => {
-        // 读取chrome.storage
-        storage.get('LeetCode_Record').then((record) => {
-            if (!record[date.toLocaleDateString()]) {
-                setLeetCodeState(true)
-            }
-        })
-    }, [date])
+    const [leeCodeRecord, setLeetCodeRecord] = useStorage('LeetCode_Record', {})
+    const leetCodeState = leeCodeRecord[date.toLocaleDateString()] ? false : true // false = 无特殊样式 = 已完成
+
     return (
         <div
             className={cn(
@@ -74,7 +66,7 @@ const Favorites = () => {
                                 {
                                     'animate-bounce':
                                         item.name == 'LeetCode'
-                                            ? LeetCodeState
+                                            ? leetCodeState
                                             : false,
                                 }
                             )}

@@ -15,15 +15,7 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet'
 
-import Calculator from '@/applications/Calculator'
-import CheatSheet from '@/applications/CheatSheet'
-import Clock from '@/applications/Clock'
-import Downloader from '@/applications/Downloader'
-import ImageClipper from '@/applications/ImageCropper'
-import Reminders from '@/applications/Reminders'
-import TextProcessor from '@/applications/TextProcessor/TextProcessor'
-import VocabularyBook from '@/applications/VocabularyBook'
-const apps = [
+import {
     Reminders,
     Calculator,
     CheatSheet,
@@ -32,6 +24,18 @@ const apps = [
     Downloader,
     ImageClipper,
     TextProcessor,
+    DailyTrace,
+} from '@/applications'
+const apps = [
+    Reminders,
+    Calculator,
+    TextProcessor,
+    DailyTrace,
+    Clock,
+    VocabularyBook,
+    Downloader,
+    CheatSheet,
+    ImageClipper,
 ]
 
 function SheetContainer({ children, name, icon }) {
