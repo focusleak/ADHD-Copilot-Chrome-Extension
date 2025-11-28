@@ -12,7 +12,7 @@ import {
     DailyTrace,
 } from '@/applications'
 const App = () => {
-    const { Component, name, icon } = Reminders
+    const { Component, name, icon } = Clock
     return (
         <>
             <h1>{name}</h1>

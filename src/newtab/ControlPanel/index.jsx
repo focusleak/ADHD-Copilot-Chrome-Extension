@@ -43,6 +43,14 @@ const ControlPanel = () => {
             >
                 Popup
             </p>
+            <p
+                className="cursor-pointer transition hover:text-green-500"
+                onClick={() => {
+                    chrome.tabs.create({ url: './applications.html' })
+                }}
+            >
+                Applications
+            </p>
             <p>
                 <a
                     className="cursor-pointer transition hover:text-green-500"
