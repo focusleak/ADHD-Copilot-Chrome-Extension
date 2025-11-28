@@ -15,29 +15,7 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet'
 
-import {
-    Reminders,
-    Calculator,
-    CheatSheet,
-    Clock,
-    VocabularyBook,
-    Downloader,
-    ImageClipper,
-    TextProcessor,
-    DailyTrace,
-} from '@/applications'
-
-const apps = [
-    Reminders,
-    Calculator,
-    TextProcessor,
-    DailyTrace,
-    Clock,
-    VocabularyBook,
-    Downloader,
-    CheatSheet,
-    ImageClipper,
-]
+import { applications } from '@/applications'
 
 function SheetContainer({ children, name, icon }) {
     return (
@@ -81,7 +59,7 @@ const Sidebar = ({ className }) => {
         >
             <ScrollArea className="h-full">
                 <ul className="flex-col items-center gap-4">
-                    {apps.map(({ name, icon, Component }) => (
+                    {applications.map(({ name, icon, Component }) => (
                         <li key={name}>
                             <SheetContainer name={name} icon={icon}>
                                 <Component />

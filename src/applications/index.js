@@ -1,9 +1,29 @@
-export * as Calculator from '@/applications/Calculator'
-export * as CheatSheet from '@/applications/CheatSheet'
-export * as Clock from '@/applications/Clock'
-export * as Downloader from '@/applications/Downloader'
-export * as ImageClipper from '@/applications/ImageCropper'
-export * as Reminders from '@/applications/Reminders'
-export * as TextProcessor from '@/applications/TextProcessor'
-export * as VocabularyBook from '@/applications/VocabularyBook'
-export * as DailyTrace from '@/applications/DailyTrace'
+import * as Calculator from '@/applications/Calculator'
+import * as Clock from '@/applications/Clock'
+import * as Downloader from '@/applications/Downloader'
+import * as ImageClipper from '@/applications/ImageCropper'
+import * as Reminders from '@/applications/Reminders'
+import * as TextProcessor from '@/applications/TextProcessor'
+import * as VocabularyBook from '@/applications/VocabularyBook'
+import * as DailyTrace from '@/applications/DailyTrace'
+
+export const applications = [
+    Reminders,
+    Calculator,
+    TextProcessor,
+    DailyTrace,
+    Clock,
+    VocabularyBook,
+    Downloader,
+    ImageClipper,
+]
+export {
+    Reminders,
+    Calculator,
+    TextProcessor,
+    DailyTrace,
+    Clock,
+    VocabularyBook,
+    Downloader,
+    ImageClipper,
+}

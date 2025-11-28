@@ -43,6 +43,7 @@ module.exports = {
         popup: './src/popup/index.js',
         options: './src/options/index.js',
         newtab: './src/newtab/index.js',
+        applications: './src/applications/main.js',
         ...(() => {
             const entries = {}
             glob.sync('./src/content_scripts/js/*.js').forEach((file) => {
@@ -180,22 +181,24 @@ module.exports = {
         //     threads: threads
         // }),
         new HtmlWebPackPlugin({
-            title: 'react-ts-project', // react的一个转换插件
             filename: path.resolve(__dirname, 'dist/popup.html'),
-            template: 'src/popup/index.html', // 当前模板地址
+            template: 'src/popup/index.html',
             chunks: ['popup'],
         }),
         new HtmlWebPackPlugin({
-            title: 'react-ts-project', // react的一个转换插件
             filename: path.resolve(__dirname, 'dist/newtab.html'),
-            template: 'src/newtab/index.html', // 当前模板地址
+            template: 'src/newtab/index.html',
             chunks: ['newtab'],
         }),
         new HtmlWebPackPlugin({
-            title: 'react-ts-project', // react的一个转换插件
             filename: path.resolve(__dirname, 'dist/options.html'),
-            template: 'src/options/index.html', // 当前模板地址
+            template: 'src/options/index.html',
             chunks: ['options'],
+        }),
+        new HtmlWebPackPlugin({
+            filename: path.resolve(__dirname, 'dist/applications.html'),
+            template: 'src/applications/index.html',
+            chunks: ['applications'],
         }),
     ],
     optimization: {

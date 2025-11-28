@@ -6,9 +6,9 @@
 
 ## 项目搭建
 
-1. `content_script`通常是注入到其他网页，因此不需要使用UI框架
-2. 其他插件页面的开发可以使用`React` `shadcn/ui` `tailwindcss` 等现代前端开发技术来提高开发效率，因而需要`Webpack`等构建工具
-3. 由于浏览器插件运行在现代浏览器中，因此不需要使用Babel转换，也不需要`core-js`，但处于学习`Webpack`的目的，依然引入
+1. `content_script`通常是注入到其他网页，直接使用原生js开发
+2. 插件页面的开发可以使用`React` `shadcn/ui` `tailwindcss` 等现代前端开发技术来提高开发效率，因而需要`Webpack`等构建工具
+3. 由于浏览器插件运行在现代浏览器中，因此不需要使用`Babel`转换，也不需要`core-js`，但出于学习`Webpack`的目的，依然引入
 4. 使用
 
 ```bash
@@ -106,7 +106,7 @@ components.json
 
 ## TODO
 
-* 网页已读标记
+* 网页访问标记
 * 结点截屏/收藏HTML
 * 多端同步
 * 资源嗅探，直链增加下载按钮：mp3 jpg pdf等
