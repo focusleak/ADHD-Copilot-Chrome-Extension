@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import icon from './vocabulary.png'
 import useStorage from '@/hooks/useStorage'
 import { useEffect } from 'react'
 
@@ -37,8 +36,4 @@ const Word = ({ children }) => {
     return <li onClick={handleClick}>{children}</li>
 }
 
-export default {
-    Component: VocabularyBook,
-    name: 'Vocabulary Book',
-    icon,
-}
+export default VocabularyBook

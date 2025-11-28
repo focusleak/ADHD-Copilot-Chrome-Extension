@@ -2,9 +2,7 @@
 import React, { useState, useRef } from 'react'
 import { Textarea } from '@/components/ui/textarea'
 import { create, all } from 'mathjs'
-import icon from './calculator.webp'
 
-// history
 const mathjs = create(all, {
     number: 'BigNumber',
     precision: 64, // 小数精度
@@ -17,11 +15,9 @@ const Calculator = () => {
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            // 固定结果
             setHistory([...history, expression + '=' + answer])
             setExpression('')
         }
-        // 上键
         if (event.key === 'ArrowUp' && history.length > 0) {
             setExpression(history.at(-1).split('=')[0])
         }
@@ -64,9 +60,4 @@ const Calculator = () => {
         </div>
     )
 }
-
-export default {
-    name: 'Calculator',
-    Component: Calculator,
-    icon,
-}
+export default Calculator

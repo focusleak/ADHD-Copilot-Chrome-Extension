@@ -2,7 +2,6 @@ import React, { useState, useId } from 'react'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Textarea } from '@/components/ui/textarea'
-import icon from './icon.jpeg'
 const TextProcessor = () => {
     const [raw, setRaw] = useState('')
     const [removeReturn, setRemoveReturn] = useState(false)
@@ -181,8 +180,4 @@ const TextProcessor = () => {
     )
 }
 
-export default {
-    Component: TextProcessor,
-    name: 'Text Processor',
-    icon,
-}
+export default TextProcessor

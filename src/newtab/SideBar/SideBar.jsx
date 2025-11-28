@@ -26,6 +26,7 @@ import {
     TextProcessor,
     DailyTrace,
 } from '@/applications'
+
 const apps = [
     Reminders,
     Calculator,

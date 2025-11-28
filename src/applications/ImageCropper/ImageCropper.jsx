@@ -6,8 +6,4 @@ const ImageCropper = () => {
         </div>
     )
 }
-export default {
-    Component: ImageCropper,
-    name: 'Image Cropper',
-    icon,
-}
+export default ImageCropper

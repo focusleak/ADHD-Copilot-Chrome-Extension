@@ -22,9 +22,13 @@ const Activities = [
     { name: '洗澡', type: 0 },
     { name: '换床单', type: 2 },
     { name: '工作', type: 0 },
+    { name: '读书', type: 0 },
     { name: '学习', type: 0 },
+    { name: '背单词', type: 0 },
     { name: 'LeetCode', type: 0 },
     { name: '娱乐', type: 0 },
+    { name: 'BiliBili', type: 0 },
+    { name: '小红书', type: 0 },
     { name: '睡觉', type: 0 },
 ]
 
@@ -76,8 +80,4 @@ const DailyTrace = () => {
     )
 }
 
-export default {
-    Component: DailyTrace,
-    name: 'Daily Trace',
-    icon,
-}
+export default DailyTrace 

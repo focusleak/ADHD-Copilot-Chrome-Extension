@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 
 import useStorage from '@/hooks/useStorage'
-import icon from './reminders.webp'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { format } from 'date-fns'
@@ -148,8 +147,4 @@ const Item = ({ children, onBurl }) => {
     )
 }
 
-export default {
-    name: 'Reminders',
-    Component: Reminders,
-    icon,
-}
+export default Reminders

@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect, memo } from 'react'
-import icon from './clock.webp'
 import { format } from 'date-fns'
 import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
@@ -193,8 +192,4 @@ const Clock = () => {
         </div>
     )
 }
-export default {
-    Component: Clock,
-    name: 'Clock',
-    icon,
-}
+export default Clock

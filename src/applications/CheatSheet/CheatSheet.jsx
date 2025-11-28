@@ -1,6 +1,5 @@
 // 搜索
 // 分类
-import icon from './icon.jpeg'
 import React, { useEffect, useState, useRef } from 'react'
 
 import useStorage from '@/hooks/useStorage'
@@ -134,8 +133,4 @@ const Item = ({ children, onBurl }) => {
     )
 }
 
-export default {
-    Component: CheatSheet,
-    name: 'CheatSheet',
-    icon,
-}
+export default CheatSheet
