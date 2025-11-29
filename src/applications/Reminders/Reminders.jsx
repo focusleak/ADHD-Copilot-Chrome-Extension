@@ -4,6 +4,7 @@ import useStorage from '@/hooks/useStorage'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { format } from 'date-fns'
+import EditableText from '@/components/EditableText'
 
 // 解析文字
 // 识别输入
@@ -99,11 +100,15 @@ const Reminders = () => {
                                     handleCheckboxChange(key)
                                 }
                             />
-                            <Item
-                                onBurl={(content) => handleBurl(key, content)}
+                            <EditableText
+                                className="flex-1"
+                                onChange={(event) => {
+                                    const content = event.target.value
+                                    handleBurl(key, content)
+                                }}
                             >
                                 {content}
-                            </Item>
+                            </EditableText>
                             <div className="text-xs text-gray-300">
                                 {/* <p>{createTime}</p>
                                 <p>{modifiedTime}</p> */}
@@ -113,37 +118,6 @@ const Reminders = () => {
                 )}
             </ul>
         </div>
-    )
-}
-
-const Item = ({ children, onBurl }) => {
-    const [mode, setMode] = useState(true)
-    const [value, setValue] = useState(children)
-
-    const handleChange = (event) => {
-        setValue(event.target.value)
-    }
-    const handleBlur = (event) => {
-        setMode(true)
-        onBurl(event.target.value)
-    }
-    return (
-        <>
-            {mode ? (
-                <p className="flex-1" onDoubleClick={() => setMode(false)}>
-                    {children}
-                </p>
-            ) : (
-                <input
-                    className="flex-1 outline-0"
-                    type="text"
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    value={value}
-                    autoFocus
-                />
-            )}
-        </>
     )
 }
 

@@ -32,6 +32,7 @@ export default defineConfig([
             'react/no-unknown-property': 'warn',
             'react/jsx-key': 'warn',
             'react/display-name': 'off',
+            'react/react-in-jsx-scope': 'off',
         },
     },
     reactHooks.configs.flat.recommended,
