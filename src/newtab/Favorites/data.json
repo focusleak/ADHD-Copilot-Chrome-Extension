@@ -325,8 +325,18 @@
         "icon": "https://www.zhipin.com/favicon.ico"
     },
     {
-        "name": "一纸简历",
-        "url": "https://cv.devtool.tech/",
-        "icon": "https://cv.devtool.tech/favicon.ico"
+        "name": "OSDev Wiki",
+        "url": "https://wiki.osdev.org/",
+        "icon": "https://wiki.osdev.org/favicon.ico"
+    },
+    {
+        "name": "C++ Reference",
+        "url": "https://en.cppreference.com/w/",
+        "icon": "https://en.cppreference.com/favicon.ico"
+    },
+    {
+        "name": "语雀",
+        "url": "https://www.yuque.com/",
+        "icon": "https://www.yuque.com/favicon.ico"
     }
 ]

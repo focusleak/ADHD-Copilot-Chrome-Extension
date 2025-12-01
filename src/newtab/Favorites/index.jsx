@@ -36,8 +36,15 @@ const Favorites = () => {
     const date = useToday()
     // LeetCode
     const [leeCodeRecord, setLeetCodeRecord] = useStorage('LeetCode_Record', {})
-    const leetCodeState = leeCodeRecord[date.toLocaleDateString()] ? false : true // false = 无特殊样式 = 已完成
+    const leetCodeState = leeCodeRecord[date.toLocaleDateString()]
+        ? false
+        : true // false = 无特殊样式 = 已完成
 
+    // 微信读书
+    const [WereadRecord, setWereadRecord] = useStorage('WereadRecord', {})
+    const WereadState = WereadRecord[date.toLocaleDateString()]
+        ? false
+        : true
     return (
         <div
             className={cn(
@@ -67,6 +74,12 @@ const Favorites = () => {
                                     'animate-bounce':
                                         item.name == 'LeetCode'
                                             ? leetCodeState
+                                            : false,
+                                },
+                                {
+                                    'animate-bounce':
+                                        item.name == '微信读书'
+                                            ? WereadState
                                             : false,
                                 }
                             )}

@@ -100,52 +100,67 @@ chrome.runtime.onInstalled.addListener(function () {
         id: 'clearCookiesLocalStorage',
     })
     chrome.contextMenus.create({
-        title: '使用谷歌搜索',
+        title: 'Search by',
+        id: 'search',
+        contexts: ['selection'],
+    })
+    chrome.contextMenus.create({
+        title: 'Google',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByGoogle',
     })
     chrome.contextMenus.create({
-        title: '使用百度搜索',
+        title: '百度',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByBaidu',
     })
     chrome.contextMenus.create({
-        title: '使用知乎搜索',
+        title: '知乎',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByZhihu',
     })
     chrome.contextMenus.create({
-        title: '使用搜狗搜索',
+        title: '搜狗',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchBySogou',
     })
     chrome.contextMenus.create({
-        title: '使用微信搜索',
+        title: '微信',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByWeixin',
     })
     chrome.contextMenus.create({
-        title: '使用微博搜索',
+        title: '微博',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByWeibo',
     })
     chrome.contextMenus.create({
-        title: '使用小红书搜索',
+        title: '小红书',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByXiaoHongShu',
     })
     chrome.contextMenus.create({
-        title: '使用哔哩哔哩搜索',
+        title: '哔哩哔哩',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByBiliBili',
     })
     chrome.contextMenus.create({
-        title: '使用京东搜索',
+        title: '京东',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByJD',
     })
     chrome.contextMenus.create({
-        title: '使用谷歌学术搜索',
+        title: '谷歌学术',
+        parentId: 'search',
         contexts: ['selection'],
         id: 'searchByGoogleScholar',
     })
@@ -156,4 +171,5 @@ chrome.runtime.onInstalled.addListener(function () {
     })
 })
 
-const WX_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090a13) UnifiedPCWindowsWechat(0xf2541022) XWEB/16467 Flue';
+const WX_UA =
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090a13) UnifiedPCWindowsWechat(0xf2541022) XWEB/16467 Flue'

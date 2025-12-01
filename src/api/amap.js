@@ -1,9 +1,56 @@
 // 高德地图相关api
-const WEB_SERVICE_KEY = "c43611c341a4ea1bec7fe8544532ad57";
-const JS_API_KEY = "c6683c23f2ee5b950866c6f734adbcf1";
+const WEB_SERVICE_KEY = 'c43611c341a4ea1bec7fe8544532ad57'
+const JS_API_KEY = 'c6683c23f2ee5b950866c6f734adbcf1'
 
 // ip定位
 // https://restapi.amap.com/v3/ip?key=key=c43611c341a4ea1bec7fe8544532ad57
 
 // 天气查询
 // https://restapi.amap.com/v3/weather/weatherInfo?city=610100&key=c43611c341a4ea1bec7fe8544532ad57
+
+import request from './request'
+
+export const getWeather = (city) =>
+    request({
+        url: 'https://restapi.amap.com//v3/weather/weatherInfo',
+        params: {
+            city,
+            key: WEB_SERVICE_KEY,
+        },
+    })
+        .then((response) => {
+            return response?.data?.lives[0]
+        })
+        .then(
+            ({
+                city,
+                humidity,
+                humidity_float,
+                province,
+                reporttime,
+                temperature,
+                temperature_float,
+                weather,
+                winddirection,
+                windpower,
+            } = {}) => {
+                return {
+                    city,
+                    humidity,
+                    province,
+                    reportTime: reporttime,
+                    temperature,
+                    weather,
+                    windDirection: winddirection,
+                    windPower: windpower,
+                }
+            }
+        )
+
+export const getIpLocation = () =>
+    request({
+        url: 'https://restapi.amap.com//v3/ip',
+        params: {
+            key: WEB_SERVICE_KEY,
+        },
+    })

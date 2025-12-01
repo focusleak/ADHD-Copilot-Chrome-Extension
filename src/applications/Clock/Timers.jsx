@@ -20,9 +20,9 @@ const presets = [
 const STATUS = { STOP: 0, RUN: 1, PAUSE: 2 }
 
 const Timers = () => {
-    const [duration, setDuration] = useState(0)
-    const [label, setLabel] = useState('')
-    const [remaining, setRemaining] = useState(0)
+    const [duration, setDuration] = useState(3000)
+    const [label, setLabel] = useState('3 s')
+    const [remaining, setRemaining] = useState(3000)
     const [status, setStatus] = useState(STATUS.STOP)
 
     const workerRef = useRef(null)
@@ -84,11 +84,7 @@ const Timers = () => {
 
     return (
         <div>
-            <p>
-                {Math.round(remaining)} / {Math.round(duration)} ms
-            </p>
-
-            <ul className="flex flex-wrap select-none">
+            <ul className="flex flex-wrap justify-center select-none">
                 {presets.map((p) => (
                     <li
                         key={p.duration}
@@ -109,7 +105,7 @@ const Timers = () => {
                 className="mx-auto"
             />
 
-            <p className="space-x-2">
+            <p className="space-x-2 text-center mt-6">
                 {status !== STATUS.STOP && <Button onClick={stop}>停止</Button>}
                 {status !== STATUS.RUN ? (
                     <Button onClick={start}>启动</Button>

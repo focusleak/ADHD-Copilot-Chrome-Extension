@@ -8,8 +8,8 @@ document.body.addEventListener('click', async (event) => {
 
         let words = (await storage.get('vocabulary')) || []
         if (isEnglish(string) && !words.includes(string)) {
-            words.push(string)
-            storage.set('vocabulary', words)
+            console.log('add', string)
+            storage.set('vocabulary', [string, ...words])
         }
         setSelectionStyles(selection, { color: '#FC6A03' })
     }

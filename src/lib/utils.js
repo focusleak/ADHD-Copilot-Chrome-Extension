@@ -97,15 +97,42 @@ export function setSelectionStyles(selection, styles) {
     // TODO 判断是否已经被span包裹
 
     const range = selection.getRangeAt(0)
-    if (range.toString().trim()) {
+    if (range.collapsed) return null
+    const fragment = range.extractContents()
+    console.log(fragment)
+    wrapTextNodes(fragment, (text) => {
         const span = document.createElement('span')
         span.dataset.adhdMark = 'true'
         // span.style.backgroundColor = "yellow";
         Object.entries(styles).forEach(([key, value]) => {
             span.style[key] = value
         })
-        try {
-            range.surroundContents(span)
-        } catch (e) {}
+        span.textContent = text
+        return span
+    })
+
+    range.insertNode(fragment)
+}
+
+function wrapTextNodes(node, wrapFn) {
+    const walker = document.createTreeWalker(
+        node,
+        NodeFilter.SHOW_TEXT,
+        null,
+        false
+    )
+
+    const textNodes = []
+    while (walker.nextNode()) {
+        const textNode = walker.currentNode
+        if (textNode.nodeValue.trim() !== '') {
+            textNodes.push(textNode)
+        }
     }
+
+    textNodes.forEach((textNode) => {
+        const wrapper = wrapFn(textNode.nodeValue)
+        textNode.parentNode.insertBefore(wrapper, textNode)
+        textNode.remove()
+    })
 }

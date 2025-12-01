@@ -12,7 +12,7 @@ const Clock = () => {
     return (
         <div className="px-4 font-sans">
             <Tabs defaultValue="3">
-                <TabsList className="m-auto">
+                <TabsList className="m-auto mb-6">
                     <TabsTrigger value="1">Stopwatch</TabsTrigger>
                     <TabsTrigger value="2">Alarm</TabsTrigger>
                     <TabsTrigger value="3">Timers</TabsTrigger>
