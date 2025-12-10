@@ -9,6 +9,7 @@ import ErrorBoundary from '@/components/ErrorBoundary'
 import TimeIndicator from './TimeIndicator/TimeIndicator.jsx'
 import Weather from './Weather/Weather'
 import { Toaster } from '@/components/ui/sonner'
+import Countdown from './Countdown/Countdown'
 const App = () => {
     return (
         <>
@@ -20,6 +21,7 @@ const App = () => {
             </ErrorBoundary>
             <ControlPanel />
             <Weather className="absolute top-2 right-[120px] rounded-lg bg-white/20 p-4 text-right shadow-lg backdrop-blur-md" />
+            <Countdown className="absolute top-[190px] right-[120px] rounded-lg bg-white/20 p-4 text-right shadow-lg backdrop-blur-md" />
             <Footer />
             <Toaster />
         </>

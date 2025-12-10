@@ -335,6 +335,11 @@
         "icon": "https://en.cppreference.com/favicon.ico"
     },
     {
+        "name": "HelloGitHub",
+        "url": "https://hellogithub.com/",
+        "icon": "https://hellogithub.com/favicon/favicon-96x96.png"
+    },
+    {
         "name": "语雀",
         "url": "https://www.yuque.com/",
         "icon": "https://www.yuque.com/favicon.ico"

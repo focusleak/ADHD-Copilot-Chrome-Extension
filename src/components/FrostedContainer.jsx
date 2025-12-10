@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-const Container = ({ className, children }) => {
+const FrostedContainer = ({ className, children }) => {
     return (
         <div
             className={cn('bg-white/20 shadow-lg backdrop-blur-md', className)}
@@ -8,4 +8,4 @@ const Container = ({ className, children }) => {
         </div>
     )
 }
-export default Container
+export default FrostedContainer

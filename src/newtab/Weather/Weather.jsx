@@ -1,29 +1,34 @@
 import { getIpLocation, getWeather } from '@/api/amap'
 import { useEffect, useState } from 'react'
+import { cn } from '@/lib/utils'
 
 const Weather = ({ className }) => {
     const [weather, setWeather] = useState({})
     useEffect(() => {
-        getIpLocation()
-            .then((response) => {
-                // console.log(response)
-                return response.data
+        getIpLocation().then(({ province, city, adcode }) => {
+            getWeather(adcode).then((weather) => {
+                setWeather(weather)
             })
-            .then(({ province, city, adcode }) => {
-                getWeather(adcode).then((weather) => {
-                    setWeather(weather)
-                })
-            })
+        })
     }, [])
     return (
-        <ul className={className}>
-            <li>{weather.city} {weather.weather}</li>
-            <li>温度 {weather.temperature} ℃</li>
-            <li>湿度 {weather.humidity} %</li>
-            <li>风力 {weather.windPower}</li>
-            <li>风向 {weather.windDirection}</li>
-            <li>更新时间 {weather.reportTime}</li>
-        </ul>
+        <div className={cn('grid grid-cols-2 text-base gap-x-2', className)}>
+            <span>{weather.city}</span>
+            <span>{weather.weather}</span>
+
+            <span>温度</span>
+            <span>{weather.temperature}℃</span>
+
+            <span>湿度</span>
+            <span>{weather.humidity}%</span>
+
+            <span>风力</span>
+            <span>{weather.windPower}</span>
+
+            <span>风向</span>
+            <span>{weather.windDirection}</span>
+            {/* <p className="text-xs">更新时间 {weather.reportTime}</p> */}
+        </div>
     )
 }
 
