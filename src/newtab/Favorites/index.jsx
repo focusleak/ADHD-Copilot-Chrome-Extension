@@ -10,7 +10,7 @@ import list from './data.json'
 const STORAGE_KEY = 'NEW_TAB_FAVORITES_FREQUENCIES'
 const page = Math.ceil(list.length / 30)
 // TODO 按最近时间、点击频率显示不同的导航
-const Favorites = () => {
+const Favorites = ({ className }) => {
     const [index, setIndex] = React.useState(0)
     let [favorites, setFavorites] = useStorage(STORAGE_KEY, {})
 
@@ -42,16 +42,11 @@ const Favorites = () => {
 
     // 微信读书
     const [WereadRecord, setWereadRecord] = useStorage('WereadRecord', {})
-    const WereadState = WereadRecord[date.toLocaleDateString()]
-        ? false
-        : true
+    const WereadState = WereadRecord[date.toLocaleDateString()] ? false : true
+
+    const EPICState = date.getDay() == 5 ? true : false
     return (
-        <div
-            className={cn(
-                'mx-auto my-0 mt-8 h-[300px] w-[1000px] overflow-hidden rounded-sm bg-white/20 shadow-lg backdrop-blur-md'
-            )}
-            onWheel={handleWheel}
-        >
+        <div className={cn('overflow-hidden', className)} onWheel={handleWheel}>
             <div
                 className="flex flex-wrap transition duration-500"
                 style={{
@@ -80,6 +75,12 @@ const Favorites = () => {
                                     'animate-bounce':
                                         item.name == '微信读书'
                                             ? WereadState
+                                            : false,
+                                },
+                                {
+                                    'animate-bounce':
+                                        item.name == 'Epic Games'
+                                            ? EPICState
                                             : false,
                                 }
                             )}

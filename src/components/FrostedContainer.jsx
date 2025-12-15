@@ -1,11 +1,25 @@
 import { cn } from '@/lib/utils'
-const FrostedContainer = ({ className, children }) => {
+import { Slot } from '@radix-ui/react-slot'
+const FrostedContainer = ({
+    className,
+    rounded,
+    shadow,
+    children,
+    asChild,
+    ...props
+}) => {
+    const Comp = asChild ? Slot : 'div'
     return (
-        <div
-            className={cn('bg-white/20 shadow-lg backdrop-blur-md', className)}
+        <Comp
+            {...props}
+            className={cn(
+                'bg-black/40 backdrop-blur-md text-white',
+                { 'rounded-lg': rounded, 'shadow-lg': shadow },
+                className
+            )}
         >
             {children}
-        </div>
+        </Comp>
     )
 }
 export default FrostedContainer

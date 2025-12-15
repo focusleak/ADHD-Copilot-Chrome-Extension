@@ -343,5 +343,10 @@
         "name": "语雀",
         "url": "https://www.yuque.com/",
         "icon": "https://www.yuque.com/favicon.ico"
+    },
+    {
+        "name": " 元素周期表",
+        "url": "https://ptable.com/",
+        "icon": "https://ptable.com/favicon.ico"
     }
 ]

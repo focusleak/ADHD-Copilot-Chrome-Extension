@@ -1,8 +1,9 @@
 import React, { useState, useId } from 'react'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
+import { cn } from '@/lib/utils'
 import { Textarea } from '@/components/ui/textarea'
-const TextProcessor = () => {
+const TextProcessor = ({ className }) => {
     const [raw, setRaw] = useState('')
     const [removeReturn, setRemoveReturn] = useState(false)
     const [removeSpace, setRemoveSpace] = useState(false)
@@ -161,7 +162,7 @@ const TextProcessor = () => {
                     })}
                 </ul>
             </div>
-            <div className='mt-4'>
+            <div className="mt-4">
                 <h3 className="text-xl">Raw Text</h3>
                 <Textarea
                     className="my-2 w-full p-2"

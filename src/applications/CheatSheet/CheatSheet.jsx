@@ -5,8 +5,8 @@ import React, { useEffect, useState, useRef } from 'react'
 import useStorage from '@/hooks/useStorage'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
-
-const CheatSheet = () => {
+import { cn } from '@/lib/utils'
+const CheatSheet = ({ className }) => {
     // 识别输入
     // x点
     // x小时后

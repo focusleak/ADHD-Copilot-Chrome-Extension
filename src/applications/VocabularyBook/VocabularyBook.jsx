@@ -7,8 +7,9 @@ import { Slider } from '@/components/ui/slider'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { AiTwotoneSound } from 'react-icons/ai'
 import { RiDeleteBin5Line } from 'react-icons/ri'
+import { cn } from '@/lib/utils'
 let times = 0
-const VocabularyBook = () => {
+const VocabularyBook = ({ className }) => {
     const [vocabulary, setVocabulary] = useStorage('vocabulary', [])
     const audioRef = useRef(new Audio())
 

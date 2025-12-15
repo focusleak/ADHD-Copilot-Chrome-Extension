@@ -49,11 +49,9 @@ const SearchEngine = () => {
     }
     const Engine = Engines[index].component
     return (
-        <>
-            <div className="h-[200px] overflow-hidden" onWheel={handleWheel}>
-                <Engine queryString={queryString} onInput={handleInput} />
-            </div>
-        </>
+        <div className="h-[200px] overflow-hidden" onWheel={handleWheel}>
+            <Engine queryString={queryString} onInput={handleInput} />
+        </div>
     )
 }
 export default SearchEngine

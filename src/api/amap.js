@@ -50,6 +50,5 @@ export const getIpLocation = () =>
             key: WEB_SERVICE_KEY,
         },
     }).then((response) => {
-        // console.log(response)
         return response?.data
     })

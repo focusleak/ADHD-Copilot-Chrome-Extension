@@ -1,403 +1,247 @@
 {
-  "name": "ADHD Copilot",
-  "description": "",
-  "version": "0.0.2",
-  "manifest_version": 3,
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  },
-  "background": {
-    "service_worker": "src/service_worker/index.js",
-    "type": "module"
-  },
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
-  },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
-  },
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  },
-  "content_scripts": [
-    {
-      "js": [
-        "src/content_scripts/js/common.js",
-        "src/content_scripts/js/dict.js"
-      ],
-      "css": [
-        "src/content_scripts/css/global.css"
-      ],
-      "matches": [
-        "https://*/*"
-      ]
+    "name": "ADHD Copilot",
+    "description": "",
+    "version": "0.0.2",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
     },
-    {
-      "css": [
-        "src/content_scripts/css/juejin.css"
-      ],
-      "js": [],
-      "matches": [
-        "https://juejin.cn/post/*"
-      ]
+    "background": {
+        "service_worker": "src/service_worker/index.js",
+        "type": "module"
     },
-    {
-      "css": [
-        "src/content_scripts/css/126.css"
-      ],
-      "js": [],
-      "matches": [
-        "https://mail.126.com/*"
-      ]
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
     },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/163.css"
-      ],
-      "matches": [
-        "https://*.163.com/*"
-      ]
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
     },
-    {
-      "js": [
-        "src/content_scripts/js/arxiv.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://*.arxiv.org/*"
-      ]
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
     },
-    {
-      "js": [
-        "src/content_scripts/js/baidu.js"
-      ],
-      "css": [
-        "src/content_scripts/css/baidu.css"
-      ],
-      "matches": [
-        "https://*.baidu.com/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/bilibili.js"
-      ],
-      "css": [
-        "src/content_scripts/css/bilibili.css"
-      ],
-      "matches": [
-        "https://*.bilibili.com/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/chatgpt.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://chatgpt.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/cnblogs.css"
-      ],
-      "matches": [
-        "https://*.cnblogs.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/cnki.css"
-      ],
-      "matches": [
-        "https://*.cnki.net/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/coolshell.css"
-      ],
-      "matches": [
-        "https://coolshell.cn/*"
-      ]
-    },
-    {
-      "css": [
-        "src/content_scripts/css/csdn.css"
-      ],
-      "matches": [
-        "https://*.csdn.net/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/geeksforgeeks.css"
-      ],
-      "matches": [
-        "https://www.geeksforgeeks.org/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/gying.css"
-      ],
-      "matches": [
-        "https://*.gying.net/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/leetcode.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://leetcode.cn/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/medium.css"
-      ],
-      "matches": [
-        "https://*.medium.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/monkeytype.css"
-      ],
-      "matches": [
-        "https://monkeytype.com/"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/mozilla.css"
-      ],
-      "matches": [
-        "https://developer.mozilla.org/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/neurips.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://proceedings.neurips.cc/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/openreview.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://openreview.net/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/pbc.css"
-      ],
-      "matches": [
-        "http://www.pbc.gov.cn/goutongjiaoliu/*"
-      ]
-    },
-    {
-      "css": [
-        "src/content_scripts/css/plantuml.css"
-      ],
-      "js": [],
-      "matches": [
-        "https://www.plantuml.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/ruanyifeng.css"
-      ],
-      "matches": [
-        "https://*.ruanyifeng.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/sina.css"
-      ],
-      "matches": [
-        "https://sports.sina.com.cn/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/sogou.js"
-      ],
-      "css": [
-        "src/content_scripts/css/sogou.css"
-      ],
-      "matches": [
-        "https://*.sogou.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/sohu.css"
-      ],
-      "matches": [
-        "https://*.sohu.com/*"
-      ]
-    },
-    {
-      "css": [
-        "src/content_scripts/css/springer.css"
-      ],
-      "matches": [
-        "https://link.springer.com/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/tencent.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://yb.tencent.com/*"
-      ],
-      "run_at": "document_start"
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/tencent.css"
-      ],
-      "matches": [
-        "https://cloud.tencent.com/*"
-      ]
-    },
-    {
-      "css": [
-        "src/content_scripts/css/timeanddate.css"
-      ],
-      "matches": [
-        "https://www.timeanddate.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/tonymacx86.css"
-      ],
-      "matches": [
-        "https://*.tonymacx86.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/v2ex.css"
-      ],
-      "matches": [
-        "https://*.v2ex.com/*"
-      ]
-    },
-    {
-      "css": [
-        "src/content_scripts/css/weibo.css"
-      ],
-      "matches": [
-        "https://*.weibo.com/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/workTimeGuard.js",
-        "src/content_scripts/js/pageTimeTracker.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://*.douyin.com/*",
-        "https://*.v2ex.com/*",
-        "https://*.weibo.com/*",
-        "https://*.zhihu.com/*",
-        "https://*.jd.com/*",
-        "https://tieba.baidu.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/v8.css"
-      ],
-      "matches": [
-        "https://v8.dev/blog/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/xiaohongshu.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://*.xiaohongshu.com/*"
-      ]
-    },
-    {
-      "js": [],
-      "css": [
-        "src/content_scripts/css/yinwang.css"
-      ],
-      "matches": [
-        "https://*.yinwang.org/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/yuanbao.js"
-      ],
-      "css": [],
-      "matches": [
-        "https://yuanbao.tencent.com/*"
-      ]
-    },
-    {
-      "js": [
-        "src/content_scripts/js/zhihu.js"
-      ],
-      "css": [
-        "src/content_scripts/css/zhihu.css"
-      ],
-      "matches": [
-        "https://*.zhihu.com/*"
-      ]
-    }
-  ],
-  "permissions": [
-    "activeTab",
-    "notifications",
-    "storage",
-    "downloads",
-    "history",
-    "cookies",
-    "contextMenus",
-    "tabs",
-    "activeTab",
-    "scripting"
-  ]
+    "content_scripts": [
+        {
+            "js": [
+                "src/content_scripts/js/common.js",
+                "src/content_scripts/js/dict.js"
+            ],
+            "css": ["src/content_scripts/css/global.css"],
+            "matches": ["https://*/*"]
+        },
+        {
+            "css": ["src/content_scripts/css/juejin.css"],
+            "js": [],
+            "matches": ["https://juejin.cn/post/*"]
+        },
+        {
+            "css": ["src/content_scripts/css/126.css"],
+            "js": [],
+            "matches": ["https://mail.126.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/163.css"],
+            "matches": ["https://*.163.com/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/arxiv.js"],
+            "css": [],
+            "matches": ["https://*.arxiv.org/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/baidu.js"],
+            "css": ["src/content_scripts/css/baidu.css"],
+            "matches": ["https://*.baidu.com/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/bilibili.js"],
+            "css": ["src/content_scripts/css/bilibili.css"],
+            "matches": ["https://*.bilibili.com/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/chatgpt.js"],
+            "css": [],
+            "matches": ["https://chatgpt.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/cnblogs.css"],
+            "matches": ["https://*.cnblogs.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/cnki.css"],
+            "matches": ["https://*.cnki.net/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/coolshell.css"],
+            "matches": ["https://coolshell.cn/*"]
+        },
+        {
+            "css": ["src/content_scripts/css/csdn.css"],
+            "matches": ["https://*.csdn.net/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/geeksforgeeks.css"],
+            "matches": ["https://www.geeksforgeeks.org/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/gying.css"],
+            "matches": ["https://*.gying.net/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/leetcode.js"],
+            "css": [],
+            "matches": ["https://leetcode.cn/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/medium.css"],
+            "matches": ["https://*.medium.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/monkeytype.css"],
+            "matches": ["https://monkeytype.com/"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/mozilla.css"],
+            "matches": ["https://developer.mozilla.org/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/neurips.js"],
+            "css": [],
+            "matches": ["https://proceedings.neurips.cc/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/openreview.js"],
+            "css": [],
+            "matches": ["https://openreview.net/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/pbc.css"],
+            "matches": ["http://www.pbc.gov.cn/goutongjiaoliu/*"]
+        },
+        {
+            "css": ["src/content_scripts/css/plantuml.css"],
+            "js": [],
+            "matches": ["https://www.plantuml.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/ruanyifeng.css"],
+            "matches": ["https://*.ruanyifeng.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/sina.css"],
+            "matches": ["https://sports.sina.com.cn/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/sogou.js"],
+            "css": ["src/content_scripts/css/sogou.css"],
+            "matches": ["https://*.sogou.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/sohu.css"],
+            "matches": ["https://*.sohu.com/*"]
+        },
+        {
+            "css": ["src/content_scripts/css/springer.css"],
+            "matches": ["https://link.springer.com/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/tencent.js"],
+            "css": [],
+            "matches": ["https://yb.tencent.com/*"],
+            "run_at": "document_start"
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/tencent.css"],
+            "matches": ["https://cloud.tencent.com/*"]
+        },
+        {
+            "css": ["src/content_scripts/css/timeanddate.css"],
+            "matches": ["https://www.timeanddate.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/tonymacx86.css"],
+            "matches": ["https://*.tonymacx86.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/v2ex.css"],
+            "matches": ["https://*.v2ex.com/*"]
+        },
+        {
+            "css": ["src/content_scripts/css/weibo.css"],
+            "matches": ["https://*.weibo.com/*"]
+        },
+        {
+            "js": [
+                "src/content_scripts/js/workTimeGuard.js",
+                "src/content_scripts/js/pageTimeTracker.js"
+            ],
+            "css": [],
+            "matches": [
+                "https://*.douyin.com/*",
+                "https://*.v2ex.com/*",
+                "https://*.weibo.com/*",
+                "https://*.zhihu.com/*",
+                "https://*.jd.com/*",
+                "https://tieba.baidu.com/*"
+            ]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/v8.css"],
+            "matches": ["https://v8.dev/blog/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/xiaohongshu.js"],
+            "css": [],
+            "matches": ["https://*.xiaohongshu.com/*"]
+        },
+        {
+            "js": [],
+            "css": ["src/content_scripts/css/yinwang.css"],
+            "matches": ["https://*.yinwang.org/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/yuanbao.js"],
+            "css": [],
+            "matches": ["https://yuanbao.tencent.com/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/zhihu.js"],
+            "css": ["src/content_scripts/css/zhihu.css"],
+            "matches": ["https://*.zhihu.com/*"]
+        },
+        {
+            "css": ["src/content_scripts/css/ptable.css"],
+            "matches": ["https://*.ptable.com/*"]
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "notifications",
+        "storage",
+        "downloads",
+        "history",
+        "cookies",
+        "contextMenus",
+        "tabs",
+        "activeTab",
+        "scripting"
+    ]
 }
