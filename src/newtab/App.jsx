@@ -1,18 +1,17 @@
 import React from 'react'
-
-import Favorites from './Favorites/index'
-import SearchEngine from './SearchEngine/index'
-import ControlPanel from './ControlPanel/index'
-import Footer from './Footer/index'
-import Sidebar from './SideBar/SideBar'
+import { cn } from '@/lib/utils'
+import { Toaster } from '@/components/ui/sonner'
 import ErrorBoundary from '@/components/ErrorBoundary'
+import FrostedContainer from '@/components/FrostedContainer'
+
+import Favorites from './Favorites'
+import SearchEngine from './SearchEngine'
+import ControlPanel from './ControlPanel'
+import Footer from './Footer'
+import Sidebar from './SideBar/SideBar'
 import TimeIndicator from './TimeIndicator/TimeIndicator.jsx'
 import Weather from './Weather/Weather'
-import { Toaster } from '@/components/ui/sonner'
 import Countdown from './Countdown/Countdown'
-import { Reminders } from '@/applications'
-import FrostedContainer from '@/components/FrostedContainer'
-import { cn } from '@/lib/utils'
 const App = () => {
     return (
         <>
@@ -25,16 +24,10 @@ const App = () => {
                 <Favorites />
             </FrostedContainer>
 
-            <FrostedContainer
-                asChild
-                rounded
-                className="absolute top-2 left-20 p-0"
-            >
-                <Reminders.Component />
-            </FrostedContainer>
-
             <ErrorBoundary>
-                <Sidebar className="absolute top-0 left-0 h-full" />
+                <FrostedContainer asChild>
+                    <Sidebar className="absolute top-0 left-0 h-full w-18" />
+                </FrostedContainer>
             </ErrorBoundary>
 
             <ControlPanel />

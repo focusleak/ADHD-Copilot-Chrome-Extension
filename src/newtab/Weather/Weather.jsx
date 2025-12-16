@@ -12,7 +12,7 @@ const Weather = ({ className }) => {
         })
     }, [])
     return (
-        <div className={cn('grid grid-cols-2 text-base gap-x-2', className)}>
+        <div className={cn('grid grid-cols-2 gap-x-2', className)}>
             <span>{weather.city}</span>
             <span>{weather.weather}</span>
 

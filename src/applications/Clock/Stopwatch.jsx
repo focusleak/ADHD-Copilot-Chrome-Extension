@@ -14,6 +14,15 @@ const Stopwatch = memo(() => {
     const [isRunning, setIsRunning] = useState(false)
     const requestId = useRef(null)
     useEffect(() => {
+        const listener = (event) => {
+            if (event.code === 'Enter') setIsRunning((isRunning) => !isRunning)
+        }
+        window.addEventListener('keyup', listener)
+        return () => {
+            window.removeEventListener('keyup', listener)
+        }
+    }, [])
+    useEffect(() => {
         if (isRunning) {
             const start = performance.now()
             const step = () => {

@@ -58,7 +58,6 @@ const Calculator = ({ className }) => {
             <p className="w-full p-2 text-right text-4xl font-bold wrap-break-word text-black/50">
                 {answer}
             </p>
-            <TB />
         </div>
     )
 }

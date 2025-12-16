@@ -51,12 +51,7 @@ function SheetContainer({ children, name, icon }) {
 // ToDo - Drag to sort
 const Sidebar = ({ className }) => {
     return (
-        <div
-            className={cn(
-                'w-18 bg-white/20 shadow-lg backdrop-blur-md',
-                className
-            )}
-        >
+        <div className={cn(className)}>
             <ScrollArea className="h-full">
                 <ul className="flex-col items-center gap-4">
                     {applications.map(({ name, icon, Component }) => (

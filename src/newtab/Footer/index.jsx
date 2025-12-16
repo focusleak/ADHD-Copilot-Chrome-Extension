@@ -1,14 +1,17 @@
-import React from 'react'
+import { cn } from '@/lib/utils'
 
-const Footer = () => {
+const Footer = ({ className }) => {
     return (
-        <>
-            <footer className="absolute bottom-0 h-6 w-full text-center text-sm/6 text-gray-500">
-                <a href="https://github.com/focusleak">
-                    &copy; Copyright 2025 FocusLeak. All rights reserved.
-                </a>
-            </footer>
-        </>
+        <footer
+            className={cn(
+                'absolute bottom-0 h-6 w-full text-center text-sm/6 text-white',
+                className
+            )}
+        >
+            <a href="https://github.com/focusleak">
+                &copy; Copyright 2025 FocusLeak. All rights reserved.
+            </a>
+        </footer>
     )
 }
 

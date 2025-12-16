@@ -10,14 +10,16 @@ import {
     ImageClipper,
     TextProcessor,
     DailyTrace,
+    Practice,
 } from '@/applications'
 const App = () => {
-    const { Component, name, icon } = Clock
+    const { Component, name } = Practice
     return (
         <>
-            <h1>{name}</h1>
-            <img width={32} height={32} src={icon} />
-            <Component />
+            {/* <img width={32} height={32} src={icon} /> */}
+            <div className="flex items-center justify-center w-full text-xl">
+                <Component className={"absolute top-[20%]"} />
+            </div>
         </>
     )
 }
