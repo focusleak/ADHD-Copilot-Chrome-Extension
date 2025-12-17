@@ -16,7 +16,7 @@ const Grid = ({ className, children }) => {
 // 重要紧急四象限
 const Reminders = ({ className }) => {
     return (
-        <div className={cn('relative w-[360px]', className)}>
+        <div className={cn('relative w-[360px] mx-auto', className)}>
             <FourQuadrant
                 width={360}
                 height={360}

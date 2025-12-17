@@ -8,20 +8,16 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { AiTwotoneSound } from 'react-icons/ai'
 import { RiDeleteBin5Line } from 'react-icons/ri'
 import { cn } from '@/lib/utils'
-let times = 0
 const VocabularyBook = ({ className }) => {
     const [vocabulary, setVocabulary] = useStorage('vocabulary', [])
     const audioRef = useRef(new Audio())
 
-    const [playSpeed, setPlaySpeed] = useState(1)
+    const [playSpeed, setPlaySpeed] = useState(3)
     const [playMode, setPlayMode] = useState('uk')
-    console.log(vocabulary)
-    times++
 
     return (
-        <div className="px-4 font-sans">
+        <div className={cn('px-4 font-sans', className)}>
             <div className="grid grid-cols-2">
-                {times}
                 <div className="flex gap-2">
                     <Label>Speed</Label>
                     <Slider
@@ -36,7 +32,7 @@ const VocabularyBook = ({ className }) => {
                 <RadioGroup
                     onValueChange={(value) => setPlayMode(value)}
                     value={playMode}
-                    className="flex p-2"
+                    className="flex p-2 justify-center"
                 >
                     <RadioGroupItem value="uk" id="uk" />
                     <Label htmlFor="uk">英音</Label>
