@@ -18,6 +18,13 @@ const Favorites = ({ className }) => {
         (a, b) => (favorites[b.name] || 0) - (favorites[a.name] || 0)
     )
 
+    // TODO 监听键盘
+    useEffect(() => {
+        window.addEventListener('keydown', (e) => {
+            // 判断当前有无焦点
+        })
+    }, [])
+
     const handleClick = (name) => {
         setFavorites(
             produce(favorites, (draft) => {

@@ -6,9 +6,9 @@ import * as Reminders from '@/applications/Reminders'
 import * as TextProcessor from '@/applications/TextProcessor'
 import * as VocabularyBook from '@/applications/VocabularyBook'
 import * as DailyTrace from '@/applications/DailyTrace'
-import * as Practice from '@/applications/Practice'
-
-export const applications = [
+import * as ArithmeticPractice from '@/applications/ArithmeticPractice'
+import * as CalligraphyCopybook from '@/applications/CalligraphyCopybook'
+export default [
     Reminders,
     Calculator,
     TextProcessor,
@@ -17,7 +17,8 @@ export const applications = [
     VocabularyBook,
     Downloader,
     ImageClipper,
-    Practice,
+    ArithmeticPractice,
+    CalligraphyCopybook,
 ]
 export {
     Reminders,
@@ -28,5 +29,6 @@ export {
     VocabularyBook,
     Downloader,
     ImageClipper,
-    Practice,
+    ArithmeticPractice,
+    CalligraphyCopybook,
 }

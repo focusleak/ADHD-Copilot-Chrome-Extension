@@ -15,6 +15,8 @@ const presets = [
     { label: '15 min', duration: 900 * 1000 },
     { label: '30 min', duration: 1800 * 1000 },
     { label: '1 hr', duration: 3600 * 1000 },
+    { label: '1.5 hr', duration: 5400 * 3600 * 1000 },
+    { label: '2 hr', duration: 7200 * 1000 },
 ]
 
 const STATUS = { STOP: 0, RUN: 1, PAUSE: 2 }

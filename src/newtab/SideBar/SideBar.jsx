@@ -15,7 +15,7 @@ import {
     SheetTrigger,
 } from '@/components/ui/sheet'
 
-import { applications } from '@/applications'
+import applications from '@/applications'
 
 function SheetContainer({ children, name, icon }) {
     return (
@@ -34,7 +34,15 @@ function SheetContainer({ children, name, icon }) {
             </SheetTrigger>
             <SheetContent side="left">
                 <SheetHeader>
-                    <SheetTitle className="text-xl">{name}</SheetTitle>
+                    <SheetTitle className="text-xl">
+                        <a
+                            href={`./applications.html?name=${name}`}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            {name}
+                        </a>
+                    </SheetTitle>
                     <SheetDescription></SheetDescription>
                 </SheetHeader>
                 <div className="h-full overflow-auto">{children}</div>

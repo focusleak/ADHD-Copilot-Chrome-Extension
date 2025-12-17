@@ -1,4 +1,4 @@
-# 浏览器插件
+# ADHD-Copilot-Chrome-Extension
 
 [Chrome Extensions 开发文档](https://developer.chrome.com/docs/extensions/get-started?hl=zh-cn)
 

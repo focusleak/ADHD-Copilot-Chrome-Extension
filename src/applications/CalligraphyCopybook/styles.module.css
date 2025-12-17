@@ -1,0 +1,15 @@
+.zi-tie {
+    grid-template-rows: repeat(auto-fill, 90px);
+    grid-template-columns: repeat(auto-fill, 90px);
+}
+
+@font-face {
+    font-family: '荆霄鹏行楷';
+    src: url('./fonts/JingXiaoPengXingKai.ttf');
+}
+
+.character {
+    font-family: '荆霄鹏行楷';
+    position: relative;
+    overflow: hidden;
+}
