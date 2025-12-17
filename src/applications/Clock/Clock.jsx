@@ -2,13 +2,13 @@ import React, { useState, useRef, useEffect, useEffectEvent, memo } from 'react'
 import { format } from 'date-fns'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-
+import { cn } from '@/lib/utils'
 import Stopwatch from './Stopwatch'
 import Alarm from './Alarm'
 import Timers from './Timers'
 import WorldClock from './WorldClock'
 
-const Clock = () => {
+const Clock = ({ className }) => {
     const [value, setValue] = useState(0)
     const listener = useEffectEvent((event) => {
         if (event.code === 'ArrowLeft') {
@@ -25,12 +25,11 @@ const Clock = () => {
         }
     }, [])
     return (
-        <div className="h-full px-4 font-sans">
+        <div className={cn('px-4 font-sans', className)}>
             <Tabs
                 // activationMode="manual"
                 // value={value}
                 defaultValue={3}
-                className={'h-full'}
                 // onValueChange={(value) => {
                 //     console.log('value change')
                 //     setValue(value)

@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/sonner'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import FrostedContainer from '@/components/FrostedContainer'
 
-import Favorites from './Favorites'
+import SiteMap from './SiteMap'
 import SearchEngine from './SearchEngine'
 import ControlPanel from './ControlPanel'
 import Footer from './Footer'
@@ -21,7 +21,7 @@ const App = () => {
                 rounded
                 className={cn('mx-auto my-0 mt-8 h-[300px] w-[1000px]')}
             >
-                <Favorites />
+                <SiteMap />
             </FrostedContainer>
 
             <ErrorBoundary>

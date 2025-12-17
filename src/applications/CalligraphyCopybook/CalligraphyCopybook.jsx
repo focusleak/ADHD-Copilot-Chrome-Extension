@@ -37,7 +37,7 @@ const Character = ({
     character,
     gridSize = 90,
     fontSize = 48,
-    strokeStyle = { stroke: '#000000', strokeWidth: 1 },
+    strokeStyle = { stroke: '#00000033', strokeWidth: 1 },
 }) => {
     return (
         <div className={cn(styles.character, 'relative')}>

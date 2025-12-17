@@ -5,7 +5,7 @@ import applications from '@/applications'
 const Default = () => {
     return (
         <div className="flex w-full items-center justify-center text-xl">
-            {applications.map(({name})=>{
+            {applications.map(({ name }) => {
                 return (
                     <div key={name} className="m-2">
                         <a href={`?name=${name}`}>{name}</a>

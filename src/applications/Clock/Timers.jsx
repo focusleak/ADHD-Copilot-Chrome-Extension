@@ -15,7 +15,7 @@ const presets = [
     { label: '15 min', duration: 900 * 1000 },
     { label: '30 min', duration: 1800 * 1000 },
     { label: '1 hr', duration: 3600 * 1000 },
-    { label: '1.5 hr', duration: 5400 * 3600 * 1000 },
+    { label: '1.5 hr', duration: 5400 * 1000 },
     { label: '2 hr', duration: 7200 * 1000 },
 ]
 
@@ -93,7 +93,7 @@ const Timers = () => {
                         onClick={() => handlePreset(p)}
                         className="flex items-center justify-center p-2"
                     >
-                        <button className="h-12 w-12 rounded-full border">
+                        <button className="h-12 w-12 rounded-full border text-[12px]">
                             {p.label}
                         </button>
                     </li>
@@ -107,7 +107,7 @@ const Timers = () => {
                 className="mx-auto"
             />
 
-            <p className="space-x-2 text-center mt-6">
+            <p className="mt-6 space-x-2 text-center">
                 {status !== STATUS.STOP && <Button onClick={stop}>停止</Button>}
                 {status !== STATUS.RUN ? (
                     <Button onClick={start}>启动</Button>
@@ -131,10 +131,7 @@ function CountdownRing({
     const circumference = 2 * Math.PI * radius
     const offset = circumference * (1 - progress)
 
-    const minutes = String(Math.floor((remaining % 3600000) / 60000)).padStart(
-        2,
-        '0'
-    )
+    const minutes = String(Math.floor(remaining / 60000)).padStart(2, '0')
     const seconds = String(Math.floor((remaining % 60000) / 1000)).padStart(
         2,
         '0'
