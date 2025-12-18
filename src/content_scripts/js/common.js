@@ -1,18 +1,5 @@
-// 避免该文件多次执行
-
-// const _addEventListener = EventTarget.prototype.addEventListener;
-// EventTarget.prototype.addEventListener = function (type, listener, options) {
-//     if (!this.eventListeners) {
-//         this.eventListeners = {};
-//     }
-//     if (!this.eventListeners[type]) {
-//         this.eventListeners[type] = new Set();
-//     }
-//     this.eventListeners[type].add(listener);
-//     _addEventListener.call(this, type, listener, options);
-// }
 import { setSelectionStyles } from '@/lib/utils.js'
-
+import storage from '@/lib/storage'
 ;(() => {
     const ICON_LINKS = Array.from(document.querySelectorAll('link'))
         .filter(({ rel }) => {
@@ -22,15 +9,23 @@ import { setSelectionStyles } from '@/lib/utils.js'
     console.log('ICON_LINKS', ICON_LINKS)
 })()
 
-const registerCombinedKeys = (() => {
-    let list = []
-    document.addEventListener('keydown', function (event) {
-        list.map(([]) => {})
-    })
-    return (keys, callback) => {}
-})()
+// 点击翻译图标，保存单词到生词本
+document.body.addEventListener('click', async (event) => {
+    if (event.target.className == 'gtx-trans-icon') {
+        const selection = window.getSelection()
+        let string = selection.toString().trim()
+        string.replaceAll('·', '')
 
-// 组合键
+        let words = (await storage.get('vocabulary')) || []
+        if (/^[a-zA-Z]+$/.test(string) && !words.includes(string)) {
+            console.log('add', string)
+            storage.set('vocabulary', [string, ...words])
+        }
+        setSelectionStyles(selection, { color: '#FC6A03' })
+    }
+})
+
+
 document.addEventListener('keydown', function (event) {
     let selection = window.getSelection()
     let string = selection.toString().trim()

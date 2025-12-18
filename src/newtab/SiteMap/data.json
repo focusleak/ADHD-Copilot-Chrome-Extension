@@ -345,8 +345,24 @@
         "icon": "https://www.yuque.com/favicon.ico"
     },
     {
-        "name": " 元素周期表",
+        "name": "元素周期表",
         "url": "https://ptable.com/",
         "icon": "https://ptable.com/favicon.ico"
+    },
+    {
+        "name": "overreacted",
+        "url": "https://overreacted.io/",
+        "icon": "https://overreacted.io/icon.png"
+    },
+    {
+        "name": "bestofjs",
+        "url": "https://bestofjs.org/",
+        "icon": "https://bestofjs.org/favicon.ico"
+    },
+
+    {
+        "name": "阿里云盘",
+        "url": "https://www.aliyundrive.com/drive/file/all",
+        "icon": "https://img.alicdn.com/imgextra/i1/O1CN01JDQCi21Dc8EfbRwvF_!!6000000000236-73-tps-64-64.ico"
     }
 ]

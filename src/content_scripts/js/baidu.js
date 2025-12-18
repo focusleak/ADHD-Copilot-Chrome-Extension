@@ -2,23 +2,23 @@ import { removePlaceholder } from '@/lib/utils'
 
 try {
     removePlaceholder(document.getElementById('kw'))
-} catch (e) {
-    console.log(e)
+} catch (error) {
+    console.log(error)
 }
 try {
     removePlaceholder(document.getElementById('chat-textarea'))
-} catch (e) {
-    console.log(e)
+} catch (error) {
+    console.log(error)
 }
 window.addEventListener('load', function () {
     try {
         removePlaceholder(document.getElementById('kw'))
-    } catch (e) {
-        console.log(e)
+    } catch (error) {
+        console.log(error)
     }
     try {
         removePlaceholder(document.getElementById('chat-textarea'))
-    } catch (e) {
-        console.log(e)
+    } catch (error) {
+        console.log(error)
     }
 })

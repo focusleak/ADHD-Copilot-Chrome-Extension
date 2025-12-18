@@ -24,8 +24,7 @@
     "content_scripts": [
         {
             "js": [
-                "src/content_scripts/js/common.js",
-                "src/content_scripts/js/dict.js"
+                "src/content_scripts/js/common.js"
             ],
             "css": ["src/content_scripts/css/global.css"],
             "matches": ["https://*/*"]

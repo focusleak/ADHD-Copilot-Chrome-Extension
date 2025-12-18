@@ -12,6 +12,7 @@ import Sidebar from './SideBar/SideBar'
 import TimeIndicator from './TimeIndicator/TimeIndicator.jsx'
 import Weather from './Weather/Weather'
 import Countdown from './Countdown/Countdown'
+import ToDos from '@/applications/ToDos/ToDos'
 const App = () => {
     return (
         <>
@@ -22,6 +23,10 @@ const App = () => {
                 className={cn('mx-auto my-0 mt-8 h-[300px] w-[1000px]')}
             >
                 <SiteMap />
+            </FrostedContainer>
+
+            <FrostedContainer asChild rounded>
+                <ToDos className={cn('absolute top-4 left-22')} />
             </FrostedContainer>
 
             <ErrorBoundary>

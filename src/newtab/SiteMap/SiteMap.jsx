@@ -78,12 +78,12 @@ const Favorites = ({ className }) => {
                                             ? leetCodeState
                                             : false,
                                 },
-                                {
-                                    'animate-bounce':
-                                        item.name == '微信读书'
-                                            ? WereadState
-                                            : false,
-                                },
+                                // {
+                                //     'animate-bounce':
+                                //         item.name == '微信读书'
+                                //             ? WereadState
+                                //             : false,
+                                // },
                                 {
                                     'animate-bounce':
                                         item.name == 'Epic Games'

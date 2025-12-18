@@ -7,6 +7,7 @@ import Stopwatch from './Stopwatch'
 import Alarm from './Alarm'
 import Timers from './Timers'
 import WorldClock from './WorldClock'
+import PomodoroTimer from './PomodoroTimer'
 
 const Clock = ({ className }) => {
     const [value, setValue] = useState(0)
@@ -37,9 +38,11 @@ const Clock = ({ className }) => {
             >
                 <TabsList className="m-auto mb-6">
                     <TabsTrigger value={0}>Stopwatch</TabsTrigger>
-                    <TabsTrigger value={1}>Alarm</TabsTrigger>
+                    {/* <TabsTrigger value={1}>Alarm</TabsTrigger> */}
                     <TabsTrigger value={2}>Timers</TabsTrigger>
-                    <TabsTrigger value={3}>World Clock</TabsTrigger>
+                    {/* <TabsTrigger value={3}>World Clock</TabsTrigger> */}
+                    <TabsTrigger value={4}>Pomodoro Timer</TabsTrigger>
+
                 </TabsList>
                 <TabsContent value={0} className={'flex-1'}>
                     <Stopwatch />
@@ -52,6 +55,9 @@ const Clock = ({ className }) => {
                 </TabsContent>
                 <TabsContent value={3}>
                     <WorldClock />
+                </TabsContent>
+                <TabsContent value={4}>
+                    <PomodoroTimer />
                 </TabsContent>
             </Tabs>
         </div>
