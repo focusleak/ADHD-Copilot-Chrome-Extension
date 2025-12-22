@@ -1,4 +1,5 @@
 export const BLOCK_WORDS = [
+    '易中天',
     'ADHD',
     'INTP',
     'MBTI',
@@ -23,6 +24,9 @@ export const BLOCK_WORDS = [
     '反诈老陈',
     '吴京',
     '女',
+    '米粉',
+    '前端面试',
+    '张水华',
     '女权',
     '好东西',
     '妻子',

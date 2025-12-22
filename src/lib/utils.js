@@ -1,13 +1,16 @@
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
+// for shadcn/ui
 export function cn(...inputs) {
     return twMerge(clsx(inputs))
 }
+
 export function isURL(text) {
     return /^https?:\/\//.test(text)
 }
 
+// 去除搜索框placeholder
 export function removePlaceholder(searchInput) {
     // Remove the placeholder of the search input box
     if (searchInput) {
@@ -40,6 +43,7 @@ export function directJump(patten, urlParam) {
     })
 }
 
+// 等待元素出现
 export function waitForElement(
     selector,
     { test, timeout } = { test: () => true }
@@ -72,8 +76,6 @@ export function waitForElement(
             : null
     })
 }
-
-// tab通信
 
 // 判断url
 export function isUrlIncluded(pattern) {

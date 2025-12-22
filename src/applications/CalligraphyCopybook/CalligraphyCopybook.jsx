@@ -1,12 +1,10 @@
 // Calligraphy
-// 需求 TODO
-// 通过虚拟列表优化
+// TODO
 // 双击弹窗，放大显示
-// 懒加载
 // 米字格 回字格
 import { useState, useEffect, useRef, startTransition } from 'react'
 import { cn } from '@/lib/utils.js'
-import characters from '@/data/characters.js'
+import characters from '@/static/data/characters.js'
 import styles from './styles.module.css'
 // https://faculty.blcu.edu.cn/xinghb/zh_CN/article/167473/content/1437.htm
 import { useVirtualizer } from '@tanstack/react-virtual'
@@ -18,6 +16,7 @@ const CalligraphyCopybook = () => {
     const COLS = 4
     const ROW_HEIGHT = 90
 
+    // eslint-disable-next-line react-hooks/incompatible-library
     const virtualizer = useVirtualizer({
         count: Math.ceil(items.length / COLS),
         getScrollElement: () => ref.current,

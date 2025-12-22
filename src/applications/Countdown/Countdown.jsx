@@ -38,7 +38,7 @@ const Countdown = ({ className }) => {
         <div className={cn(className, 'font-[黑体]')}>
             <ul>
                 {data.map(({ title, startDate }) => {
-                    let diff = differenceInDays(startDate, today)
+                    let diff = differenceInDays(new Date(startDate).setHours(23, 59, 59), today)
                     return diff >= 0 ? (
                         <li key={title} className="py-4">
                             <p>
@@ -49,7 +49,7 @@ const Countdown = ({ className }) => {
                             </p>
                             <p>
                                 还有
-                                {diff == 0 ? (
+                                {diff < 3 ? (
                                     <>
                                         <span
                                             className={cn(

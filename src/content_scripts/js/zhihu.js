@@ -1,5 +1,5 @@
-// import { BLOCK_WORDS } from '@/data/blockWords'
-// import { removePlaceholder } from '@/lib/utils'
+import { BLOCK_WORDS } from '@/static/data/blockWords'
+import { removePlaceholder } from '@/lib/utils'
 // window.addEventListener('load', function () {
 //     // Remove the placeholder of the search input box
 //     document
@@ -47,24 +47,25 @@
 //         // }
 //     })
 
-//     // 屏蔽词
-//     const observer = new MutationObserver(() => {
-//         console.log('mutation')
-//         ;[...document.querySelectorAll('.Card.TopstoryItem')]
-//             .filter((element) => {
-//                 return BLOCK_WORDS.some((word) => {
-//                     return element
-//                         .querySelector('.ContentItem-title')
-//                         ?.innerText.includes(word)
-//                 })
-//             })
-//             .forEach((element) => {
-//                 console.log('屏蔽:')
-//                 console.log(element.innerText)
-//                 element.remove()
-//             })
-//     })
-//     observer.observe(document.body, { childList: true, subtree: true })
-
 //     // TODO 解除复制限制
 // })
+
+// 屏蔽词
+;(function () {
+    const observer = new MutationObserver(() => {
+        Array.from(document.querySelectorAll('.Card.TopstoryItem'))
+            .filter((element) => {
+                return BLOCK_WORDS.some((word) => {
+                    return element
+                        .querySelector('.ContentItem-title')
+                        ?.innerText.includes(word)
+                })
+            })
+            .forEach((element) => {
+                console.log('屏蔽:')
+                console.log(element.innerText)
+                element.remove()
+            })
+    })
+    observer.observe(document.body, { childList: true, subtree: true })
+})()

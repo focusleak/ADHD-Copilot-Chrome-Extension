@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
 
-const ControlPanel = () => {
+const ControlPanel = ({ className }) => {
     return (
-        <div className="absolute top-4 right-8 text-right opacity-0 transition hover:opacity-100">
+        <div className={className}>
             <p
                 className="cursor-pointer transition hover:text-green-500"
                 onClick={() => {

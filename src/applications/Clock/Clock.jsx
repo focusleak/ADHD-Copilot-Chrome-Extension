@@ -30,7 +30,7 @@ const Clock = ({ className }) => {
             <Tabs
                 // activationMode="manual"
                 // value={value}
-                defaultValue={3}
+                defaultValue={0}
                 // onValueChange={(value) => {
                 //     console.log('value change')
                 //     setValue(value)
@@ -41,7 +41,7 @@ const Clock = ({ className }) => {
                     {/* <TabsTrigger value={1}>Alarm</TabsTrigger> */}
                     <TabsTrigger value={2}>Timers</TabsTrigger>
                     {/* <TabsTrigger value={3}>World Clock</TabsTrigger> */}
-                    <TabsTrigger value={4}>Pomodoro Timer</TabsTrigger>
+                    <TabsTrigger value={4}>Pomodoro</TabsTrigger>
 
                 </TabsList>
                 <TabsContent value={0} className={'flex-1'}>

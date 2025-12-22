@@ -9,9 +9,9 @@ import SearchEngine from './SearchEngine'
 import ControlPanel from './ControlPanel'
 import Footer from './Footer'
 import Sidebar from './SideBar/SideBar'
-import TimeIndicator from './TimeIndicator/TimeIndicator.jsx'
-import Weather from './Weather/Weather'
-import Countdown from './Countdown/Countdown'
+import TimeIndicator from '../applications/TimeIndicator/TimeIndicator.jsx'
+import Weather from '../applications/Weather/Weather'
+import Countdown from '../applications/Countdown/Countdown'
 import ToDos from '@/applications/ToDos/ToDos'
 const App = () => {
     return (
@@ -25,17 +25,19 @@ const App = () => {
                 <SiteMap />
             </FrostedContainer>
 
-            <FrostedContainer asChild rounded>
-                <ToDos className={cn('absolute top-4 left-22')} />
-            </FrostedContainer>
-
             <ErrorBoundary>
                 <FrostedContainer asChild>
                     <Sidebar className="absolute top-0 left-0 h-full w-18" />
                 </FrostedContainer>
             </ErrorBoundary>
 
-            <ControlPanel />
+            <FrostedContainer asChild rounded>
+                <ToDos className={cn('absolute top-4 left-22')} />
+            </FrostedContainer>
+
+            <FrostedContainer asChild rounded>
+                <ControlPanel className="absolute bottom-4 left-22 p-4 opacity-0 transition hover:opacity-100" />
+            </FrostedContainer>
 
             <FrostedContainer
                 className="absolute top-2 right-[120px] p-4 text-right"
@@ -52,12 +54,14 @@ const App = () => {
             >
                 <Countdown className="" />
             </FrostedContainer>
+
             <FrostedContainer
                 asChild
                 className="absolute top-0 right-0 h-full w-[108px]"
             >
                 <TimeIndicator />
             </FrostedContainer>
+
             <Footer />
             <Toaster />
         </>

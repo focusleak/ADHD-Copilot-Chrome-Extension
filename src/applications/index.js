@@ -8,6 +8,8 @@ import * as VocabularyBook from '@/applications/VocabularyBook'
 import * as DailyTrace from '@/applications/DailyTrace'
 import * as ArithmeticPractice from '@/applications/ArithmeticPractice'
 import * as CalligraphyCopybook from '@/applications/CalligraphyCopybook'
+import * as Health from '@/applications/Health'
+// import * as CubeNet from '@/applications/CubeNet'
 export default [
     Reminders,
     Calculator,
@@ -19,6 +21,7 @@ export default [
     DailyTrace,
     Downloader,
     ImageClipper,
+    Health,
 ]
 export {
     Reminders,
@@ -31,4 +34,5 @@ export {
     DailyTrace,
     Downloader,
     ImageClipper,
+    Health,
 }

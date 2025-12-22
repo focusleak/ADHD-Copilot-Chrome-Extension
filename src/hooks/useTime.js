@@ -9,7 +9,7 @@ import {
     addHours,
     startOfWeek,
     addWeeks,
-    format
+    format,
 } from 'date-fns'
 
 export const useToday = () => {
@@ -21,7 +21,7 @@ export const useToday = () => {
             startOfDay(addDays(now, 1)),
             now
         )
-        
+
         const timer = setTimeout(() => {
             update(new Date())
         }, msUntilTomorrow)
@@ -74,6 +74,6 @@ export const useWeek = ({ weekStartsOn = 1 }) => {
             update(new Date())
         }, msUntilNextWeek)
         return () => clearTimeout(timer)
-    }, [date])
+    }, [date, weekStartsOn])
     return date
 }
