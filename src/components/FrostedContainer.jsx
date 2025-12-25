@@ -13,7 +13,7 @@ const FrostedContainer = ({
         <Comp
             {...props}
             className={cn(
-                'bg-black/40 text-white backdrop-blur-md',
+                'dark:bg-black/40 dark:text-white backdrop-blur-md bg-white/40 text-black',
                 // 'bg-black/40 text-white backdrop-blur-md hover:opacity-100 opacity-50 transition-opacity',
                 { 'rounded-lg': rounded, 'shadow-lg': shadow },
                 className

@@ -6,29 +6,14 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { produce } from 'immer'
 import { random, sample } from 'lodash'
 // import { toast } from 'sonner'
+import percentToFraction from './percentToFraction.json'
 
-const operators = ['+', '-'] //, '×''÷']
-const percentToFraction = {
-    '33%': '1/3',
-    '25%': '1/4',
-    '16.7%': '1/6',
-    '14.3%': '1/7',
-    '28.6%': '2/7',
-    '42.8%': '3/7',
-    '12.5%': '1/8',
-    '37.5%': '3/8',
-    '11.1%': '1/9',
-    '22.2%': '2/9',
-    '9.1%': '1/11',
-    '8.3%': '1/12',
-    '8%': '1/12.5',
-    '7.7%': '1/13',
-    '7.1%': '1/14',
-    '6.7%': '1/15',
-    '6.3%': '1/16',
-    '5.9%': '1/17',
-    '5.6%': '1/18',
-    '5.3%': '1/19',
+import Power from './Power.jsx'
+const Anki = {
+    混合增长率: '',
+    间隔增长率: '',
+    拉动增长率: '',
+    增长贡献率: '',
 }
 const Problems = [
     {
@@ -75,12 +60,7 @@ const Problems = [
             return { operator: '^', operands: [base, exponent], answer }
         },
         render: (operator, operands) => {
-            return (
-                <span>
-                    {operands[0]}
-                    <sup>{operands[1]}</sup>
-                </span>
-            )
+            return <Power base={operands[0]} exponent={operands[1]} />
         },
     },
     {
@@ -143,11 +123,30 @@ const Problems = [
             return <span>{operands[0]}</span>
         },
     },
+    // anki
+    // {
+    //     type: 'Anki',
+    //     solution: (operator, operands) => {
+    //         return Anki[operands[0]]
+    //     },
+    //     generate: () => {
+    //         const question = sample(Object.keys(Anki))
+    //         return {
+    //             operator: '',
+    //             operands: [question],
+    //             answer: Anki[question],
+    //         }
+    //     },
+    //     render: (operator, operands) => {
+    //         return <span>{operands[0]}</span>
+    //     },
+    // },
     // { type: '分数比大小' },
     // { type: '小数加减' },
-    // { type: '指数' },
     // { type: '分数' },
 ]
+
+// A4纸模式：一次出一页题，同时出答案，支持打印
 const ArithmeticPractice = ({ className }) => {
     const [input, setInput] = useState('')
 
@@ -234,6 +233,7 @@ const ArithmeticPractice = ({ className }) => {
                     if (event.key === 'Enter') checkAnswer()
                 }}
             />
+            {/* keyboard */}
             <p className="mt-4">
                 <button
                     className="px-2 transition hover:text-green-400"
@@ -255,8 +255,8 @@ const ArithmeticPractice = ({ className }) => {
                 </button>
             </p>
             <p className="mt-4">
-                Correct: {correctNum} , Wrong:{' '}
-                <span className="text-red-500">{wrongNum}</span>
+                <span className="text-green-500">Correct: {correctNum}</span> ,
+                <span className="text-red-500">Wrong: {wrongNum}</span>
             </p>
             {/* <p className="mt-4">
                 <button className="px-2" onClick={startTimer}>
@@ -266,7 +266,86 @@ const ArithmeticPractice = ({ className }) => {
                     End
                 </button>
             </p> */}
+            <CheatSheet className="mt-16" />
         </div>
+    )
+}
+
+const History = ({ className, list }) => {
+    //
+    return (
+        <div className={className}>
+            <ul>
+                {list.map((item, index) => (
+                    <li key={index}>{item}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+const CheatSheet = ({ className }) => {
+    const percents = Object.keys(percentToFraction)
+    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    const months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+    ]
+    const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    return (
+        <ul
+            className={cn(
+                className,
+                'flex flex-row flex-wrap gap-x-4 px-2 text-left text-xs'
+            )}
+        >
+            {percents.map((percent) => (
+                <li
+                    key={percent}
+                    className="w-20 transition hover:text-green-500"
+                >
+                    {percent} = {percentToFraction[percent]}
+                </li>
+            ))}
+            {days.map((week, index) => (
+                <li key={week} className="w-20 transition hover:text-green-500">
+                    {week} : {index + 1}
+                </li>
+            ))}
+            {months.map((month, index) => (
+                <li
+                    key={month}
+                    className="w-20 transition hover:text-green-500"
+                >
+                    {month} : {index + 1}
+                </li>
+            ))}
+            {numbers.map((base) => (
+                <li key={base} className="w-20 transition hover:text-green-500">
+                    <Power base={base} exponent={2} /> = {Math.pow(base, 2)}
+                </li>
+            ))}
+            {numbers.map((base) => (
+                <li key={base} className="w-20 transition hover:text-green-500">
+                    <Power base={base} exponent={3} /> = {Math.pow(base, 3)}
+                </li>
+            ))}
+            {numbers.map((base) => (
+                <li key={base} className="w-20 transition hover:text-green-500">
+                    <Power base={2} exponent={base} /> = {Math.pow(2, base)}
+                </li>
+            ))}
+        </ul>
     )
 }
 export default ArithmeticPractice

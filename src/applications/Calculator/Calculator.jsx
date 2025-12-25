@@ -40,7 +40,7 @@ const Calculator = ({ className }) => {
             <ul>
                 {history.map((item, index) => (
                     <li key={item}>
-                        <p className="w-full px-2 py-0 text-right text-xl text-black/80">
+                        <p className="w-full px-2 py-0 text-right text-xl text-black/80 dark:text-white/80">
                             {item}
                         </p>
                     </li>
@@ -55,7 +55,7 @@ const Calculator = ({ className }) => {
                 className="w-full p-2 text-right text-4xl font-bold outline-0"
                 autoFocus
             />
-            <p className="w-full p-2 text-right text-4xl font-bold wrap-break-word text-black/50">
+            <p className="w-full p-2 text-right text-4xl font-bold wrap-break-word text-black/50 dark:text-white/50">
                 {answer}
             </p>
         </div>

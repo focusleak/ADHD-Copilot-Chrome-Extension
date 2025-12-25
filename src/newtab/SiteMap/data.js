@@ -154,13 +154,13 @@ export const defaultBookmarks = [
         url: 'https://wx.qq.com/',
         icon: 'https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico',
     },
-    
+
     {
         name: 'V2EX',
         url: 'https://www.v2ex.com/',
         icon: 'https://www.v2ex.com/favicon.ico',
     },
-    
+
     {
         name: '健康160',
         url: 'https://www.91160.com/',
@@ -176,7 +176,7 @@ export const defaultBookmarks = [
         url: 'https://www.gog.com/',
         icon: 'https://www.gog.com/favicon.ico',
     },
-    
+
     {
         name: 'outlook',
         url: 'https://outlook.live.com/owa/',
@@ -1885,7 +1885,6 @@ export const defaultBookmarks = [
         url: 'https://grok.com/',
         icon: 'https://grok.com/favicon.ico',
     },
-
     {
         name: 'DeepWiki | AI documentation you can talk to, for every repo',
         url: 'https://deepwiki.com/',

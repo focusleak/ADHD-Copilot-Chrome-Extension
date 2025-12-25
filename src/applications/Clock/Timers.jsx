@@ -174,6 +174,7 @@ function CountdownRing({
                 fontSize="16"
                 textAnchor="middle"
                 dominantBaseline="middle"
+                className='dark:text-white text-black'
             >
                 {label}
             </text>

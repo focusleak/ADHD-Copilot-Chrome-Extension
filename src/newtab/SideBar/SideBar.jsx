@@ -32,7 +32,7 @@ function SheetContainer({ children, name, icon }) {
                     <p className="text-center leading-none">{name}</p>
                 </div>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="left" className="dark:bg-black dark:text-white">
                 <SheetHeader>
                     <SheetTitle className="text-xl">
                         <a

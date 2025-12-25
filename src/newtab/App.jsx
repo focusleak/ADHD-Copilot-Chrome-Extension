@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/sonner'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import FrostedContainer from '@/components/FrostedContainer'
+import Background from '@/components/Background'
 
 import SiteMap from './SiteMap'
 import SearchEngine from './SearchEngine'
@@ -15,7 +16,9 @@ import Countdown from '../applications/Countdown/Countdown'
 import ToDos from '@/applications/ToDos/ToDos'
 const App = () => {
     return (
-        <>
+        <Background
+            src="https://bing.img.run/rand.php"
+            className="h-full w-full">
             <SearchEngine />
             <FrostedContainer
                 asChild
@@ -64,7 +67,7 @@ const App = () => {
 
             <Footer />
             <Toaster />
-        </>
+        </Background>
     )
 }
 export default App

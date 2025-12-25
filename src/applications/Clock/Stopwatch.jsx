@@ -66,14 +66,14 @@ const Stopwatch = memo(({ className }) => {
                 {isRunning ? (
                     <button
                         onClick={handleLap}
-                        className="m-4 h-12 w-12 rounded-full bg-gray-400 text-center text-sm text-white outline-0"
+                        className="m-4 h-12 w-12 rounded-full bg-gray-400 text-center text-sm text-white outline-0 dark:bg-black dark:text-black"
                     >
                         Lap
                     </button>
                 ) : (
                     <button
                         onClick={handleReset}
-                        className="m-4 h-12 w-12 rounded-full bg-gray-400 text-center text-sm text-white outline-0"
+                        className="m-4 h-12 w-12 rounded-full bg-gray-400 text-center text-sm text-white outline-0 dark:bg-black dark:text-black"
                     >
                         Reset
                     </button>
@@ -90,7 +90,7 @@ const Stopwatch = memo(({ className }) => {
                     {isRunning ? 'Stop' : 'Start'}
                 </button>
             </div>
-            <ul className="overflow-auto flex-1 text-center text-sm">
+            <ul className="flex-1 overflow-auto text-center text-sm">
                 {laps.map((lap, index) => (
                     <li key={index}>
                         {ms2hms(lap.milliseconds)}{' '}

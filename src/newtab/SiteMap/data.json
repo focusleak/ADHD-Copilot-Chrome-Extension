@@ -2,367 +2,451 @@
     {
         "name": "ChatGPT",
         "url": "https://chat.openai.com/chat",
-        "icon": "https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg"
+        "icon": "https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg",
+        "type": 0
     },
     {
         "name": "Gemini",
         "url": "https://gemini.google.com/app",
-        "icon": "https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg"
+        "icon": "https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg",
+        "type": 0
     },
     {
         "name": "Grok",
         "url": "https://grok.com/",
-        "icon": "https://grok.com/favicon.ico"
+        "icon": "https://grok.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "Perplexity",
         "url": "https://www.perplexity.ai/",
-        "icon": "https://www.perplexity.ai/favicon.ico"
+        "icon": "https://www.perplexity.ai/favicon.ico",
+        "type": 0
     },
     {
         "name": "Copilot",
         "url": "https://copilot.microsoft.com/",
-        "icon": "https://copilot.microsoft.com/static/cmc/favicon.svg"
+        "icon": "https://copilot.microsoft.com/static/cmc/favicon.svg",
+        "type": 0
     },
     {
         "name": "腾讯元宝",
         "url": "https://yuanbao.tencent.com/",
-        "icon": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon@32.png"
+        "icon": "https://static.yuanbao.tencent.com/m/yuanbao-web/favicon@32.png",
+        "type": 0
     },
     {
         "name": "DeepWiki",
         "url": "https://deepwiki.com/",
-        "icon": "https://deepwiki.com/favicon.ico"
+        "icon": "https://deepwiki.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "NotebookLM",
         "url": "https://notebooklm.google/",
-        "icon": "https://notebooklm.google/_/static/branding/v4/light_mode/favicon/favicon.svg"
+        "icon": "https://notebooklm.google/_/static/branding/v4/light_mode/favicon/favicon.svg",
+        "type": 0
     },
     {
         "name": "Radio Garden",
         "url": "https://radio.garden/",
-        "icon": "https://radio.garden/icons/favicon.png"
+        "icon": "https://radio.garden/icons/favicon.png",
+        "type": 0
     },
     {
         "name": "Hacker News",
         "url": "https://news.ycombinator.com/",
-        "icon": "https://news.ycombinator.com/favicon.ico"
+        "icon": "https://news.ycombinator.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "Github",
         "url": "https://github.com/",
-        "icon": "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg"
+        "icon": "https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg",
+        "type": 0
     },
     {
         "name": "LeetCode",
         "url": "https://leetcode.cn/",
-        "icon": "https://leetcode.cn/favicon.ico"
+        "icon": "https://leetcode.cn/favicon.ico",
+        "type": 0
     },
     {
         "name": "CodeWars",
         "url": "https://www.codewars.com/",
-        "icon": "https://www.codewars.com/favicon.ico"
+        "icon": "https://www.codewars.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "牛客",
         "url": "https://www.nowcoder.com/interview/center",
-        "icon": "https://www.nowcoder.com/favicon.ico"
+        "icon": "https://www.nowcoder.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "FreeCodeCamp",
         "url": "https://www.freecodecamp.org/learn/",
-        "icon": "https://www.freecodecamp.org/favicon-32x32.png"
+        "icon": "https://www.freecodecamp.org/favicon-32x32.png",
+        "type": 0
     },
     {
         "name": "Learn X in Y Minutes",
         "url": "https://learnxinyminutes.com/",
-        "icon": "https://learnxinyminutes.com/favicon.ico"
+        "icon": "https://learnxinyminutes.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "datastructures-js",
         "url": "https://datastructures-js.info/",
-        "icon": "https://datastructures-js.info/favicon.svg"
+        "icon": "https://datastructures-js.info/favicon.svg",
+        "type": 0
     },
     {
         "name": "CS自学指南",
         "url": "https://csdiy.wiki/",
-        "icon": "https://csdiy.wiki/images/favicon.ico"
+        "icon": "https://csdiy.wiki/images/favicon.ico",
+        "type": 0
     },
     {
         "name": "OI Wiki",
         "url": "https://oi-wiki.org/",
-        "icon": "https://oi-wiki.org/favicon.ico"
+        "icon": "https://oi-wiki.org/favicon.ico",
+        "type": 0
     },
     {
         "name": "Youtube",
         "url": "https://www.youtube.com/",
-        "icon": "https://www.youtube.com/s/desktop/2aa21710/img/favicon_144x144.png"
+        "icon": "https://www.youtube.com/s/desktop/2aa21710/img/favicon_144x144.png",
+        "type": 0
     },
     {
         "name": "roadmap",
         "url": "https://roadmap.sh/",
-        "icon": "https://roadmap.sh/manifest/icon32.png"
+        "icon": "https://roadmap.sh/manifest/icon32.png",
+        "type": 0
     },
     {
         "name": "MDN",
         "url": "https://developer.mozilla.org/zh-CN/",
-        "icon": "https://developer.mozilla.org/favicon.svg"
+        "icon": "https://developer.mozilla.org/favicon.svg",
+        "type": 0
     },
     {
         "name": "StackOverflow",
         "url": "https://stackoverflow.com/",
-        "icon": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a"
+        "icon": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+        "type": 0
     },
     {
         "name": "Node.js",
         "url": "https://nodejs.org/zh-cn/",
-        "icon": "https://nodejs.org/static/images/favicons/favicon.png"
+        "icon": "https://nodejs.org/static/images/favicons/favicon.png",
+        "type": 0
     },
     {
         "name": "NPM",
         "url": "https://www.npmjs.com/",
-        "icon": "https://static-production.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png"
+        "icon": "https://static-production.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png",
+        "type": 0
     },
     {
         "name": "TypeScript",
         "url": "https://www.typescriptlang.org/",
-        "icon": "https://www.typescriptlang.org/favicon-32x32.png"
+        "icon": "https://www.typescriptlang.org/favicon-32x32.png",
+        "type": 0
     },
     {
         "name": "Webpack",
         "url": "https://webpack.js.org/",
-        "icon": "https://webpack.js.org/icon_512x512.png"
+        "icon": "https://webpack.js.org/icon_512x512.png",
+        "type": 0
     },
     {
         "name": "Nest.js",
         "url": "https://nestjs.com/",
-        "icon": "https://nestjs.com/logo-small-gradient.0ed287ce.svg"
+        "icon": "https://nestjs.com/logo-small-gradient.0ed287ce.svg",
+        "type": 0
     },
     {
         "name": "tailwindcss",
         "url": "https://tailwindcss.com/",
-        "icon": "https://tailwindcss.com/favicons/favicon-32x32.png?v=4"
+        "icon": "https://tailwindcss.com/favicons/favicon-32x32.png?v=4",
+        "type": 0
     },
     {
         "name": "React",
         "url": "https://react.dev/",
-        "icon": "https://react.dev/favicon.ico"
+        "icon": "https://react.dev/favicon.ico",
+        "type": 0
     },
     {
         "name": "Vue",
         "url": "https://vuejs.org/",
-        "icon": "https://vuejs.org/images/logo.png"
+        "icon": "https://vuejs.org/images/logo.png",
+        "type": 0
     },
     {
         "name": "Vite",
         "url": "https://vitejs.dev/",
-        "icon": "https://vitejs.dev/logo.svg"
+        "icon": "https://vitejs.dev/logo.svg",
+        "type": 0
     },
     {
         "name": "Svelte",
         "url": "https://svelte.dev/",
-        "icon": "https://svelte.dev/favicon.png"
+        "icon": "https://svelte.dev/favicon.png",
+        "type": 0
     },
     {
         "name": "Solid.js",
         "url": "https://www.solidjs.com/",
-        "icon": "https://www.solidjs.com/img/favicons/favicon-32x32.png"
+        "icon": "https://www.solidjs.com/img/favicons/favicon-32x32.png",
+        "type": 0
     },
     {
         "name": "Prettier",
         "url": "https://prettier.io/",
-        "icon": "https://prettier.io/icon.png"
+        "icon": "https://prettier.io/icon.png",
+        "type": 0
     },
     {
         "name": "shadcn/ui",
         "url": "https://ui.shadcn.com/",
-        "icon": "https://ui.shadcn.com/favicon.ico"
+        "icon": "https://ui.shadcn.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "Zustand",
         "url": "https://zustand-demo.pmnd.rs/",
-        "icon": "https://zustand-demo.pmnd.rs/favicon.ico"
+        "icon": "https://zustand-demo.pmnd.rs/favicon.ico",
+        "type": 0
     },
     {
         "name": "immer",
         "url": "https://immerjs.github.io/immer/",
-        "icon": "https://immerjs.github.io/immer/img/favicon.ico"
+        "icon": "https://immerjs.github.io/immer/img/favicon.ico",
+        "type": 0
     },
     {
         "name": "Storybook",
         "url": "https://storybook.js.org/",
-        "icon": "https://storybook.js.org/icon.svg"
+        "icon": "https://storybook.js.org/icon.svg",
+        "type": 0
     },
     {
         "name": "Expo",
         "url": "https://expo.dev/",
-        "icon": "https://static.expo.dev/static/favicons/favicon-light-48x48.png"
+        "icon": "https://static.expo.dev/static/favicons/favicon-light-48x48.png",
+        "type": 0
     },
     {
         "name": "V2EX",
         "url": "https://www.v2ex.com/",
-        "icon": "https://www.v2ex.com/static/icon-192.png"
+        "icon": "https://www.v2ex.com/static/icon-192.png",
+        "type": 0
     },
     {
         "name": "InfoQ",
         "url": "https://www.infoq.cn/",
-        "icon": "https://static001.infoq.cn/static/infoq/www/img/share-default-5tgbiuhgfefgujjhg.png"
+        "icon": "https://static001.infoq.cn/static/infoq/www/img/share-default-5tgbiuhgfefgujjhg.png",
+        "type": 0
     },
     {
         "name": "美团技术团队",
         "url": "https://tech.meituan.com/",
-        "icon": "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/android-icon-192x192.png"
+        "icon": "https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/android-icon-192x192.png",
+        "type": 0
     },
     {
         "name": "微信读书",
         "url": "https://weread.qq.com/",
-        "icon": "https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/favicon/favicon_48h.png"
+        "icon": "https://rescdn.qqmail.com/node/wr/wrpage/style/images/independent/favicon/favicon_48h.png",
+        "type": 0
     },
     {
         "name": "Human Benchmark",
         "url": "https://humanbenchmark.com/",
-        "icon": "https://humanbenchmark.com/favicon.ico"
+        "icon": "https://humanbenchmark.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "CPU Benchmarks",
         "url": "https://www.cpubenchmark.net/",
-        "icon": "https://www.cpubenchmark.net/favicon.ico"
+        "icon": "https://www.cpubenchmark.net/favicon.ico",
+        "type": 0
     },
     {
         "name": "Videocard Benchmarks",
         "url": "https://www.videocardbenchmark.net/",
-        "icon": "https://www.videocardbenchmark.net/favicon.ico"
+        "icon": "https://www.videocardbenchmark.net/favicon.ico",
+        "type": 0
     },
     {
         "name": "Z-Library",
         "url": "https://z-lib.fm/",
-        "icon": "https://z-lib.fm/favicon.ico"
+        "icon": "https://z-lib.fm/favicon.ico",
+        "type": 0
     },
     {
         "url": "https://annas-archive.org/",
         "name": "Anna's Archive",
-        "icon": "https://annas-archive.org/favicon.ico"
+        "icon": "https://annas-archive.org/favicon.ico",
+        "type": 0
     },
     {
         "url": "https://unsplash.com/",
         "name": "Unsplash",
-        "icon": "https://unsplash.com/favicon.ico"
+        "icon": "https://unsplash.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "PrintFriendly",
         "url": "https://www.printfriendly.com/",
-        "icon": "https://www.printfriendly.com/favicon.ico"
+        "icon": "https://www.printfriendly.com/favicon.ico",
+        "type": 0
     },
     {
         "url": "https://lbs.amap.com/",
         "name": "高德开放平台",
-        "icon": "https://a.amap.com/pc/static/favicon.ico"
+        "icon": "https://a.amap.com/pc/static/favicon.ico",
+        "type": 0
     },
     {
         "name": "Math Notepad",
         "url": "https://mathnotepad.com/",
-        "icon": "https://mathnotepad.com/favicon.ico"
+        "icon": "https://mathnotepad.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "微博",
         "url": "http://weibo.com/",
-        "icon": "http://weibo.com/favicon.ico"
+        "icon": "http://weibo.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "小红书",
         "url": "https://www.xiaohongshu.com/",
-        "icon": "https://www.xiaohongshu.com/favicon.ico"
+        "icon": "https://www.xiaohongshu.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "哔哩哔哩",
         "url": "https://www.bilibili.com/",
-        "icon": "https://www.bilibili.com/favicon.ico"
+        "icon": "https://www.bilibili.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "CCTV",
         "url": "https://tv.cctv.com/live/",
-        "icon": "https://tv.cctv.com/favicon.ico"
+        "icon": "https://tv.cctv.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "豆瓣",
         "url": "https://www.douban.com/",
-        "icon": "https://www.douban.com/favicon.ico"
+        "icon": "https://www.douban.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "126邮箱",
         "url": "https://mail.126.com/",
-        "icon": "https://mail.126.com/favicon.ico"
+        "icon": "https://mail.126.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "163邮箱",
         "url": "http://mail.163.com/",
-        "icon": "http://mail.163.com/favicon.ico"
+        "icon": "http://mail.163.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "QQ邮箱",
         "url": "https://mail.qq.com/",
-        "icon": "https://mail.qq.com/favicon.ico"
+        "icon": "https://mail.qq.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "咪咕视频",
         "url": "https://www.miguvideo.com/",
-        "icon": "https://www.miguvideo.com/favicon.ico"
+        "icon": "https://www.miguvideo.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "Epic Games",
         "url": "https://store.epicgames.com/zh-CN",
-        "icon": "https://static-assets-prod.epicgames.com/epic-store/static/favicon.ico"
+        "icon": "https://static-assets-prod.epicgames.com/epic-store/static/favicon.ico",
+        "type": 0
     },
     {
         "name": "LangShift",
         "url": "https://langshift.dev/",
-        "icon": "https://langshift.dev/favicon.ico"
+        "icon": "https://langshift.dev/favicon.ico",
+        "type": 0
     },
     {
         "name": "Boss 直聘",
         "url": "https://www.zhipin.com/",
-        "icon": "https://www.zhipin.com/favicon.ico"
+        "icon": "https://www.zhipin.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "OSDev Wiki",
         "url": "https://wiki.osdev.org/",
-        "icon": "https://wiki.osdev.org/favicon.ico"
+        "icon": "https://wiki.osdev.org/favicon.ico",
+        "type": 0
     },
     {
         "name": "C++ Reference",
         "url": "https://en.cppreference.com/w/",
-        "icon": "https://en.cppreference.com/favicon.ico"
+        "icon": "https://en.cppreference.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "HelloGitHub",
         "url": "https://hellogithub.com/",
-        "icon": "https://hellogithub.com/favicon/favicon-96x96.png"
+        "icon": "https://hellogithub.com/favicon/favicon-96x96.png",
+        "type": 0
     },
     {
         "name": "语雀",
         "url": "https://www.yuque.com/",
-        "icon": "https://www.yuque.com/favicon.ico"
+        "icon": "https://www.yuque.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "元素周期表",
         "url": "https://ptable.com/",
-        "icon": "https://ptable.com/favicon.ico"
+        "icon": "https://ptable.com/favicon.ico",
+        "type": 0
     },
     {
         "name": "overreacted",
         "url": "https://overreacted.io/",
-        "icon": "https://overreacted.io/icon.png"
+        "icon": "https://overreacted.io/icon.png",
+        "type": 0
     },
     {
         "name": "bestofjs",
         "url": "https://bestofjs.org/",
-        "icon": "https://bestofjs.org/favicon.ico"
+        "icon": "https://bestofjs.org/favicon.ico",
+        "type": 0
     },
-
+    {
+        "name": "wikibooks",
+        "url": "https://zh.wikibooks.org/",
+        "icon": "https://zh.wikibooks.org/favicon.ico",
+        "type": 0
+    },
     {
         "name": "阿里云盘",
         "url": "https://www.aliyundrive.com/drive/file/all",
-        "icon": "https://img.alicdn.com/imgextra/i1/O1CN01JDQCi21Dc8EfbRwvF_!!6000000000236-73-tps-64-64.ico"
+        "icon": "https://img.alicdn.com/imgextra/i1/O1CN01JDQCi21Dc8EfbRwvF_!!6000000000236-73-tps-64-64.ico",
+        "type": 0
+    },
+    {
+        "name": "This Person Does Not Exist",
+        "url": "https://thispersondoesnotexist.com/",
+        "icon": "https://thispersondoesnotexist.com/favicon.ico",
+        "type": 0
     }
 ]

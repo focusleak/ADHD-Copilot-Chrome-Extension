@@ -4,25 +4,26 @@ import { cn } from '@/lib/utils'
 const data = [
     {
         title: '报名确认',
+        url: 'https://hrss.sz.gov.cn/gzryzk/content/post_12516345.html',
         startDate: new Date(2025, 11, 9, 0, 0, 0),
         type: 0,
     },
-    {
-        title: '打印准考证',
-        startDate: new Date(2025, 11, 24, 10, 0, 0),
-        type: 0,
-    },
+    // {
+    //     title: '打印准考证',
+    //     url: 'http://hrss.sz.gov.cn/szksy',
+    //     startDate: new Date(2025, 11, 24, 10, 0, 0),
+    //     type: 0,
+    // },
     {
         title: '笔试',
         startDate: new Date(2025, 11, 27, 9, 0, 0),
         type: 0,
     },
     {
-        title: '分数线',
+        title: '分数线公布',
         startDate: new Date(2026, 0, 26, 9, 0, 0),
         type: 0,
-    }
-    ,
+    },
     // {
     //     title: '换牙套',
     //     startDate: new Date(2025, 11, 12, 23, 0, 0),
@@ -38,7 +39,10 @@ const Countdown = ({ className }) => {
         <div className={cn(className, 'font-[黑体]')}>
             <ul>
                 {data.map(({ title, startDate }) => {
-                    let diff = differenceInDays(new Date(startDate).setHours(23, 59, 59), today)
+                    let diff = differenceInDays(
+                        new Date(startDate).setHours(23, 59, 59),
+                        today
+                    )
                     return diff >= 0 ? (
                         <li key={title} className="py-4">
                             <p>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import applications from '@/applications'
-
+import CubeNet from './CubeNet/CubeNet'
 const Default = () => {
     return (
         <div className="flex w-full items-center justify-center text-xl">
@@ -27,6 +27,7 @@ const App = () => {
             {/* <img width={32} height={32} src={icon} /> */}
             <div className="flex w-full items-center justify-center text-xl">
                 <Component className={'absolute top-[20%]'} />
+                {/* <CubeNet /> */}
             </div>
         </>
     )
