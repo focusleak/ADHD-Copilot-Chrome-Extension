@@ -15,7 +15,7 @@ export const getWeather = (city) =>
         },
     })
         .then((response) => {
-            return response?.data?.lives[0]
+            return response?.data?.lives?.[0] || {}
         })
         .then(
             ({
@@ -50,5 +50,11 @@ export const getIpLocation = () =>
             key: WEB_SERVICE_KEY,
         },
     }).then((response) => {
+        const data = response?.data
+        console.log(data)
+        if (data.status == 0 || data.adcode.length == 0)
+            return {
+                adcode: 440300,
+            }
         return response?.data
     })

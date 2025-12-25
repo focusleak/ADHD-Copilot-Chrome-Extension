@@ -10,6 +10,7 @@ export const BLOCK_WORDS = [
     'intp',
     'su7',
     '丁真',
+    '智商',
     '丈夫',
     '中医',
     '主理人',

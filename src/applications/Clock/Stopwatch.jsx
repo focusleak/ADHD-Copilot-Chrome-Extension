@@ -66,14 +66,14 @@ const Stopwatch = memo(({ className }) => {
                 {isRunning ? (
                     <button
                         onClick={handleLap}
-                        className="m-4 h-12 w-12 rounded-full bg-gray-400 text-center text-sm text-white outline-0 dark:bg-black dark:text-black"
+                        className="m-4 h-12 w-12 rounded-full bg-gray-400 text-center text-sm text-white outline-0"
                     >
                         Lap
                     </button>
                 ) : (
                     <button
                         onClick={handleReset}
-                        className="m-4 h-12 w-12 rounded-full bg-gray-400 text-center text-sm text-white outline-0 dark:bg-black dark:text-black"
+                        className="m-4 h-12 w-12 rounded-full bg-gray-400 text-center text-sm text-white outline-0"
                     >
                         Reset
                     </button>

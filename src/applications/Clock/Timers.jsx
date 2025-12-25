@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import notification from '@/lib/notification'
-
+import { cn } from '@/lib/utils'
 const presets = [
     { label: '3 s', duration: 3 * 1000 },
     { label: '5 s', duration: 5 * 1000 },
@@ -138,7 +138,11 @@ function CountdownRing({
     )
 
     return (
-        <svg width={size} height={size} className={className}>
+        <svg
+            width={size}
+            height={size}
+            className={cn('text-black dark:text-white', className)}
+        >
             <circle
                 cx={size / 2}
                 cy={size / 2}
@@ -165,6 +169,7 @@ function CountdownRing({
                 fontSize="40"
                 textAnchor="middle"
                 dominantBaseline="middle"
+                fill="currentColor"
             >
                 {minutes}:{seconds}
             </text>
@@ -174,7 +179,7 @@ function CountdownRing({
                 fontSize="16"
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className='dark:text-white text-black'
+                fill="currentColor"
             >
                 {label}
             </text>
