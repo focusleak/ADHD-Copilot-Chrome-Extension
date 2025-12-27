@@ -23,7 +23,7 @@ const CalligraphyCopybook = () => {
         estimateSize: () => ROW_HEIGHT,
     })
     return (
-        <div ref={ref} className={'w-full h-full overflow-auto'}>
+        <div ref={ref} className={'h-full w-full overflow-auto'}>
             <div
                 style={{
                     height: virtualizer.getTotalSize(),
@@ -58,12 +58,16 @@ const Character = ({
     style,
     gridSize = 90,
     fontSize = 48,
-    strokeStyle = { stroke: '#00000033', strokeWidth: 1 },
+    strokeStyle = { strokeWidth: 1 },
 }) => {
     return (
         <div className={cn(styles.character, className)} style={style}>
             {/* 改用背景图方案 */}
-            <svg width={gridSize - 2} height={gridSize - 2} style={strokeStyle}>
+            <svg
+                width={gridSize - 2}
+                height={gridSize - 2}
+                style={{ ...strokeStyle, stroke: 'currentColor', opacity: 0.3 }}
+            >
                 <line x1="0" y1="0" x2="100%" y2="0" />
                 <line x1="0" y1="0" x2="0" y2="100%" />
                 <line x1="100%" y1="0" x2="100%" y2="100%" />

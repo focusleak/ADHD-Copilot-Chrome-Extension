@@ -9,6 +9,7 @@ import * as DailyTrace from '@/applications/DailyTrace'
 import * as ArithmeticPractice from '@/applications/ArithmeticPractice'
 import * as CalligraphyCopybook from '@/applications/CalligraphyCopybook'
 import * as Health from '@/applications/Health'
+import * as ZhiLeMe from '@/applications/ZhiLeMe'
 // import * as CubeNet from '@/applications/CubeNet'
 export default [
     Reminders,
@@ -22,6 +23,7 @@ export default [
     Downloader,
     ImageClipper,
     Health,
+    ZhiLeMe
 ]
 export {
     Reminders,
@@ -35,4 +37,5 @@ export {
     Downloader,
     ImageClipper,
     Health,
+    ZhiLeMe
 }

@@ -4,8 +4,6 @@ export default function FourQuadrant({
     width = 100,
     height = 100,
     className,
-    stroke = 'black',
-    fill = 'black',
     ...props
 }) {
     return (
@@ -14,8 +12,8 @@ export default function FourQuadrant({
             width={width}
             height={height}
             viewBox={`0 0 ${width} ${height}`}
-            stroke={stroke}
-            fill={fill}
+            stroke="currentColor"
+            fill="currentColor"
             {...props}
         >
             <defs>
