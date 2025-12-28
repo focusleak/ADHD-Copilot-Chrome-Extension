@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { produce } from 'immer'
-import useStorage from '@/hooks/useStorage'
+import { useStorage } from '@/hooks/useStorage'
 import EditableText from '@/components/EditableText'
 import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
@@ -32,7 +32,7 @@ const VocabularyBook = ({ className }) => {
                 <RadioGroup
                     onValueChange={(value) => setPlayMode(value)}
                     value={playMode}
-                    className="flex p-2 justify-center"
+                    className="flex justify-center p-2"
                 >
                     <RadioGroupItem value="uk" id="uk" />
                     <Label htmlFor="uk">英音</Label>

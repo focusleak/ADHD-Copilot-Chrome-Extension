@@ -26,41 +26,39 @@ const Clock = ({ className }) => {
         }
     }, [])
     return (
-        <div className={cn('px-4 font-sans', className)}>
-            <Tabs
-                // activationMode="manual"
-                // value={value}
-                defaultValue={0}
-                // onValueChange={(value) => {
-                //     console.log('value change')
-                //     setValue(value)
-                // }}
-            >
-                <TabsList className="m-auto mb-6">
-                    <TabsTrigger value={0}>Stopwatch</TabsTrigger>
-                    {/* <TabsTrigger value={1}>Alarm</TabsTrigger> */}
-                    <TabsTrigger value={2}>Timers</TabsTrigger>
-                    {/* <TabsTrigger value={3}>World Clock</TabsTrigger> */}
-                    <TabsTrigger value={4}>Pomodoro</TabsTrigger>
-
-                </TabsList>
-                <TabsContent value={0} className={'flex-1'}>
-                    <Stopwatch />
-                </TabsContent>
-                <TabsContent value={1}>
-                    <Alarm />
-                </TabsContent>
-                <TabsContent value={2}>
-                    <Timers />
-                </TabsContent>
-                <TabsContent value={3}>
-                    <WorldClock />
-                </TabsContent>
-                <TabsContent value={4}>
-                    <PomodoroTimer />
-                </TabsContent>
-            </Tabs>
-        </div>
+        <Tabs
+            className={cn('px-4 font-sans', className)}
+            defaultValue={0}
+            // activationMode="manual"
+            // value={value}
+            // onValueChange={(value) => {
+            //     console.log('value change')
+            //     setValue(value)
+            // }}
+        >
+            <TabsList className="m-auto mb-6">
+                <TabsTrigger value={0}>Stopwatch</TabsTrigger>
+                {/* <TabsTrigger value={1}>Alarm</TabsTrigger> */}
+                <TabsTrigger value={2}>Timers</TabsTrigger>
+                <TabsTrigger value={3}>World Clock</TabsTrigger>
+                <TabsTrigger value={4}>Pomodoro</TabsTrigger>
+            </TabsList>
+            <TabsContent value={0} className={'flex-1'}>
+                <Stopwatch />
+            </TabsContent>
+            <TabsContent value={1}>
+                <Alarm />
+            </TabsContent>
+            <TabsContent value={2}>
+                <Timers />
+            </TabsContent>
+            <TabsContent value={3}>
+                <WorldClock />
+            </TabsContent>
+            <TabsContent value={4}>
+                <PomodoroTimer />
+            </TabsContent>
+        </Tabs>
     )
 }
 export default Clock

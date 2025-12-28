@@ -1,7 +1,7 @@
 import { useState, useEffect, useEffectEvent } from 'react'
+import { isPlainObject } from 'lodash-es'
 import storage from '@/lib/storage'
-
-const useStorage = (key, initialValue) => {
+export const useStorage = (key, initialValue) => {
     const [value, setValue] = useState(initialValue)
 
     useEffect(() => {
@@ -18,12 +18,18 @@ const useStorage = (key, initialValue) => {
         return () => unsubscribe()
     }, [key])
 
-    const storeValue = (value, ...args) => {
-        storage.set(key, value)
-        setValue(value, ...args)
+    const storeValue = (newValue, ...args) => {
+        if (typeof newValue === 'function') {
+            storage.set(key, newValue(value))
+        } else if (Array.isArray(newValue) || isPlainObject(newValue)) {
+            storage.set(key, newValue)
+        } else {
+            console.error(
+                'useStorage only supports storing objects and arrays.'
+            )
+        }
+        setValue(newValue, ...args)
     }
 
     return [value, storeValue]
 }
-
-export default useStorage

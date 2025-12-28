@@ -2,7 +2,7 @@
 // 分类
 import React, { useEffect, useState, useRef } from 'react'
 
-import useStorage from '@/hooks/useStorage'
+import { useStorage } from '@/hooks/useStorage'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { cn } from '@/lib/utils'

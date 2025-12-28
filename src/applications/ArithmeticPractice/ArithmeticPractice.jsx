@@ -1,6 +1,8 @@
 import { cn } from '@/lib/utils'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useStorage } from '@/hooks/useStorage'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { produce } from 'immer'
@@ -123,6 +125,7 @@ const Problems = [
             return <span>{operands[0]}</span>
         },
     },
+    // TODO 图形旋转&对称想象
     // anki
     // {
     //     type: 'Anki',
@@ -146,8 +149,29 @@ const Problems = [
     // { type: '分数' },
 ]
 
-// A4纸模式：一次出一页题，同时出答案，支持打印
 const ArithmeticPractice = ({ className }) => {
+    console.log(className)
+    return (
+        <Tabs defaultValue={0} className={cn('text-center', className)}>
+            <TabsList className="m-auto mb-6">
+                <TabsTrigger value={0}>Practice</TabsTrigger>
+                <TabsTrigger value={1}>History</TabsTrigger>
+                <TabsTrigger value={2}>CheatSheet</TabsTrigger>
+            </TabsList>
+            <TabsContent value={0}>
+                <Practice />
+            </TabsContent>
+            <TabsContent value={1}>
+                <History />
+            </TabsContent>
+            <TabsContent value={2}>
+                <CheatSheet className="mx-auto max-w-[800px]" />
+            </TabsContent>
+        </Tabs>
+    )
+}
+// A4纸模式：一次出一页题，同时出答案，支持打印
+const Practice = ({ className }) => {
     const [input, setInput] = useState('')
 
     const [operands, setOperands] = useState([0, 0])
@@ -255,8 +279,10 @@ const ArithmeticPractice = ({ className }) => {
                 </button>
             </p>
             <p className="mt-4">
-                <span className="text-green-500">Correct: {correctNum}</span> ,
-                <span className="text-red-500">Wrong: {wrongNum}</span>
+                <span className="px-1 text-green-500">
+                    Correct: {correctNum}
+                </span>
+                <span className="px-1 text-red-500">Wrong: {wrongNum}</span>
             </p>
             {/* <p className="mt-4">
                 <button className="px-2" onClick={startTimer}>
@@ -266,16 +292,15 @@ const ArithmeticPractice = ({ className }) => {
                     End
                 </button>
             </p> */}
-            <CheatSheet className="mt-16" />
         </div>
     )
 }
 
-const History = ({ className, list }) => {
-    //
+const History = ({ className }) => {
+    const [list, setList] = useStorage('arithmetic-practice-history', [])
     return (
         <div className={className}>
-            <ul>
+            <ul className="mx-auto max-w-[800px]">
                 {list.map((item, index) => (
                     <li key={index}>{item}</li>
                 ))}
@@ -285,6 +310,10 @@ const History = ({ className, list }) => {
 }
 const CheatSheet = ({ className }) => {
     const percents = Object.keys(percentToFraction)
+    const [status, setStatus] = useStorage(
+        'arithmetic-practice-cheatsheet-status',
+        {}
+    )
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     const months = [
         'Jan',
@@ -306,46 +335,115 @@ const CheatSheet = ({ className }) => {
         <ul
             className={cn(
                 className,
-                'flex flex-row flex-wrap gap-x-4 px-2 text-left text-xs'
+                'grid grid-cols-[repeat(auto-fill,80px)] justify-around px-2 text-left text-xs'
             )}
         >
-            {percents.map((percent) => (
-                <li
-                    key={percent}
-                    className="w-20 transition hover:text-green-500"
-                >
-                    {percent} = {percentToFraction[percent]}
-                </li>
-            ))}
-            {days.map((week, index) => (
-                <li key={week} className="w-20 transition hover:text-green-500">
+            {percents.map((percent) => {
+                const key = percent
+                return (
+                    <li
+                        key={key}
+                        className={cn('transition', {
+                            'text-black/20 dark:text-white/20': status[key],
+                            'hover:text-green-500': !status[key],
+                        })}
+                        onClick={() => {
+                            setStatus(
+                                produce((draft) => {
+                                    draft[key] = !draft[key]
+                                })
+                            )
+                        }}
+                    >
+                        {percent} = {percentToFraction[percent]}
+                    </li>
+                )
+            })}
+            {/* {days.map((week, index) => (
+                <li key={week} className="transition hover:text-green-500">
                     {week} : {index + 1}
                 </li>
             ))}
             {months.map((month, index) => (
                 <li
                     key={month}
-                    className="w-20 transition hover:text-green-500"
+                    className="transition hover:text-green-500"
                 >
                     {month} : {index + 1}
                 </li>
-            ))}
-            {numbers.map((base) => (
-                <li key={base} className="w-20 transition hover:text-green-500">
-                    <Power base={base} exponent={2} /> = {Math.pow(base, 2)}
-                </li>
-            ))}
-            {numbers.map((base) => (
-                <li key={base} className="w-20 transition hover:text-green-500">
-                    <Power base={base} exponent={3} /> = {Math.pow(base, 3)}
-                </li>
-            ))}
-            {numbers.map((base) => (
-                <li key={base} className="w-20 transition hover:text-green-500">
-                    <Power base={2} exponent={base} /> = {Math.pow(2, base)}
-                </li>
-            ))}
+            ))} */}
+            {numbers.map((base) => {
+                const key = base + '^2'
+                return (
+                    <Item
+                        key={key}
+                        status={status[key]}
+                        onClick={() => {
+                            setStatus(
+                                produce((draft) => {
+                                    draft[key] = !draft[key]
+                                })
+                            )
+                        }}
+                    >
+                        <Power base={base} exponent={2} /> = {Math.pow(base, 2)}
+                    </Item>
+                )
+            })}
+            {numbers.map((base) => {
+                const key = base + '^3'
+                return (
+                    <Item
+                        key={key}
+                        status={status[key]}
+                        onClick={() => {
+                            setStatus(
+                                produce((draft) => {
+                                    draft[key] = !draft[key]
+                                })
+                            )
+                        }}
+                    >
+                        <Power base={base} exponent={3} /> = {Math.pow(base, 3)}
+                    </Item>
+                )
+            })}
+            {numbers.map((exponent) => {
+                const key = '2^' + exponent
+                return (
+                    <Item
+                        key={key}
+                        status={status[key]}
+                        onClick={() => {
+                            setStatus(
+                                produce((draft) => {
+                                    draft[key] = !draft[key]
+                                })
+                            )
+                        }}
+                    >
+                        <Power base={2} exponent={exponent} /> ={' '}
+                        {Math.pow(2, exponent)}
+                    </Item>
+                )
+            })}
         </ul>
+    )
+}
+
+const Item = ({ className, key, children, onClick, status, ...props }) => {
+    return (
+        <li
+            key={key}
+            className={cn('transition', {
+                'text-black/20 dark:text-white/20': status,
+                'hover:text-green-500': !status,
+            })}
+            onClick={onClick}
+            {...props}
+        >
+            {children}
+        </li>
     )
 }
 export default ArithmeticPractice

@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Label } from '@/components/ui/label'
 import notification from '@/lib/notification'
 import { cn } from '@/lib/utils'
 const presets = [
@@ -26,6 +28,7 @@ const Timers = () => {
     const [label, setLabel] = useState('3 s')
     const [remaining, setRemaining] = useState(3000)
     const [status, setStatus] = useState(STATUS.STOP)
+    const [isLoop, setIsLoop] = useState(false)
 
     const workerRef = useRef(null)
 
@@ -114,6 +117,14 @@ const Timers = () => {
                 ) : (
                     <Button onClick={pause}>暂停</Button>
                 )}
+                <Button onClick={pause}>Next Cycle</Button>
+                <Label>
+                    循环
+                    <Checkbox
+                        checked={isLoop}
+                        onCheckedChange={(checked) => setIsLoop(checked)}
+                    />
+                </Label>
             </p>
         </div>
     )

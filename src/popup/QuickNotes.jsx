@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import useStorage from '@/hooks/useStorage'
+import { useStorage } from '@/hooks/useStorage'
 import { Textarea } from '@/components/ui/textarea'
 
 const STORAGE_KEY = 'POPUP_QUICK_NOTES'

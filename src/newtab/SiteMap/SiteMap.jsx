@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { produce } from 'immer'
 import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
-import useStorage from '@/hooks/useStorage'
+import { useStorage } from '@/hooks/useStorage'
 import { useToday } from '@/hooks/useTime'
 
 import list from './data.json'
