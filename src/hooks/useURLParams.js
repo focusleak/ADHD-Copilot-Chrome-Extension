@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-const useURLParams = () => {
+export const useURLParams = () => {
     const [params, setParams] = useState(new URLSearchParams(window.location.search))
     useEffect(() => {
         const handleURLChange = () => {

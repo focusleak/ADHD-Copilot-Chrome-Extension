@@ -11,6 +11,7 @@ import * as CalligraphyCopybook from '@/applications/CalligraphyCopybook'
 import * as Health from '@/applications/Health'
 import * as ZhiLeMe from '@/applications/ZhiLeMe'
 // import * as CubeNet from '@/applications/CubeNet'
+import * as FlashCard from '@/applications/FlashCard'
 export default [
     Reminders,
     Calculator,
@@ -23,7 +24,8 @@ export default [
     Downloader,
     ImageClipper,
     Health,
-    ZhiLeMe
+    ZhiLeMe,
+    FlashCard
 ]
 export {
     Reminders,
@@ -37,5 +39,6 @@ export {
     Downloader,
     ImageClipper,
     Health,
-    ZhiLeMe
+    ZhiLeMe,
+    FlashCard
 }

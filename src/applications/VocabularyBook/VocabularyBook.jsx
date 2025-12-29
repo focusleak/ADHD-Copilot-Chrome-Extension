@@ -16,7 +16,7 @@ const VocabularyBook = ({ className }) => {
     const [playMode, setPlayMode] = useState('uk')
 
     return (
-        <div className={cn('px-4 font-sans', className)}>
+        <div className={cn('px-4 font-sans h-full flex flex-col', className)}>
             <div className="grid grid-cols-2">
                 <div className="flex gap-2">
                     <Label>Speed</Label>
@@ -40,7 +40,7 @@ const VocabularyBook = ({ className }) => {
                     <Label htmlFor="en">美音</Label>
                 </RadioGroup>
             </div>
-            <ul className="py-4 text-sm">
+            <ul className="my-4 text-sm flex-1 overflow-auto" >
                 {vocabulary.map((word, index) => (
                     <li key={word + index} className="flex items-center gap-2">
                         <span>{index + 1}. </span>

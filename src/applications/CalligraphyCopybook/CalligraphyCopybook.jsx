@@ -10,20 +10,31 @@ import styles from './styles.module.css'
 import { useVirtualizer } from '@tanstack/react-virtual'
 
 const items = characters.filter(({ frequency }) => frequency)
-const CalligraphyCopybook = () => {
+const CalligraphyCopybook = ({ className }) => {
     const ref = useRef(null)
-
-    const COLS = 4
+    const [cols, setCols] = useState(4)
+    const [offsetLeft, setOffsetLeft] = useState(0)
     const ROW_HEIGHT = 90
+
+    useEffect(() => {
+        const handleResize = () => {
+            const cols = Math.floor(ref.current.offsetWidth / ROW_HEIGHT)
+            setCols(cols)
+            // setOffsetLeft((ref.current.offsetWidth - cols * ROW_HEIGHT) / 2)
+        }
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     // eslint-disable-next-line react-hooks/incompatible-library
     const virtualizer = useVirtualizer({
-        count: Math.ceil(items.length / COLS),
+        count: Math.ceil(items.length / cols),
         getScrollElement: () => ref.current,
         estimateSize: () => ROW_HEIGHT,
     })
     return (
-        <div ref={ref} className={'h-full w-full overflow-auto'}>
+        <div ref={ref} className={cn('h-full w-full overflow-auto')}>
             <div
                 style={{
                     height: virtualizer.getTotalSize(),
@@ -32,13 +43,13 @@ const CalligraphyCopybook = () => {
                 className={cn(styles.ziTie)}
             >
                 {virtualizer.getVirtualItems().map((row) => {
-                    const start = row.index * COLS
-                    const rowItems = items.slice(start, start + COLS)
+                    const start = row.index * cols
+                    const rowItems = items.slice(start, start + cols)
                     return rowItems.map((char, index) => (
                         <Character
                             style={{
                                 top: 0,
-                                left: index * ROW_HEIGHT,
+                                left: index * ROW_HEIGHT + offsetLeft,
                                 transform: `translateY(${row.start}px)`,
                             }}
                             className={'absolute'}

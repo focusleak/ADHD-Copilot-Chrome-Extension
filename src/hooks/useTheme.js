@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useTheme = (defaultTheme = 'light') => {
+export const useTheme = (defaultTheme = 'light') => {
     const [theme, setTheme] = useState(defaultTheme)
 
     useEffect(() => {
@@ -9,4 +9,3 @@ const useTheme = (defaultTheme = 'light') => {
 
     return [theme, setTheme]
 }
-export default useTheme

@@ -314,28 +314,32 @@ const CheatSheet = ({ className }) => {
         'arithmetic-practice-cheatsheet-status',
         {}
     )
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    const months = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
-    ]
     const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    // 勾股数
+    const pythagoreanTriple = [
+        [3, 4, 5],
+        [5, 12, 13],
+        [6, 8, 10],
+        [7, 24, 25],
+        [8, 15, 17],
+        [9, 12, 15],
+        [9, 40, 41],
+        [10, 24, 26],
+        [11, 60, 61],
+        [12, 35, 37],
+        [15, 36, 39],
+        [20, 21, 29],
+    ]
+    for (let triple of pythagoreanTriple) {
+        const [a, b, c] = triple
+        console.log(`${a}^2 + ${b}^2 = ${c}^2`, a ** 2 + b ** 2 == c ** 2)
+    }
 
     return (
         <ul
             className={cn(
                 className,
-                'grid grid-cols-[repeat(auto-fill,80px)] justify-around px-2 text-left text-xs'
+                'grid grid-cols-[repeat(auto-fill,100px)] justify-around px-2 text-left text-xs'
             )}
         >
             {percents.map((percent) => {
@@ -424,6 +428,25 @@ const CheatSheet = ({ className }) => {
                     >
                         <Power base={2} exponent={exponent} /> ={' '}
                         {Math.pow(2, exponent)}
+                    </Item>
+                )
+            })}
+            {pythagoreanTriple.map((triple) => {
+                const [a, b, c] = triple
+                const key = `${a}^2 + ${b}^2 = ${c}^2`
+                return (
+                    <Item
+                        key={key}
+                        status={status[key]}
+                        onClick={() => {
+                            setStatus(
+                                produce((draft) => {
+                                    draft[key] = !draft[key]
+                                })
+                            )
+                        }}
+                    >
+                        <Power base={a} exponent={2} /> + <Power base={b} exponent={2} /> = <Power base={c} exponent={2} />
                     </Item>
                 )
             })}

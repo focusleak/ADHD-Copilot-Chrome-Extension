@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTitle } from '@/hooks/useTitle'
 
 import applications from '@/applications'
 import CubeNet from './CubeNet/CubeNet'
@@ -16,12 +17,13 @@ const Default = () => {
     )
 }
 const App = () => {
-    const { Component } = applications.find(
+    const { Component, name } = applications.find(
         ({ name }) =>
             name === new URLSearchParams(window.location.search).get('name')
     ) || {
         Component: Default,
     }
+    useTitle(name || 'Applications')
     return (
         <>
             {/* <img width={32} height={32} src={icon} /> */}
