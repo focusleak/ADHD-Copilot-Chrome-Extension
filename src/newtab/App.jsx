@@ -14,11 +14,14 @@ import TimeIndicator from '../applications/TimeIndicator/TimeIndicator.jsx'
 import Weather from '../applications/Weather/Weather'
 import Countdown from '../applications/Countdown/Countdown'
 import ToDos from '@/applications/ToDos/ToDos'
+import DailyTrace from '@/applications/DailyTrace/DailyTrace'
+import QuickNote from '@/applications/QuickNote/QuickNote'
 const App = () => {
     return (
         <Background
             src="https://bing.img.run/rand.php"
-            className="h-full w-full">
+            className="h-full w-full"
+        >
             <SearchEngine />
             <FrostedContainer
                 asChild
@@ -36,6 +39,21 @@ const App = () => {
 
             <FrostedContainer asChild rounded>
                 <ToDos className={cn('absolute top-4 left-22')} />
+            </FrostedContainer>
+
+            {/* <FrostedContainer
+                asChild
+                className="absolute top-[300px] left-22 h-[390px] w-[225px] overflow-auto p-4"
+                rounded
+            >
+                <DailyTrace />
+            </FrostedContainer> */}
+            <FrostedContainer
+                asChild
+                className="absolute top-[330px] left-22 w-[160px] overflow-auto p-4"
+                rounded
+            >
+                <QuickNote />
             </FrostedContainer>
 
             <FrostedContainer asChild rounded>

@@ -309,12 +309,11 @@ const History = ({ className }) => {
     )
 }
 const CheatSheet = ({ className }) => {
-    const percents = Object.keys(percentToFraction)
     const [status, setStatus] = useStorage(
         'arithmetic-practice-cheatsheet-status',
         {}
     )
-    const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    const numbers = Array.from({ length: 15 }, (_, i) => [i + 2])
     // 勾股数
     const pythagoreanTriple = [
         [3, 4, 5],
@@ -330,143 +329,115 @@ const CheatSheet = ({ className }) => {
         [15, 36, 39],
         [20, 21, 29],
     ]
-    for (let triple of pythagoreanTriple) {
-        const [a, b, c] = triple
-        console.log(`${a}^2 + ${b}^2 = ${c}^2`, a ** 2 + b ** 2 == c ** 2)
-    }
+    const list = [
+        {
+            type: 0,
+            key: (operand) => operand[0] + '=' + operand[1],
+            operands: Object.entries(percentToFraction),
+            render: (operand) => {
+                return (
+                    <>
+                        {operand[0]} = {operand[1]}
+                    </>
+                )
+            },
+        },
+        {
+            type: 1,
+            key: (operand) => operand[0] + '^2',
+            operands: numbers,
+            render: (operand) => {
+                return (
+                    <>
+                        <Power base={operand[0]} exponent={2} /> ={' '}
+                        {Math.pow(operand[0], 2)}
+                    </>
+                )
+            },
+        },
+        {
+            type: 2,
+            key: (operand) => operand[0] + '^3',
+            operands: numbers,
+            render: (operand) => {
+                return (
+                    <>
+                        <Power base={operand[0]} exponent={3} /> ={' '}
+                        {Math.pow(operand[0], 3)}
+                    </>
+                )
+            },
+        },
+        {
+            type: 3,
+            key: (operand) => '2^' + operand[0],
+            operands: numbers,
+            render: (operand) => {
+                return (
+                    <>
+                        <Power base={2} exponent={operand[0]} /> ={' '}
+                        {Math.pow(2, operand[0])}
+                    </>
+                )
+            },
+        },
+        {
+            type: 4,
+            key: (operand) => {
+                const [a, b, c] = operand
+                return `${a}^2 + ${b}^2 = ${c}^2`
+            },
+            operands: pythagoreanTriple,
+            render: (operand) => {
+                const [a, b, c] = operand
+                return (
+                    <>
+                        <Power base={a} exponent={2} /> +{' '}
+                        <Power base={b} exponent={2} /> ={' '}
+                        <Power base={c} exponent={2} />
+                    </>
+                )
+            },
+        },
+    ]
 
     return (
-        <ul
-            className={cn(
-                className,
-                'grid grid-cols-[repeat(auto-fill,100px)] justify-around px-2 text-left text-xs'
-            )}
-        >
-            {percents.map((percent) => {
-                const key = percent
-                return (
-                    <li
-                        key={key}
-                        className={cn('transition', {
-                            'text-black/20 dark:text-white/20': status[key],
-                            'hover:text-green-500': !status[key],
-                        })}
-                        onClick={() => {
-                            setStatus(
-                                produce((draft) => {
-                                    draft[key] = !draft[key]
-                                })
-                            )
-                        }}
-                    >
-                        {percent} = {percentToFraction[percent]}
-                    </li>
-                )
-            })}
-            {/* {days.map((week, index) => (
-                <li key={week} className="transition hover:text-green-500">
-                    {week} : {index + 1}
-                </li>
-            ))}
-            {months.map((month, index) => (
-                <li
-                    key={month}
-                    className="transition hover:text-green-500"
+        <>
+            {list.map(({ render, type, key, operands }) => (
+                <ul
+                    key={type}
+                    className={cn(
+                        className,
+                        'grid grid-cols-[repeat(auto-fill,100px)] justify-around px-2 text-left text-xs'
+                    )}
                 >
-                    {month} : {index + 1}
-                </li>
-            ))} */}
-            {numbers.map((base) => {
-                const key = base + '^2'
-                return (
-                    <Item
-                        key={key}
-                        status={status[key]}
-                        onClick={() => {
-                            setStatus(
-                                produce((draft) => {
-                                    draft[key] = !draft[key]
-                                })
-                            )
-                        }}
-                    >
-                        <Power base={base} exponent={2} /> = {Math.pow(base, 2)}
-                    </Item>
-                )
-            })}
-            {numbers.map((base) => {
-                const key = base + '^3'
-                return (
-                    <Item
-                        key={key}
-                        status={status[key]}
-                        onClick={() => {
-                            setStatus(
-                                produce((draft) => {
-                                    draft[key] = !draft[key]
-                                })
-                            )
-                        }}
-                    >
-                        <Power base={base} exponent={3} /> = {Math.pow(base, 3)}
-                    </Item>
-                )
-            })}
-            {numbers.map((exponent) => {
-                const key = '2^' + exponent
-                return (
-                    <Item
-                        key={key}
-                        status={status[key]}
-                        onClick={() => {
-                            setStatus(
-                                produce((draft) => {
-                                    draft[key] = !draft[key]
-                                })
-                            )
-                        }}
-                    >
-                        <Power base={2} exponent={exponent} /> ={' '}
-                        {Math.pow(2, exponent)}
-                    </Item>
-                )
-            })}
-            {pythagoreanTriple.map((triple) => {
-                const [a, b, c] = triple
-                const key = `${a}^2 + ${b}^2 = ${c}^2`
-                return (
-                    <Item
-                        key={key}
-                        status={status[key]}
-                        onClick={() => {
-                            setStatus(
-                                produce((draft) => {
-                                    draft[key] = !draft[key]
-                                })
-                            )
-                        }}
-                    >
-                        <Power base={a} exponent={2} /> + <Power base={b} exponent={2} /> = <Power base={c} exponent={2} />
-                    </Item>
-                )
-            })}
-        </ul>
+                    {operands.map((operand) => {
+                        return (
+                            <li
+                                key={key(operand)}
+                                className={cn('transition', {
+                                    'text-black/20 dark:text-white/20':
+                                        status[key(operand)],
+                                    'hover:text-green-500':
+                                        !status[key(operand)],
+                                })}
+                                onClick={() => {
+                                    setStatus(
+                                        produce((draft) => {
+                                            draft[key(operand)] =
+                                                !draft[key(operand)]
+                                        })
+                                    )
+                                }}
+                            >
+                                {render(operand)}
+                            </li>
+                        )
+                    })}
+                </ul>
+            ))}
+        </>
     )
 }
 
-const Item = ({ className, key, children, onClick, status, ...props }) => {
-    return (
-        <li
-            key={key}
-            className={cn('transition', {
-                'text-black/20 dark:text-white/20': status,
-                'hover:text-green-500': !status,
-            })}
-            onClick={onClick}
-            {...props}
-        >
-            {children}
-        </li>
-    )
-}
 export default ArithmeticPractice

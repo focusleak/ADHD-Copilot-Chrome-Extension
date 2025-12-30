@@ -5,15 +5,15 @@ import applications from '@/applications'
 import CubeNet from './CubeNet/CubeNet'
 const Default = () => {
     return (
-        <div className="flex w-full items-center justify-center text-xl">
+        <ul className="flex w-full flex-wrap items-center justify-center text-xl">
             {applications.map(({ name }) => {
                 return (
-                    <div key={name} className="m-2">
-                        <a href={`?name=${name}`}>{name}</a>
-                    </div>
+                    <li key={name} className="m-4">
+                        <a href={`?name=${name}`} className='hover:text-green-500'>{name}</a>
+                    </li>
                 )
             })}
-        </div>
+        </ul>
     )
 }
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
     return (
         <>
             {/* <img width={32} height={32} src={icon} /> */}
-            <div className="flex w-full items-center justify-center text-xl">
+            <div className="flex h-full w-full items-center justify-center text-xl">
                 <Component className={'absolute top-[20%]'} />
                 {/* <CubeNet /> */}
             </div>

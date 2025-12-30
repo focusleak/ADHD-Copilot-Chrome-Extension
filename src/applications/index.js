@@ -12,33 +12,24 @@ import * as Health from '@/applications/Health'
 import * as ZhiLeMe from '@/applications/ZhiLeMe'
 // import * as CubeNet from '@/applications/CubeNet'
 import * as FlashCard from '@/applications/FlashCard'
-export default [
+import * as Gallery from '@/applications/Gallery'
+import * as QuickNote from '@/applications/QuickNote'
+
+export const applications = {
     Reminders,
     Calculator,
     Clock,
-    VocabularyBook,
     ArithmeticPractice,
     CalligraphyCopybook,
-    TextProcessor,
     DailyTrace,
-    Downloader,
-    ImageClipper,
+    QuickNote,
+    Gallery,
     Health,
     ZhiLeMe,
-    FlashCard
-]
-export {
-    Reminders,
-    Calculator,
-    Clock,
     VocabularyBook,
-    ArithmeticPractice,
-    CalligraphyCopybook,
     TextProcessor,
-    DailyTrace,
-    Downloader,
     ImageClipper,
-    Health,
-    ZhiLeMe,
-    FlashCard
+    FlashCard,
+    Downloader,
 }
+export default Object.values(applications)

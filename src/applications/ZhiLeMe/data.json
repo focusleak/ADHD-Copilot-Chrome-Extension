@@ -1,0 +1,37 @@
+[
+    { "name": "DELL XPS 15 9560", "price": "8999", "time": "2017-06-18" },
+    { "name": "Samsung T7 太空灰 1TB", "price": "499", "time": "2025-05-18" },
+    {
+        "name": "Samsung Bar Plus 香槟银 128GB",
+        "price": "99",
+        "time": "2024-03-08"
+    },
+    {
+        "name": "Dockcase拓展坞 10合1探索版 极光银",
+        "price": "490",
+        "time": "2025-06-02"
+    },
+    { "name": "iPad Pro 2020", "price": "5088", "time": "2021-05-01" },
+    { "name": "Apple Pencil", "price": "868", "time": "2021-05-07" },
+    { "name": "Apple Watch S8", "price": "", "time": "" },
+    { "name": "Air Tag", "price": "", "time": "" },
+    { "name": "iPhone 16 Pro", "price": "", "time": "" },
+    { "name": "AirPods 4 ANC", "price": "", "time": "" },
+    { "name": "Sony WH1000-XM4", "price": "1471", "time": "2024-05-20" },
+    { "name": "小米体重秤 S200", "price": "", "time": "" },
+    { "name": "小米LED智能台灯1s", "price": "169", "time": "2021-03-01" },
+    { "name": "小米智能除菌加湿器2", "price": "190", "time": "2023-02-02" },
+    { "name": "小米空调伴侣", "price": "", "time": "" },
+    { "name": "小米立式冲牙器", "price": "189", "time": "2021-04-25" },
+    { "name": "小米口袋照片打印机 Pro", "price": "441", "time": "2025-06-16" },
+    { "name": "小米波轮洗衣机 8KG", "price": "560", "time": "2025-11-28" },
+    { "name": "小米电热水壶3 1.7L", "price": "89", "time": "2025-11-22" },
+    { "name": "90分 PC行李箱 24英寸", "price": "332", "time": "2022-11-10" },
+    { "name": "酷态科CP13 10000mah 20W", "price": "68", "time": "2025-05-28" },
+    {
+        "name": "HyperX Alloy Origin 104火轴机械键盘",
+        "price": "399",
+        "time": "2022-09-15"
+    },
+    { "name": "XBox手柄", "price": "", "time": "" }
+]
