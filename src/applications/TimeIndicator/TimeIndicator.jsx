@@ -6,7 +6,7 @@ import { cva } from 'class-variance-authority'
 
 import { useToday } from '@/hooks/useTime'
 
-const YearIndicator = ({ className }) => {
+export const YearIndicator = ({ className }) => {
     const date = useToday()
     const dayOfYear = getDayOfYear(date)
     const year = date.getFullYear()
@@ -57,10 +57,11 @@ const HourIndicator = ({ className }) => {}
 const MonthIndicator = ({ className }) => {}
 const WeekIndicator = ({ className }) => {}
 
-const Point = React.memo(({ className }) => {
-    return <li className={cn('h-1 w-1 rounded-full', className)}></li>
+const Point = React.memo(({ className, ...props }) => {
+    return (
+        <li className={cn('h-1 w-1 rounded-full', className)} {...props}></li>
+    )
 })
-
 
 // year month week day
 const TimeIndicator = ({ className, type }) => {

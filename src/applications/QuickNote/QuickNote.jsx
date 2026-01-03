@@ -50,7 +50,7 @@ const QuickNote = ({ className }) => {
             <div>
                 <input
                     type="text"
-                    className="w-full border-b border-black/50 p-2 text-xl font-bold outline-0 dark:border-white/50"
+                    className="w-full border-b border-black/20 p-2 text-xl font-bold outline-0 dark:border-white/20"
                     // placeholder="后天/明天/d天后/x点/提醒我xxx"
                     value={input}
                     onInput={(e) => {
@@ -70,7 +70,7 @@ const QuickNote = ({ className }) => {
                     ({ checked, content, createTime, modifiedTime }, index) => (
                         <li
                             key={index}
-                            className="flex w-full border-b border-black/50 py-2 text-xs wrap-break-word dark:border-white/50"
+                            className="flex w-full border-b border-black/20 py-2 text-xs wrap-break-word dark:border-white/20"
                         >
                             <Checkbox
                                 className="mx-2"
@@ -93,7 +93,7 @@ const QuickNote = ({ className }) => {
                             >
                                 {content}
                             </EditableText>
-                            <div className="text-xs text-black/50 dark:text-white/50">
+                            <div className="text-xs text-black/20 dark:text-white/20">
                                 <button
                                     onClick={() => {
                                         setQuickNotes(

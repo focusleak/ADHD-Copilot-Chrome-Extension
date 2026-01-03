@@ -144,6 +144,7 @@ const Problems = [
     //         return <span>{operands[0]}</span>
     //     },
     // },
+    // { type: '三位数除法' },
     // { type: '分数比大小' },
     // { type: '小数加减' },
     // { type: '分数' },
@@ -314,6 +315,11 @@ const CheatSheet = ({ className }) => {
         {}
     )
     const numbers = Array.from({ length: 15 }, (_, i) => [i + 2])
+    const percents = Array.from({ length: 50 }, (_, i) => (i + 1) / 1000).map(
+        (decimal) => {
+            return [decimal, 1 / (1 + decimal), 1 - decimal]
+        }
+    )
     // 勾股数
     const pythagoreanTriple = [
         [3, 4, 5],
@@ -436,6 +442,13 @@ const CheatSheet = ({ className }) => {
                     })}
                 </ul>
             ))}
+            <ul>
+                {percents.map(([percent, raw, near]) => (
+                    <li key={percent}>
+                        {percent}% : {raw} - {near} = {(near - raw).toFixed(4)}
+                    </li>
+                ))}
+            </ul>
         </>
     )
 }
