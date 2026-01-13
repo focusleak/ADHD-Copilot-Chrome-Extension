@@ -50,7 +50,7 @@ import { removePlaceholder } from '@/lib/utils'
 //     // TODO 解除复制限制
 // })
 
-// 屏蔽词
+// 屏蔽含有讨厌的主题词的内容
 ;(function () {
     const observer = new MutationObserver(() => {
         Array.from(document.querySelectorAll('.Card.TopstoryItem'))

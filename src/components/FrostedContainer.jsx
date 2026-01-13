@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { Slot } from '@radix-ui/react-slot'
-const FrostedContainer = ({
+export const FrostedContainer = ({
     className,
     rounded,
     shadow,
@@ -23,4 +23,3 @@ const FrostedContainer = ({
         </Comp>
     )
 }
-export default FrostedContainer

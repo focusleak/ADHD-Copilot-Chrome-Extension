@@ -448,5 +448,11 @@
         "url": "https://thispersondoesnotexist.com/",
         "icon": "https://thispersondoesnotexist.com/favicon.ico",
         "type": 0
+    },
+    {
+        "name": "知乎",
+        "url": "https://www.zhihu.com/",
+        "icon": "https://www.zhihu.com/favicon.ico",
+        "type": 0
     }
 ]

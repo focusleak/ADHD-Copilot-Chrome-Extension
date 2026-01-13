@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { toast } from "sonner"
+import { toast } from 'sonner'
 
 // 创建axios实例
-const request = axios.create({
+export const request = axios.create({
     // baseURL: , // 环境变量配置
     timeout: 10000, // 请求超时
     // responseType: 'json',
@@ -39,5 +39,3 @@ request.interceptors.response.use(
         return Promise.reject(error)
     }
 )
-
-export default request

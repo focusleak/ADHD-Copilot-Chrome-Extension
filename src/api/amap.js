@@ -4,7 +4,7 @@ const JS_API_KEY = 'c6683c23f2ee5b950866c6f734adbcf1'
 
 // https://lbs.amap.com/
 
-import request from './request'
+import {request} from './request'
 
 export const getWeather = (city) =>
     request({

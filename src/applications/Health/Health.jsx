@@ -19,6 +19,8 @@ const Health = ({ className }) => {
     const hipCircumference = 0 // https://zh.wikihow.com/%E6%B5%8B%E9%87%8F%E8%87%80%E5%9B%B4
     const proximalThighCircumference = 0
 
+    const shoulderWidth = 0
+
     // BMI = weight / (height * height)   kg / m
     const BMI = useMemo(() => {
         return (weight / (height / 100) ** 2).toFixed(2)
@@ -77,6 +79,10 @@ const Health = ({ className }) => {
         }
     }, [gender, height, age, weight])
 
+    const pillowHeight = useMemo(() => {
+        return 0.167 * shoulderWidth + 4.633
+    }, [shoulderWidth])
+
     return (
         <div className={cn('px-4 text-lg', className)}>
             <p>年龄：{age}</p>
@@ -109,6 +115,9 @@ const Health = ({ className }) => {
             <p>脂肪：</p>
             <p>蛋白质：</p>
             <p>水：</p>
+            <p title="男性不高于12.36cm 女性不高于10.95cm，枕头压缩高度6-7cm">
+                枕头高度：{pillowHeight}cm{' '}
+            </p>
         </div>
     )
 }

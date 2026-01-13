@@ -1,6 +1,4 @@
-import React from 'react'
-
-import ErrorBoundary from '@/components/ErrorBoundary'
+import { ErrorBoundary } from '@/components'
 
 import QuickNotes from '@/popup/QuickNotes'
 const App = () => {

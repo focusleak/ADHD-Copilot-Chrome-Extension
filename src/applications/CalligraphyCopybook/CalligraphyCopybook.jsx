@@ -3,14 +3,48 @@
 // 双击弹窗，放大显示
 // 米字格 回字格
 import { useState, useEffect, useRef, startTransition } from 'react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn } from '@/lib/utils.js'
 import characters from '@/static/data/characters.js'
 import styles from './styles.module.css'
 // https://faculty.blcu.edu.cn/xinghb/zh_CN/article/167473/content/1437.htm
 import { useVirtualizer } from '@tanstack/react-virtual'
 
-const items = characters.filter(({ frequency }) => frequency)
+const items = characters.filter(({ frequency }) => frequency) //.slice(0, 10)
+
 const CalligraphyCopybook = ({ className }) => {
+    return (
+        <Tabs
+            defaultValue={0}
+            className={cn('CalligraphyCopybook flex h-full', className)}
+        >
+            <TabsList className="m-auto mb-6">
+                <TabsTrigger value={0}>每日一字</TabsTrigger>
+                <TabsTrigger value={1}>Calligraphy Copybook</TabsTrigger>
+            </TabsList>
+            <TabsContent value={0}>
+                <EverydayCharacter />
+            </TabsContent>
+            <TabsContent value={1} className={'min-h-0 flex-1'}>
+                <Copybook />
+            </TabsContent>
+        </Tabs>
+    )
+}
+
+const EverydayCharacter = ({ className }) => {
+    return (
+        <div className="relative flex justify-center">
+            <Character
+                character={'如'}
+                gridSize={360}
+                fontSize={192}
+            ></Character>
+        </div>
+    )
+}
+
+const Copybook = ({ className }) => {
     const ref = useRef(null)
     const [cols, setCols] = useState(4)
     const [offsetLeft, setOffsetLeft] = useState(0)
@@ -34,7 +68,7 @@ const CalligraphyCopybook = ({ className }) => {
         estimateSize: () => ROW_HEIGHT,
     })
     return (
-        <div ref={ref} className={cn('h-full w-full overflow-auto')}>
+        <div ref={ref} className={cn('h-full w-full flex-1 overflow-auto')}>
             <div
                 style={{
                     height: virtualizer.getTotalSize(),
@@ -75,24 +109,47 @@ const Character = ({
         <div className={cn(styles.character, className)} style={style}>
             {/* 改用背景图方案 */}
             <svg
-                width={gridSize - 2}
-                height={gridSize - 2}
-                style={{ ...strokeStyle, stroke: 'currentColor', opacity: 0.3 }}
+                width={gridSize}
+                height={gridSize}
+                stroke="currentColor"
+                fill="currentColor"
             >
-                <line x1="0" y1="0" x2="100%" y2="0" />
-                <line x1="0" y1="0" x2="0" y2="100%" />
-                <line x1="100%" y1="0" x2="100%" y2="100%" />
-                <line x1="0" y1="100%" x2="100%" y2="100%" />
-                <line x1="0" y1="50%" x2="100%" y2="50%" />
-                <line x1="50%" y1="0" x2="50%" y2="100%" />
-                <line x1="0" y1="0" x2="100%" y2="100%" />
-                <line x1="100%" y1="0" x2="0" y2="100%" />
+                <g
+                    style={{
+                        ...strokeStyle,
+                        stroke: 'currentColor',
+                        opacity: 0.3,
+                    }}
+                >
+                    <line x1="1" y1="1" x2={gridSize - 1} y2="1" />
+                    <line x1="1" y1="1" x2="1" y2={gridSize - 1} />
+                    <line
+                        x1={gridSize - 1}
+                        y1="1"
+                        x2={gridSize - 1}
+                        y2={gridSize - 1}
+                    />
+                    <line
+                        x1="1"
+                        y1={gridSize - 1}
+                        x2={gridSize - 1}
+                        y2={gridSize - 1}
+                    />
+                    <line x1="1" y1="50%" x2={gridSize - 1} y2="50%" />
+                    <line x1="50%" y1="1" x2="50%" y2={gridSize - 1} />
+                    <line x1="1" y1="1" x2={gridSize - 1} y2={gridSize - 1} />
+                    <line x1={gridSize - 1} y1="1" x2="1" y2={gridSize - 1} />
+                </g>
+                <text
+                    x="50%"
+                    y="50%"
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fontSize={fontSize}
+                >
+                    {character}
+                </text>
             </svg>
-            <div
-                className={`absolute top-0 left-0 z-10 h-[90px] w-[90px] text-center text-[48px] leading-[90px]`}
-            >
-                {character}
-            </div>
         </div>
     )
 }

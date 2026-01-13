@@ -16,7 +16,14 @@ const getBase64fromURL = async (src) => {
         reader.readAsDataURL(blob)
     })
 }
-const Background = ({ className, style, src, asChild, children, ...props }) => {
+export const Background = ({
+    className,
+    style,
+    src,
+    asChild,
+    children,
+    ...props
+}) => {
     const [base64, setBase64] = useState(null)
     const [filename, setFilename] = useState(null)
     const handleChangeImage = () => {
@@ -56,5 +63,3 @@ const Background = ({ className, style, src, asChild, children, ...props }) => {
         </Comp>
     )
 }
-
-export default Background

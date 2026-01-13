@@ -9,7 +9,7 @@ const Footer = ({ className }) => {
             )}
         >
             <a href="https://github.com/focusleak">
-                &copy; Copyright 2025 FocusLeak. All rights reserved.
+                &copy; Copyright 2025-2026 FocusLeak. All rights reserved.
             </a>
         </footer>
     )

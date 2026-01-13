@@ -1,9 +1,7 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/sonner'
-import ErrorBoundary from '@/components/ErrorBoundary'
-import FrostedContainer from '@/components/FrostedContainer'
-import Background from '@/components/Background'
+import { ErrorBoundary, Background, FrostedContainer } from '@/components'
 
 import SiteMap from './SiteMap'
 import SearchEngine from './SearchEngine'
@@ -18,7 +16,8 @@ import QuickNote from '@/applications/QuickNote/QuickNote'
 const App = () => {
     return (
         <Background
-            src="https://bing.img.run/rand.php"
+            // src="https://bing.img.run/rand.php"
+            src="https://picsum.photos/1920/1080"
             className="h-full w-full"
         >
             <SearchEngine />
@@ -45,7 +44,7 @@ const App = () => {
             </FrostedContainer> */}
             <FrostedContainer
                 asChild
-                className="absolute top-[330px] left-22 w-[160px] overflow-auto p-4"
+                className="absolute top-[20px] left-22 w-[160px] overflow-auto p-4"
                 rounded
             >
                 <QuickNote />

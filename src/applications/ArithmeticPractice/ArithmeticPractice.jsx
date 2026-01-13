@@ -442,13 +442,13 @@ const CheatSheet = ({ className }) => {
                     })}
                 </ul>
             ))}
-            <ul>
+            {/* <ul>
                 {percents.map(([percent, raw, near]) => (
                     <li key={percent}>
                         {percent}% : {raw} - {near} = {(near - raw).toFixed(4)}
                     </li>
                 ))}
-            </ul>
+            </ul> */}
         </>
     )
 }
