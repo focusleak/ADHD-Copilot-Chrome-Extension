@@ -1,0 +1,154 @@
+[
+    {
+        "name": "DELL XPS 15 9560",
+        "price": 8999,
+        "time": "2017-06-18",
+        "type": 0
+    },
+    {
+        "name": "Samsung T7 太空灰 1TB",
+        "price": 499,
+        "time": "2025-05-18",
+        "type": 0
+    },
+    {
+        "name": "Samsung Bar Plus 香槟银 128GB",
+        "price": 99,
+        "time": "2024-03-08",
+        "type": 0
+    },
+    {
+        "name": "Dockcase拓展坞 10合1探索版 极光银",
+        "price": 490,
+        "time": "2025-06-02",
+        "type": 0
+    },
+    {
+        "name": "iPad Pro 2020",
+        "price": 5088,
+        "time": "2021-05-01",
+        "type": 0
+    },
+    { "name": "Apple Pencil", "price": 868, "time": "2021-05-07", "type": 0 },
+    { "name": "Apple Watch S8", "price": "", "time": "", "type": 0 },
+    { "name": "Air Tag", "price": "", "time": "", "type": 0 },
+    { "name": "iPhone 16 Pro", "price": 8499, "time": "", "type": 0 },
+    { "name": "AirPods 4 ANC", "price": 1100, "time": "", "type": 0 },
+    {
+        "name": "Sony WH1000-XM4",
+        "price": 1471,
+        "time": "2024-05-20",
+        "type": 0
+    },
+    { "name": "小米体重秤 S200", "price": "", "time": "", "type": 0 },
+    {
+        "name": "小米LED智能台灯1s",
+        "price": 169,
+        "time": "2021-03-01",
+        "type": 0
+    },
+    {
+        "name": "小米智能除菌加湿器2",
+        "price": 190,
+        "time": "2023-02-02",
+        "type": 0
+    },
+    { "name": "小米空调伴侣", "price": "", "time": "", "type": 0 },
+    { "name": "小米超大双料鼠标垫", "price": 49, "time": "", "type": 0 },
+    {
+        "name": "小米立式冲牙器",
+        "price": 189,
+        "time": "2021-04-25",
+        "type": 0
+    },
+    {
+        "name": "小米口袋照片打印机 Pro",
+        "price": 441,
+        "time": "2025-06-16",
+        "type": 0
+    },
+    {
+        "name": "小米波轮洗衣机 8KG",
+        "price": 560,
+        "time": "2025-11-28",
+        "type": 0
+    },
+    {
+        "name": "小米电热水壶3 1.7L",
+        "price": 89,
+        "time": "2025-11-22",
+        "type": 0
+    },
+    {
+        "name": "90分 PC行李箱 24英寸",
+        "price": 332,
+        "time": "2022-11-10",
+        "type": 0
+    },
+    {
+        "name": "酷态科CP13 10000mah 20W",
+        "price": 68,
+        "time": "2025-05-28",
+        "type": 0
+    },
+    {
+        "name": "HyperX Alloy Origin 104火轴机械键盘",
+        "price": 399,
+        "time": "2022-09-15",
+        "type": 0
+    },
+    { "name": "XBox手柄", "price": "", "time": "", "type": 0 },
+
+    {
+        "name": "Adidas Pure Boos",
+        "price": 399,
+        "time": "2023-11-11",
+        "type": 0
+    },
+    {
+        "name": "Adidas TERREX AX3",
+        "price": 342,
+        "time": "2025-04-27",
+        "type": 0
+    },
+    {
+        "name": "Adidas TEMPER RUN 2",
+        "price": 307,
+        "time": "2025-04-27",
+        "type": 0
+    },
+
+    { "name": "移动", "price": " 8元/月", "cycle": "", "type": 1 },
+    { "name": "联通", "price": " 5元/月", "cycle": "", "type": 1 },
+    { "name": "电信宽带", "price": " 79元/月", "cycle": "", "type": 1 },
+    { "name": "Apple Music", "price": " 6元/月", "cycle": "", "type": 1 },
+    { "name": "房租水电物业管理费", "price": "", "cycle": "", "type": 1 },
+
+    { "name": "香皂", "price": "", "cycle": "", "type": 1 },
+    { "name": "洗发水", "price": "", "cycle": "", "type": 1 },
+    { "name": "牙刷", "price": "", "cycle": "", "type": 1 },
+    { "name": "毛巾", "price": "", "cycle": "", "type": 1 },
+    { "name": "漱口水", "price": "", "cycle": "", "type": 1 },
+    { "name": "牙膏", "price": "", "cycle": "", "type": 1 },
+    { "name": "旁氏米粹洁面泡泡", "price": "", "cycle": "", "type": 1 },
+    { "name": "洗衣液", "price": "", "cycle": "", "type": 1 },
+    { "name": "抽纸", "price": "", "cycle": "", "type": 1 },
+    { "name": "湿厕纸", "price": "", "cycle": "", "type": 1 },
+    { "name": "蚊香液", "price": "", "cycle": "", "type": 1 },
+
+    { "name": "咖啡", "price": "", "cycle": "", "type": 1 },
+    { "name": "奶粉", "price": "", "cycle": "", "type": 1 },
+
+    { "name": "过氧苯甲酰凝胶 班赛", "price": "", "cycle": "", "type": 1 },
+    { "name": "阿达帕林凝胶 达芙文", "price": "", "cycle": "", "type": 1 },
+    {
+        "name": "曲安奈德益康唑乳膏 派瑞松",
+        "price": "",
+        "cycle": "",
+        "type": 1
+    },
+    { "name": "维生素B", "price": "", "cycle": "", "type": 1 },
+    { "name": "维生素C", "price": "", "cycle": "", "type": 1 },
+    { "name": "葡萄糖酸锌", "price": "", "cycle": "", "type": 1 },
+    { "name": "叶黄素", "price": "", "cycle": "", "type": 1 }
+]

@@ -14,7 +14,7 @@ import * as Reminders from '@/applications/Reminders'
 import * as TextProcessor from '@/applications/TextProcessor'
 import * as TimeIndicator from '@/applications/TimeIndicator'
 import * as VocabularyBook from '@/applications/VocabularyBook'
-import * as ZhiLeMe from '@/applications/ZhiLeMe'
+import * as Lifescribe from '@/applications/Lifescribe'
 
 export const applications = {
     Reminders,
@@ -26,7 +26,7 @@ export const applications = {
     QuickNote,
     Gallery,
     Health,
-    ZhiLeMe,
+    Lifescribe,
     VocabularyBook,
     TextProcessor,
     ImageClipper,

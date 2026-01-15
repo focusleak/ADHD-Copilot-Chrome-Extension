@@ -450,6 +450,21 @@
         "type": 0
     },
     {
+        "name": "京东",
+        "url": "http://www.jd.com/",
+        "icon": "http://www.jd.com/favicon.ico"
+    },
+    {
+        "name": "淘宝",
+        "url": "https://www.taobao.com/",
+        "icon": "https://www.taobao.com/favicon.ico"
+    },
+    {
+        "name": "天猫",
+        "url": "https://www.tmall.com/",
+        "icon": "https://www.tmall.com/favicon.ico"
+    },
+    {
         "name": "知乎",
         "url": "https://www.zhihu.com/",
         "icon": "https://www.zhihu.com/favicon.ico",

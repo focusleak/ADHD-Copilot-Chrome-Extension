@@ -9,7 +9,12 @@ const Default = () => {
             {applications.map(({ name }) => {
                 return (
                     <li key={name} className="m-4">
-                        <a href={`?name=${name}`} className='hover:text-green-500'>{name}</a>
+                        <a
+                            href={`?name=${name}`}
+                            className="hover:text-green-500"
+                        >
+                            {name}
+                        </a>
                     </li>
                 )
             })}
@@ -27,8 +32,8 @@ const App = () => {
     return (
         <>
             {/* <img width={32} height={32} src={icon} /> */}
-            <div className="flex h-full w-full items-center justify-center text-xl">
-                <Component className={'absolute top-[20%]'} />
+            <div className="flex h-full w-full text-xl p-4">
+                <Component />
                 {/* <CubeNet /> */}
             </div>
         </>

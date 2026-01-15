@@ -135,21 +135,6 @@ export const defaultBookmarks = [
         icon: 'https://en.wikipedia.org/favicon.ico',
     },
     {
-        name: '京东',
-        url: 'http://www.jd.com/',
-        icon: 'http://www.jd.com/favicon.ico',
-    },
-    {
-        name: '淘宝',
-        url: 'https://www.taobao.com/',
-        icon: 'https://www.taobao.com/favicon.ico',
-    },
-    {
-        name: '天猫',
-        url: 'https://www.tmall.com/',
-        icon: 'https://www.tmall.com/favicon.ico',
-    },
-    {
         name: '微信网页版',
         url: 'https://wx.qq.com/',
         icon: 'https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico',
