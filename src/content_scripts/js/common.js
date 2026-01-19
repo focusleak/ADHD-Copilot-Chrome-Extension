@@ -1,5 +1,7 @@
 import { setSelectionStyles } from '@/lib/utils.js'
 import storage from '@/lib/storage'
+import './autofill'
+console.log('common.js')
 ;(() => {
     const ICON_LINKS = Array.from(document.querySelectorAll('link'))
         .filter(({ rel }) => {
@@ -24,7 +26,6 @@ document.body.addEventListener('click', async (event) => {
         setSelectionStyles(selection, { color: '#FC6A03' })
     }
 })
-
 
 document.addEventListener('keydown', function (event) {
     let selection = window.getSelection()

@@ -24,9 +24,9 @@ const App = () => {
             <FrostedContainer
                 asChild
                 rounded
-                className={cn('mx-auto my-0 mt-8 h-[300px] w-[1000px]')}
+                className={cn('mx-auto my-0 mt-8')}
             >
-                <SiteMap />
+                <SiteMap rows={4} cols={8} />
             </FrostedContainer>
 
             <ErrorBoundary>
@@ -44,7 +44,7 @@ const App = () => {
             </FrostedContainer> */}
             <FrostedContainer
                 asChild
-                className="absolute top-[20px] left-22 w-[160px] overflow-auto p-4"
+                className="absolute top-[140px] left-22 w-[160px] overflow-auto p-4"
                 rounded
             >
                 <QuickNote />
@@ -55,7 +55,7 @@ const App = () => {
             </FrostedContainer>
 
             <FrostedContainer
-                className="absolute top-2 right-[120px] p-4 text-right"
+                className="absolute top-2 left-22 p-4 text-right"
                 asChild
                 rounded
             >
@@ -63,7 +63,7 @@ const App = () => {
             </FrostedContainer>
 
             <FrostedContainer
-                className="absolute top-[190px] right-[120px] p-4 text-right"
+                className="absolute top-[12px] right-[120px] p-4 text-right"
                 asChild
                 rounded
             >

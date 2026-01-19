@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@/lib/utils'
+import { useStorage } from '@/hooks'
 
-const getBase64fromURL = async (src) => {
-    const res = await fetch(src)
+const getBase64fromURL = async (url) => {
+    const res = await fetch(url)
     const filename = res.url.split('?')[1]
     const blob = await res.blob()
     const reader = new FileReader()
@@ -22,11 +23,12 @@ export const Background = ({
     src,
     asChild,
     children,
+    cache = true,
     ...props
 }) => {
-    const [base64, setBase64] = useState(null)
-    const [filename, setFilename] = useState(null)
-    const handleChangeImage = () => {
+    const [base64, setBase64] = useStorage('background-base64', null, true)
+    const [filename, setFilename] = useStorage('background-name', null, true)
+    const changeImage = () => {
         if (src) {
             getBase64fromURL(src).then(({ base64, filename }) => {
                 setBase64(base64)
@@ -35,7 +37,7 @@ export const Background = ({
         }
     }
     useEffect(() => {
-        handleChangeImage()
+        changeImage()
     }, [])
     const handleDownload = () => {
         if (base64) {
@@ -58,7 +60,7 @@ export const Background = ({
             {children}
             <span className="absolute right-[120px] bottom-2 flex cursor-pointer gap-1 dark:text-white">
                 <span onClick={handleDownload}>下载</span>
-                <span onClick={handleChangeImage}>换一张</span>
+                <span onClick={changeImage}>换一张</span>
             </span>
         </Comp>
     )

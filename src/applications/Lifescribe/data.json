@@ -62,6 +62,27 @@
         "type": 0
     },
     {
+        "name": "米家蓝牙温湿度计 2",
+        "price": 0,
+        "time": "",
+        "count": 2,
+        "type": 0
+    },
+    {
+        "name": "米家魔方转换器",
+        "price": 59,
+        "time": "2022-08-21",
+        "count": 1,
+        "type": 0
+    },
+    {
+        "name": "米家插线板20W快充版",
+        "price": 69,
+        "time": "2022-11-19",
+        "count": 2,
+        "type": 0
+    },
+    {
         "name": "小米口袋照片打印机 Pro",
         "price": 441,
         "time": "2025-06-16",
@@ -83,6 +104,18 @@
         "name": "90分 PC行李箱 24英寸",
         "price": 332,
         "time": "2022-11-10",
+        "type": 0
+    },
+    {
+        "name": "紫米镍氢5号充电电池",
+        "price": 0,
+        "time": "",
+        "type": 0
+    },
+    {
+        "name": "紫米镍氢7号充电电池",
+        "price": 0,
+        "time": "",
         "type": 0
     },
     {
@@ -115,6 +148,13 @@
         "name": "Adidas TEMPER RUN 2",
         "price": 307,
         "time": "2025-04-27",
+        "type": 0
+    },
+    {
+        "name": "优衣库AIRism针织短裤",
+        "price": 59,
+        "count": 2,
+        "time": "2025-05-30",
         "type": 0
     },
 
@@ -150,5 +190,9 @@
     { "name": "维生素B", "price": "", "cycle": "", "type": 1 },
     { "name": "维生素C", "price": "", "cycle": "", "type": 1 },
     { "name": "葡萄糖酸锌", "price": "", "cycle": "", "type": 1 },
-    { "name": "叶黄素", "price": "", "cycle": "", "type": 1 }
+    { "name": "叶黄素", "price": "", "cycle": "", "type": 1 },
+
+    { "name": "洗牙", "price": "", "cycle": "", "type": 2 },
+    { "name": "体检", "price": "", "cycle": "", "type": 2 },
+    { "name": "健身", "price": "", "cycle": "", "type": 2 }
 ]

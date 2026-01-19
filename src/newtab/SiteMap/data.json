@@ -469,5 +469,16 @@
         "url": "https://www.zhihu.com/",
         "icon": "https://www.zhihu.com/favicon.ico",
         "type": 0
+    },
+    {
+        "name": "粉笔",
+        "url": "https://www.fenbi.com/",
+        "icon": "https://www.fenbi.com/favicon.ico",
+        "type": 0
+    },{
+        "name": "恒生指数",
+        "url": "https://www.hsi.com.hk/",
+        "icon": "https://www.hsi.com.hk/static/uploads/assets/images/favicon.ico",
+        "type": 0
     }
 ]

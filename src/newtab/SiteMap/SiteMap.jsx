@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { produce } from 'immer'
-import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
-import { useStorage } from '@/hooks/useStorage'
-import { useToday } from '@/hooks/useTime'
+import { useStorage, useToday } from '@/hooks'
+
+import Image from '@/components/Image'
 
 import list from './data.json'
 
 const STORAGE_KEY = 'NEW_TAB_FAVORITES_FREQUENCIES'
-const page = Math.ceil(list.length / 30)
+
 // TODO 按最近时间、点击频率显示不同的导航
-const Favorites = ({ className }) => {
+const SiteMap = ({ className, rows = 3, cols = 10, gridSize = 100 }) => {
     const [index, setIndex] = React.useState(0)
     let [favorites, setFavorites] = useStorage(STORAGE_KEY, {})
 
@@ -33,8 +33,11 @@ const Favorites = ({ className }) => {
             })
         )
     }
+
+    const PAGE_NUM = Math.ceil(list.length / (cols * rows))
+
     const handleWheel = (e) => {
-        if (e.deltaY > 0 && index < page - 1) {
+        if (e.deltaY > 0 && index < PAGE_NUM - 1) {
             setIndex(index + 1)
         } else if (e.deltaY < 0 && index > 0) {
             setIndex(index - 1)
@@ -53,11 +56,18 @@ const Favorites = ({ className }) => {
 
     const EPICState = date.getDay() == 5 ? true : false
     return (
-        <div className={cn('overflow-hidden', className)} onWheel={handleWheel}>
+        <div
+            className={cn('overflow-hidden', className)}
+            onWheel={handleWheel}
+            style={{
+                width: cols * gridSize,
+                height: rows * gridSize,
+            }}
+        >
             <div
                 className="flex flex-wrap transition duration-500"
                 style={{
-                    transform: `translateY(${-index * 300}px)`,
+                    transform: `translateY(${-index * gridSize * rows}px)`,
                 }}
             >
                 {sortedList.map((item, key) => {
@@ -70,8 +80,12 @@ const Favorites = ({ className }) => {
                             target="_blank"
                             rel="noreferrer"
                             key={item.name}
+                            style={{
+                                width: gridSize,
+                                height: gridSize,
+                            }}
                             className={cn(
-                                'flex h-[100px] w-[100px] flex-col items-center justify-center rounded-sm hover:bg-white/10',
+                                'flex flex-col items-center justify-center rounded-sm hover:bg-white/10',
                                 {
                                     'animate-bounce':
                                         item.name == 'LeetCode'
@@ -108,4 +122,4 @@ const Favorites = ({ className }) => {
         </div>
     )
 }
-export default Favorites
+export default SiteMap

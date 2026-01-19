@@ -27,7 +27,7 @@
                 "src/content_scripts/js/common.js"
             ],
             "css": ["src/content_scripts/css/global.css"],
-            "matches": ["https://*/*"]
+            "matches": ["*://*/*"]
         },
         {
             "css": ["src/content_scripts/css/juejin.css"],

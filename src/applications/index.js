@@ -15,7 +15,7 @@ import * as TextProcessor from '@/applications/TextProcessor'
 import * as TimeIndicator from '@/applications/TimeIndicator'
 import * as VocabularyBook from '@/applications/VocabularyBook'
 import * as Lifescribe from '@/applications/Lifescribe'
-
+import * as StructuredInterview from '@/applications/StructuredInterview'
 export const applications = {
     Reminders,
     Calculator,
@@ -33,5 +33,6 @@ export const applications = {
     FlashCard,
     Downloader,
     TimeIndicator,
+    StructuredInterview,
 }
 export default Object.values(applications)

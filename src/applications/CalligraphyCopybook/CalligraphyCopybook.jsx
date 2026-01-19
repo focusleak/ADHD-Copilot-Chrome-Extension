@@ -4,11 +4,15 @@
 // 米字格 回字格
 import { useState, useEffect, useRef, startTransition } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { useVirtualizer } from '@tanstack/react-virtual'
 import { cn } from '@/lib/utils.js'
+import { getDayOfYear } from 'date-fns'
+
+import { useToday } from '@/hooks/useTime'
+
 import characters from '@/static/data/characters.js'
 import styles from './styles.module.css'
 // https://faculty.blcu.edu.cn/xinghb/zh_CN/article/167473/content/1437.htm
-import { useVirtualizer } from '@tanstack/react-virtual'
 
 const items = characters.filter(({ frequency }) => frequency) //.slice(0, 10)
 
@@ -33,10 +37,13 @@ const CalligraphyCopybook = ({ className }) => {
 }
 
 const EverydayCharacter = ({ className }) => {
+    const day = useToday()
+    const dayOfYear = getDayOfYear(day)
+    
     return (
-        <div className="relative flex justify-center">
+        <div className={cn('relative flex justify-center', className)}>
             <Character
-                character={'如'}
+                character={characters[dayOfYear - 1].character}
                 gridSize={360}
                 fontSize={192}
             ></Character>
@@ -68,7 +75,10 @@ const Copybook = ({ className }) => {
         estimateSize: () => ROW_HEIGHT,
     })
     return (
-        <div ref={ref} className={cn('h-full w-full flex-1 overflow-auto')}>
+        <div
+            ref={ref}
+            className={cn('h-full w-full flex-1 overflow-auto', className)}
+        >
             <div
                 style={{
                     height: virtualizer.getTotalSize(),
