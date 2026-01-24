@@ -1,3 +1,18 @@
+// {
+//             "js": [
+//                 "src/content_scripts/js/workTimeGuard.js",
+//                 "src/content_scripts/js/pageTimeTracker.js"
+//             ],
+//             "css": [],
+//             "matches": [
+//                 "https://*.douyin.com/*",
+//                 "https://*.v2ex.com/*",
+//                 "https://*.weibo.com/*",
+//                 "https://*.zhihu.com/*",
+//                 "https://*.jd.com/*",
+//                 "https://tieba.baidu.com/*"
+//             ]
+//         },
 ;(function () {
     const timeTracker = {
         time: 0,

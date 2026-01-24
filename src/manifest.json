@@ -187,21 +187,6 @@
             "matches": ["https://*.weibo.com/*"]
         },
         {
-            "js": [
-                "src/content_scripts/js/workTimeGuard.js",
-                "src/content_scripts/js/pageTimeTracker.js"
-            ],
-            "css": [],
-            "matches": [
-                "https://*.douyin.com/*",
-                "https://*.v2ex.com/*",
-                "https://*.weibo.com/*",
-                "https://*.zhihu.com/*",
-                "https://*.jd.com/*",
-                "https://tieba.baidu.com/*"
-            ]
-        },
-        {
             "js": [],
             "css": ["src/content_scripts/css/v8.css"],
             "matches": ["https://v8.dev/blog/*"]
@@ -229,6 +214,10 @@
         {
             "css": ["src/content_scripts/css/ptable.css"],
             "matches": ["https://*.ptable.com/*"]
+        },
+        {
+            "js": ["src/content_scripts/js/epic.js"],
+            "matches": ["https://*.epic.com/*"]
         }
     ],
     "permissions": [

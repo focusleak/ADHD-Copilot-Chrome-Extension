@@ -3,6 +3,7 @@
 // npm run add component <name>
 // npm run add api <name>
 // npm run add hook <name>
+// npm run add content_script <name>
 const fs = require('fs')
 const path = require('path')
 // TODO

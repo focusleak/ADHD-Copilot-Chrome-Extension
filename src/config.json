@@ -1,0 +1,10 @@
+[
+    {
+        "name": "湖北省人事考试平台",
+        "url": "123.56.138.149/provexam",
+        "fields": [
+            { "selector": "#yusername", "value": "nedraw" },
+            { "selector": "#ypassword", "value": "zH@142857" }
+        ]
+    }
+]

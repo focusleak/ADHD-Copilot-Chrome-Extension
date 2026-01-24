@@ -1,6 +1,4 @@
-import { cn } from '@/lib/utils'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useStorage } from '@/hooks/useStorage'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Label } from '@/components/ui/label'
@@ -8,8 +6,9 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { produce } from 'immer'
 import { random, sample } from 'lodash'
 // import { toast } from 'sonner'
-import percentToFraction from './percentToFraction.json'
+import { cn } from '@/lib/utils'
 
+import percentToFraction from './percentToFraction.json'
 import Power from './Power.jsx'
 const Anki = {
     混合增长率: '',
@@ -151,7 +150,6 @@ const Problems = [
 ]
 
 const ArithmeticPractice = ({ className }) => {
-    console.log(className)
     return (
         <Tabs defaultValue={0} className={cn('text-center', className)}>
             <TabsList className="m-auto mb-6">
@@ -175,6 +173,8 @@ const ArithmeticPractice = ({ className }) => {
 const Practice = ({ className }) => {
     const [input, setInput] = useState('')
 
+    const [status, setStatus] = useState(0)
+
     const [operands, setOperands] = useState([0, 0])
     const [operator, setOperator] = useState('+')
     const [answer, setAnswer] = useState(null)
@@ -182,9 +182,13 @@ const Practice = ({ className }) => {
     const [warn, setWarn] = useState(false)
     const [correctNum, setCorrectNum] = useState(0)
     const [wrongNum, setWrongNum] = useState(0)
-    const [type, setType] = useState(0)
+    const [type, setType] = useStorage('arithmetic-practice-type', 0)
+    const [history, setHistory] = useStorage('arithmetic-practice-history', [])
 
-    const [typeChecked, setTypeChecked] = useState(Problems.map(() => true))
+    const [typeChecked, setTypeChecked] = useStorage(
+        'arithmetic-practice-type-checked',
+        Problems.map(() => true)
+    )
 
     const generateProblem = () => {
         if (typeChecked.every((v) => v === false)) return
@@ -198,7 +202,6 @@ const Practice = ({ className }) => {
         setAnswer(answer)
         setInput('')
     }
-
     useEffect(() => {
         generateProblem()
     }, [])
@@ -212,7 +215,28 @@ const Practice = ({ className }) => {
             setWarn(true)
             setTimeout(() => setWarn(false), 400)
         }
+        setHistory(
+            produce(history, (draft) => {
+                draft.push({
+                    type: type,
+                    operands,
+                    operator,
+                    input,
+                    correct: answer == input,
+                })
+            })
+        )
     }
+
+    // useEffect(() => {
+    //     const handleKeyDown = (e) => {
+
+    //     }
+    //     window.addEventListener('keydown', handleKeyDown)
+    //     return () => {
+    //         window.removeEventListener('keydown', handleKeyDown)
+    //     }
+    // })
     const startTimer = () => {}
     const stopTimer = () => {}
 
@@ -298,13 +322,21 @@ const Practice = ({ className }) => {
 }
 
 const History = ({ className }) => {
-    const [list, setList] = useStorage('arithmetic-practice-history', [])
+    const [history] = useStorage('arithmetic-practice-history', [])
+    console.log(history)
     return (
         <div className={className}>
             <ul className="mx-auto max-w-[800px]">
-                {list.map((item, index) => (
-                    <li key={index}>{item}</li>
-                ))}
+                {history.map(
+                    (
+                        { type, correct, input, answer, operands, operator },
+                        index
+                    ) => (
+                        <li key={index}>
+                            {Problems[type].render(operator, operands)}
+                        </li>
+                    )
+                )}
             </ul>
         </div>
     )

@@ -1,6 +1,6 @@
 import { setSelectionStyles } from '@/lib/utils.js'
 import storage from '@/lib/storage'
-import './autofill'
+import './common/autofill'
 console.log('common.js')
 ;(() => {
     const ICON_LINKS = Array.from(document.querySelectorAll('link'))

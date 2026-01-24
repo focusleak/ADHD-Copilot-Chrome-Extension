@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea'
 const TextProcessor = ({ className }) => {
     const [raw, setRaw] = useState('')
     const [removeReturn, setRemoveReturn] = useState(false)
+    const [intelRemoveReturn, setIntelRemoveReturn] = useState(false)
     const [removeSpace, setRemoveSpace] = useState(false)
     const [decodeFromBase64, setDecodeFromBase64] = useState(false)
     const [encodeToBase64, setEncodeToBase64] = useState(false)
@@ -27,6 +28,14 @@ const TextProcessor = ({ className }) => {
             handle: (text) => text.replace(/\n/g, ''),
             state: removeReturn,
             setState: setRemoveReturn,
+        },
+        {
+            name: 'Smart Remove Return',
+            id: useId(),
+            order: 0,
+            handle: (text) => text.replace(/(?<![。！？…])\n+/g, ''),
+            state: intelRemoveReturn,
+            setState: setIntelRemoveReturn,
         },
         {
             name: 'Remove Space',

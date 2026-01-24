@@ -55,6 +55,7 @@
         "core-js": "^3.46.0",
         "crypto-js": "^4.2.0",
         "date-fns": "^4.1.0",
+        "debug": "^4.4.3",
         "immer": "^10.2.0",
         "lodash-es": "^4.17.22",
         "lucide-react": "^0.548.0",
@@ -75,7 +76,8 @@
     "scripts": {
         "dev": "webpack serve --mode development",
         "build": "webpack --mode production",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "add": "TODO"
     },
     "repository": {
         "type": "git",

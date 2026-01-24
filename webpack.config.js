@@ -71,6 +71,7 @@ module.exports = {
         port: 8004,
         open: true,
         hot: false,
+        liveReload: false,
         // 将 bundle 写到磁盘而不是内存
         devMiddleware: {
             writeToDisk: true,

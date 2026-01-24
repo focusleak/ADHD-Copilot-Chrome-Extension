@@ -26,6 +26,7 @@ const Reminders = ({ className }) => {
                     <TabsTrigger value={1}>Routine</TabsTrigger>
                     <TabsTrigger value={2}>ToDos</TabsTrigger>
                     <TabsTrigger value={3}>Tips</TabsTrigger>
+                    <TabsTrigger value={4}>Plan</TabsTrigger>
                 </TabsList>
                 <TabsContent value={0}>
                     <EisenhowerMatrix />
@@ -38,6 +39,9 @@ const Reminders = ({ className }) => {
                 </TabsContent>
                 <TabsContent value={3}>
                     <Tips />
+                </TabsContent>
+                <TabsContent value={4}>
+                    <Plan />
                 </TabsContent>
             </Tabs>
         </div>
@@ -85,7 +89,7 @@ const Tips = () => {
         '【费曼学习法】 输入后一定要有输出，最好是文字输出',
         '【覆盖】用新直觉覆盖旧直觉，用新习惯覆盖旧习惯',
         '【执行力】 简单的事情赶紧做',
-        '关注精力分配，少做无意义的决策',
+        '【精力分配】关注精力分配，少做无意义的纠结和决策',
         '毕其功于一役 or 走一步看一步',
         '总结一套自己的方法论',
         '多思考为什么',
@@ -97,6 +101,17 @@ const Tips = () => {
         '复杂的事情边做边想，容易的事情先想再做',
         '不要用战术上的勤奋掩盖战略上的懒惰：遇到频繁出现问题先考虑有无更好的方法去解决，而不是重复劳动',
     ]
+    return (
+        <ol>
+            {data.map((item, index) => (
+                <li key={index}>{item}</li>
+            ))}
+        </ol>
+    )
+}
+
+const Plan = () => {
+    const data = []
     return (
         <ol>
             {data.map((item, index) => (

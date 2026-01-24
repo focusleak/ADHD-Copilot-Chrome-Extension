@@ -17,6 +17,7 @@ const SiteMap = ({ className, rows = 3, cols = 10, gridSize = 100 }) => {
     let sortedList = list.toSorted(
         (a, b) => (favorites[b.name] || 0) - (favorites[a.name] || 0)
     )
+    console.log(JSON.stringify(sortedList))
 
     // TODO 监听键盘
     useEffect(() => {

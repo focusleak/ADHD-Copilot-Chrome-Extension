@@ -49,86 +49,7 @@ export const defaultBookmarks = [
         name: '看美剧学英语',
         icon: 'https://www.babelabc.com/favicon.ico',
     },
-    {
-        name: '失信查询',
-        url: 'https://www.acfic.org.cn/shixin/new/index.html',
-        icon: 'https://www.acfic.org.cn/favicon.ico',
-    },
-    {
-        name: '国家社会保险公共服务平台',
-        url: 'http://si.12333.gov.cn/index.jhtml',
-        icon: 'http://si.12333.gov.cn/favicon.ico',
-    },
-    {
-        name: '国家数据',
-        url: 'https://data.stats.gov.cn/',
-        icon: 'https://data.stats.gov.cn//images/favourite.ico',
-    },
-    {
-        name: '国家药品监督管理局',
-        url: 'https://www.nmpa.gov.cn/',
-        icon: 'https://www.nmpa.gov.cn/favicon.ico',
-    },
-    {
-        name: '中国铁路12306',
-        url: 'https://www.12306.cn/index/index.html',
-        icon: 'https://www.12306.cn/images/favicon.ico',
-    },
-    {
-        name: '学信网',
-        url: 'https://www.chsi.com.cn/',
-        icon: 'https://www.chsi.com.cn/favicon.ico',
-    },
-    {
-        name: '国家法律法规数据库',
-        url: 'https://flk.npc.gov.cn/index.html',
-        icon: 'https://flk.npc.gov.cn/favicon.ico',
-    },
-    {
-        name: '湖北省公安交通管理局互联网交通安全服务管理平台',
-        url: 'https://hb.122.gov.cn/views/member/index.html?index=1',
-        icon: 'https://hb.122.gov.cn/favicon.ico',
-    },
-    {
-        name: '社会统一用户管理系统登录',
-        url: 'https://sipub.sz.gov.cn/suum/',
-        icon: 'https://sipub.sz.gov.cn/favicon.ico',
-    },
-    {
-        name: '深圳市人力资源和社会保障局',
-        url: 'http://hrss.sz.gov.cn/',
-        icon: 'http://hrss.sz.gov.cn/favicon.ico',
-    },
-    {
-        name: '全国人社政务服务平台',
-        url: 'https://zwfw.mohrss.gov.cn/',
-        icon: 'https://zwfw.mohrss.gov.cn/favicon.ico',
-    },
-    {
-        name: 'Google',
-        url: 'https://www.google.com/',
-        icon: 'https://www.google.com/favicon.ico',
-    },
-    {
-        name: '必应',
-        url: 'https://cn.bing.com/',
-        icon: 'https://cn.bing.com/favicon.ico',
-    },
-    {
-        name: 'Google Scholar',
-        url: 'https://scholar.google.com/',
-        icon: 'https://scholar.google.com/favicon.ico',
-    },
-    {
-        name: '搜狗',
-        url: 'https://www.sogou.com/',
-        icon: 'https://www.sogou.com/favicon.ico',
-    },
-    {
-        name: '百度',
-        url: 'https://www.baidu.com/',
-        icon: 'https://www.baidu.com/favicon.ico',
-    },
+
     {
         name: 'Wikipedia',
         url: 'https://en.wikipedia.org/wiki/Main_Page',
@@ -146,37 +67,6 @@ export const defaultBookmarks = [
         icon: 'https://www.v2ex.com/favicon.ico',
     },
 
-    {
-        name: '健康160',
-        url: 'https://www.91160.com/',
-        icon: 'https://www.91160.com/favicon.ico',
-    },
-    {
-        name: '中国联通网上营业厅',
-        url: 'http://www.10010.com/',
-        icon: 'http://www.10010.com/favicon.ico',
-    },
-    {
-        name: 'GOG',
-        url: 'https://www.gog.com/',
-        icon: 'https://www.gog.com/favicon.ico',
-    },
-
-    {
-        name: 'outlook',
-        url: 'https://outlook.live.com/owa/',
-        icon: 'https://outlook.live.com/favicon.ico',
-    },
-    {
-        name: 'iCloud',
-        url: 'https://www.icloud.com/',
-        icon: 'https://www.icloud.com/favicon.ico',
-    },
-    {
-        name: 'Instagram',
-        url: 'https://www.instagram.com/',
-        icon: 'https://www.instagram.com/favicon.ico',
-    },
     {
         name: 'Practice',
         url: 'https://www.keybr.com/',
@@ -232,11 +122,7 @@ export const defaultBookmarks = [
         url: 'https://dezoomify.ophir.dev/',
         icon: 'https://dezoomify.ophir.dev/favicon.ico',
     },
-    {
-        name: 'Fireboy and Watergirl - Play Now!',
-        url: 'https://www.fireboynwatergirl.com/',
-        icon: 'https://www.fireboynwatergirl.com/favicon.ico',
-    },
+
     {
         name: 'LKs - 良心到难以置信的网站推荐',
         url: 'https://lkssite.vip/',

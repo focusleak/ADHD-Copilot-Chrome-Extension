@@ -15,6 +15,7 @@ const presets = [
     { label: '5 min', duration: 300 * 1000 },
     { label: '10 min', duration: 600 * 1000 },
     { label: '15 min', duration: 900 * 1000 },
+    { label: '20 min', duration: 1200 * 1000 },
     { label: '30 min', duration: 1800 * 1000 },
     { label: '1 hr', duration: 3600 * 1000 },
     { label: '1.5 hr', duration: 5400 * 1000 },

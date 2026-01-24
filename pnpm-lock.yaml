@@ -49,7 +49,7 @@ importers:
         version: 3.13.13(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       axios:
         specifier: ^1.13.2
-        version: 1.13.2
+        version: 1.13.2(debug@4.4.3)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -68,6 +68,9 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
+      debug:
+        specifier: ^4.4.3
+        version: 4.4.3
       immer:
         specifier: ^10.2.0
         version: 10.2.0
@@ -203,7 +206,7 @@ importers:
         version: 7.4.5(webpack@5.102.1)
       webpack-dev-server:
         specifier: ^5.2.2
-        version: 5.2.2(webpack-cli@6.0.1)(webpack@5.102.1)
+        version: 5.2.2(debug@4.4.3)(webpack-cli@6.0.1)(webpack@5.102.1)
 
 packages:
 
@@ -5794,7 +5797,7 @@ snapshots:
       webpack: 5.102.1(webpack-cli@6.0.1)
       webpack-cli: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.102.1)
     optionalDependencies:
-      webpack-dev-server: 5.2.2(webpack-cli@6.0.1)(webpack@5.102.1)
+      webpack-dev-server: 5.2.2(debug@4.4.3)(webpack-cli@6.0.1)(webpack@5.102.1)
 
   '@xtuc/ieee754@1.2.0': {}
 
@@ -5924,9 +5927,9 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.1.0
 
-  axios@1.13.2:
+  axios@1.13.2(debug@4.4.3):
     dependencies:
-      follow-redirects: 1.15.11
+      follow-redirects: 1.15.11(debug@4.4.3)
       form-data: 4.0.5
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -6687,7 +6690,9 @@ snapshots:
 
   flatted@3.3.3: {}
 
-  follow-redirects@1.15.11: {}
+  follow-redirects@1.15.11(debug@4.4.3):
+    optionalDependencies:
+      debug: 4.4.3
 
   for-each@0.3.5:
     dependencies:
@@ -6875,10 +6880,10 @@ snapshots:
 
   http-parser-js@0.5.10: {}
 
-  http-proxy-middleware@2.0.9(@types/express@4.17.25):
+  http-proxy-middleware@2.0.9(@types/express@4.17.25)(debug@4.4.3):
     dependencies:
       '@types/http-proxy': 1.17.17
-      http-proxy: 1.18.1
+      http-proxy: 1.18.1(debug@4.4.3)
       is-glob: 4.0.3
       is-plain-obj: 3.0.0
       micromatch: 4.0.8
@@ -6887,10 +6892,10 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  http-proxy@1.18.1:
+  http-proxy@1.18.1(debug@4.4.3):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.11
+      follow-redirects: 1.15.11(debug@4.4.3)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -8236,7 +8241,7 @@ snapshots:
       webpack: 5.102.1(webpack-cli@6.0.1)
       webpack-merge: 6.0.1
     optionalDependencies:
-      webpack-dev-server: 5.2.2(webpack-cli@6.0.1)(webpack@5.102.1)
+      webpack-dev-server: 5.2.2(debug@4.4.3)(webpack-cli@6.0.1)(webpack@5.102.1)
 
   webpack-dev-middleware@7.4.5(webpack@5.102.1):
     dependencies:
@@ -8249,7 +8254,7 @@ snapshots:
     optionalDependencies:
       webpack: 5.102.1(webpack-cli@6.0.1)
 
-  webpack-dev-server@5.2.2(webpack-cli@6.0.1)(webpack@5.102.1):
+  webpack-dev-server@5.2.2(debug@4.4.3)(webpack-cli@6.0.1)(webpack@5.102.1):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -8267,7 +8272,7 @@ snapshots:
       connect-history-api-fallback: 2.0.0
       express: 4.21.2
       graceful-fs: 4.2.11
-      http-proxy-middleware: 2.0.9(@types/express@4.17.25)
+      http-proxy-middleware: 2.0.9(@types/express@4.17.25)(debug@4.4.3)
       ipaddr.js: 2.2.0
       launch-editor: 2.12.0
       open: 10.2.0
