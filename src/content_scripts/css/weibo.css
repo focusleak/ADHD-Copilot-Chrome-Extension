@@ -12,3 +12,7 @@
 a[href="/tv"] {
   display: none !important;
 }
+
+#homeWrap :nth-child(2){
+  display: none !important;
+}
